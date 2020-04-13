@@ -18,7 +18,7 @@ const routes = [
         component: AccountSetup
     },
     {
-        path:      '/',
+        path:      '/chat',
         name:      'Chat',
         component: Chat
     }
