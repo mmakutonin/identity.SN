@@ -1,0 +1,68 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:vue/essential"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "vue"
+    ],
+    "rules": {
+        "block-scoped-var": "error",
+        "class-methods-use-this": "error",
+        "consistent-return": "error",
+        "curly":["error","all"],
+        "default-param-last": "error",
+        "no-proto": "error",
+        "require-await": "error",
+        "wrap-iife": "error",
+        "no-use-before-define":"error",
+        "array-bracket-spacing":"error",
+        "camelcase":"error",
+        "comma-style":"error",
+        "brace-style": ["error","stroustrup"],
+        "block-spacing": ["error","never"],
+        "function-call-argument-newline":["error","never"],
+        "eol-last":["error","never"],
+        "indent": "error",
+        "no-var": "error",
+        "no-useless-rename": "error",
+        "prefer-arrow-callback": "error",
+        "prefer-const": "error",
+        "prefer-spread":"error",
+        "rest-spread-spacing":["error","never"],
+        "template-curly-spacing": ["error", "always"],
+        "jsx-quotes":["error","prefer-single"],
+        "key-spacing":["error", {
+            "align": "value"
+        }],
+        "max-statements-per-line": "error",
+        "no-multiple-empty-lines": "error",
+        "no-whitespace-before-property":"error",
+        "object-curly-spacing":["error","always"],
+        "space-before-function-paren":["error","never"],
+        "wrap-regex":"error",
+        "arrow-spacing": "error",
+        "semi":["error","never"],
+        "quotes": ["error", "single", {
+            "avoidEscape":true,
+            "allowTemplateLiterals":true
+        }],
+        "prefer-object-spread":"error",
+        "prefer-exponentiation-operator":"error",
+        "operator-assignment":"error",
+        "object-property-newline":["error",{ "allowAllPropertiesOnSameLine": true }]
+    }
+}
