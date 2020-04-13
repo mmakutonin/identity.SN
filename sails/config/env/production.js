@@ -47,6 +47,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     default: {
+      // TODO: AWS Database address here
       // adapter: 'sails-mysql',
       // url: 'mysql://user:password@host:port/database',
       //--------------------------------------------------------------------------

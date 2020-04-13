@@ -10,28 +10,17 @@
 
 module.exports.routes = {
 
-  /***************************************************************************
-  *                                                                          *
-  * Make the view located at `views/homepage.ejs` your home page.            *
-  *                                                                          *
-  * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
-  *                                                                          *
-  ***************************************************************************/
+  // Add REST calls above here to override wildcard route
+  'POST /api/v1/user/new': 'UserController.store',
+  'GET /api/v1/user/:id': 'UserController.find',
+  'PUT /api/v1/user/:id': 'UserController.update',
+  'DELETE /api/v1/user/:id': 'UserController.destroy',
 
-  '/': { view: 'pages/homepage' },
-
-
-  /***************************************************************************
-  *                                                                          *
-  * More custom routes here...                                               *
-  * (See https://sailsjs.com/config/routes for examples.)                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the routes in this file, it   *
-  * is matched against "shadow routes" (e.g. blueprint routes).  If it does  *
-  * not match any of those, it is matched against static assets.             *
-  *                                                                          *
-  ***************************************************************************/
-
+  // Wildcard Route match that sends all requests to a single page vue app
+  // Just put their JS bundle into assets/js and reference it in homepage.ejs
+  'GET /*': { 
+    view: 'pages/homepage',
+    skipAssets: true,
+  },
 
 };

@@ -49,6 +49,8 @@ module.exports.security = {
   *                                                                           *
   ****************************************************************************/
 
-  // csrf: false
+  // TODO: turn this on when we're ready to make REST calls
+
+  csrf: false,
 
 };
