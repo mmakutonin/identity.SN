@@ -1,6 +1,9 @@
 <template>
     <div>
         Hi from Chat
+		<ChatVideo />
+		<ChatTextPane />
+		<ChatConversationList />
     </div>
 </template>
 
@@ -10,10 +13,10 @@ import ChatTextPane from '../components/ChatTextPane'
 import ChatConversationList from '../components/ChatConversationList'
 export default {
 	name: 'Chat',
-	components: [
+	components: {
 		ChatVideo,
 		ChatTextPane,
 		ChatConversationList
-	]
+	}
 }
 </script>

@@ -1,7 +1,0 @@
-{
-    "git.autofetch": true,
-    "explorer.confirmDelete": false,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    }
-}

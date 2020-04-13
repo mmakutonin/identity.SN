@@ -1,0 +1,11 @@
+:root {
+    --full-screen-height: 100vh
+}
+
+.cust-login {
+    height: var(--full-screen-height)
+}
+
+.cust-75-percent-height {
+    height: 75%
+}
