@@ -8,8 +8,10 @@
     </div>
     <div class='w3-half w3-display-container cust-full-height'>
       <div class='w3-display-middle w3-card w3-twothird w3-white w3-round-xlarge cust-threequarter-height'>
-        <LoginOAuthButton signInMethod='Google' />
-        <LoginOAuthButton signInMethod='Facebook' />
+        <div class='w3-display-middle'>
+          <LoginOAuthButton signInMethod='Google' />
+          <LoginOAuthButton signInMethod='Facebook' />
+        </div>
       </div>
     </div>
   </div>

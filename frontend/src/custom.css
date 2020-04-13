@@ -10,6 +10,11 @@
     height: 100%
 }
 
+.cust-small-icon-image-dim {
+    height: 1em;
+    width: 1em
+}
+
 .cust-threequarter-height {
     height: 75%
 }
