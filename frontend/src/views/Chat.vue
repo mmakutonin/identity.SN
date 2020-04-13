@@ -9,11 +9,11 @@ import ChatVideo from '../components/ChatVideo'
 import ChatTextPane from '../components/ChatTextPane'
 import ChatConversationList from '../components/ChatConversationList'
 export default {
-    name: 'Chat',
-    components: [
-        ChatVideo,
-        ChatTextPane,
-        ChatConversationList
-    ]
+	name: 'Chat',
+	components: [
+		ChatVideo,
+		ChatTextPane,
+		ChatConversationList
+	]
 }
 </script>
