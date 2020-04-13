@@ -3,9 +3,13 @@
 }
 
 .cust-login {
-    height: var(--full-screen-height)
+    height: var(--full-screen-height);
 }
 
-.cust-75-percent-height {
+.cust-full-height {
+    height: 100%
+}
+
+.cust-threequarter-height {
     height: 75%
 }
