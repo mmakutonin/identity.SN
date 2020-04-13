@@ -5,24 +5,24 @@ import Chat from '../views/Chat.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
-    path: '/',
-    name: 'Login',
+    path:      '/',
+    name:      'Login',
     component: Login
   },
   {
-    path: '/fill-info',
-    name: 'AccountSetup',
-    component: function () {
+    path:      '/fill-info',
+    name:      'AccountSetup',
+    component: function() {
       return import(/* webpackChunkName: "AccountSetup" */ '../views/AccountSetup.vue')
     }
   },
   {
-    path: '/',
-    name: 'Chat',
+    path:      '/',
+    name:      'Chat',
     component: Chat
-  },
+  }
 ]
 
 const router = new VueRouter({
