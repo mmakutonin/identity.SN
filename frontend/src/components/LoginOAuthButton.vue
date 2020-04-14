@@ -1,5 +1,5 @@
 <template>
-	<div class='w3-button w3-section w3-round-xlarge w3-border w3-center' v-on:click='signIn()'>
+	<div class='w3-button w3-section w3-round-xlarge w3-border w3-center w3-hover-indigo loginOAuth-button' v-on:click='signIn()'>
 		<img
 			v-if='signInMethod === "Google"'
 			class='w3-image cust-small-icon-image-dim'
