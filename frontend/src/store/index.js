@@ -109,11 +109,25 @@ export default new Vuex.Store({
                 currentChat:    (state, { currentContact }) => state.chats[currentContact.chatIndex]
             },
             mutations: {
-                addSentMessage(state, payload) {
+                addMessage(state, payload) {
                     Vue.set(state.chats[payload.index], state.chats[payload.index].length, payload.chat)
                 },
                 changeCurrentContact(state, payload) {
                     state.currentContactIndex = payload.index
+                }
+            },
+            actions: {
+                sendMessage({ commit, getters }, payload) {
+                    const chat = {
+                        sender:    true,
+                        content:   payload.messageText,
+                        timestamp: Date.now()
+                    }
+                    commit({
+                        type:  'addMessage',
+                        chat,
+                        index: getters.currentContact.chatIndex
+                    })
                 }
             }
         }
