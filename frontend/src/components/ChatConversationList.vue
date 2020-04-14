@@ -1,13 +1,15 @@
 <template>
-    <div>
+    <div class='w3-pink'>
+        Hi From ChatConversationList
         <div
             v-for='(contact, index) in contacts'
             v-bind:key='contact.chatIndex'
             class='w3-card w3-container w3-section w3-border'
         >
             <input
+                type='button'
                 v-bind:value='contact.initials'
-                v-bind:class='classStr(index)'
+                v-bind:class='"w3-button w3-circle " + color(index)'
                 v-on:click='changeCurrentContact({index})'
             />
             {{contact.lastMessage.content}}
@@ -20,13 +22,12 @@ import { mapState, mapMutations } from 'vuex'
 export default {
     name:    'ChatConversationList',
     methods: {
-        classStr(index) {
-            const className = 'w3-btn w3-round '
+        color(index) {
             if(index === this.currentContactIndex) {
-                return className + 'w3-blue'
+                return 'w3-blue'
             }
             else {
-                return className + 'w3-light-blue'
+                return 'w3-light-blue'
             }
         },
         ...mapMutations('chat', [
