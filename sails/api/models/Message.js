@@ -6,25 +6,38 @@
  */
 
 module.exports = {
+  tableName: "messages",
 
   attributes: {
-
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-
-    body: { type: 'string', },
+    id: {
+      type: "number",
+      autoIncrement: true,
+      columnName: "message_id",
+    },
+    message: { type: "string", required: true },
+    createdAt: {
+      type: "number",
+      autoCreatedAt: true,
+      columnName: "created_at",
+    },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
     //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
 
-
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-
+    from: {
+      model: "user",
+      columnName: "user_from",
+    },
+    to: {
+      model: "user",
+      columnName: "user_to",
+    },
   },
-
 };
-
