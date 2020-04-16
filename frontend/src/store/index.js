@@ -13,12 +13,13 @@ export default new Vuex.Store({
     },
     modules: {
         accountSetup: {
-            state: {
+            namespaced: true,
+            state:      {
                 //dummy data
-                interestsAll:    ['Sports', 'Buffalo', 'LGBTQ+', 'Religion', 'MasterChef'],
-                interestsKnown:  [],
-                identitiesAll:   ['Buffalo', 'Bisexual', 'Jewish', 'Christian', 'Buffalo Bills'],
-                identitiesKnown: []
+                interestsAll:    { 1: 'Sports', 3: 'Buffalo', 934: 'LGBTQ+', 1102: 'Religion', 231: 'MasterChef' },
+                interestsKnown:  {},
+                identitiesAll:   { 3: 'Buffalo', 662: 'Bisexual', 1213: 'Jewish', 1234: 'Christian', 45612: 'Buffalo Bills' },
+                identitiesKnown: {}
             },
             mutations: {
                 populateUserMetadata(state, payload) {
@@ -27,11 +28,11 @@ export default new Vuex.Store({
                     state.identitiesAll = payload.identitiesAll
                     state.identitiesKnown = payload.identitiesKnown
                 },
-                identityAdd(state, payload) {
-                    Vue.set(state.identitiesKnown, state.identitiesKnown.length, state.identitiesAll[payload.index])
+                elementAdd(state, payload) {
+                    Vue.set( state[payload.elementType + 'Known'], payload.index, state[payload.elementType + 'All'][payload.index])
                 },
-                identityRemove(state, payload) {
-                    Vue.delete(state.identitiesKnown, payload.index)
+                elementRemove(state, payload) {
+                    Vue.delete(state[payload.elementType + 'Known'], payload.index)
                 },
                 interestAdd(state, payload) {
                     Vue.set(state.interestsKnown, state.interestsKnown.length, state.interestsAll[payload.index])
