@@ -1,18 +1,34 @@
 <template>
-	<div class='w3-bar navbar'>
-      <div class='nav-logo'><img src='../assets/ic-icon.png'></div>
-      
-      <div class="nav-items">
-      <a href="#" class="w3-bar-item w3-button w3-hover-none w3-hover-text-indigo w3-round">Home</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-none w3-hover-text-indigo w3-round">About</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-none w3-hover-text-indigo w3-round">Product</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-none w3-hover-text-indigo w3-round">Contact</a>
-      </div>
+  <div class="w3-bar navbar">
+    <div class="nav-logo"><img src="../assets/ic-icon.png" /></div>
+
+    <div class="nav-items">
+      <a
+        href="#"
+        class="w3-bar-item w3-button w3-hover-none w3-hover-text-indigo w3-round"
+        >Home</a
+      >
+      <a
+        href="#"
+        class="w3-bar-item w3-button w3-hover-none w3-hover-text-indigo w3-round"
+        >Features</a
+      >
+      <a
+        href="#"
+        class="w3-bar-item w3-button w3-hover-none w3-hover-text-indigo w3-round"
+        >About</a
+      >
+      <a
+        href="#"
+        class="w3-bar-item w3-button w3-hover-none w3-hover-text-indigo w3-round"
+        >Contact</a
+      >
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name:  'MainNavBar'
-}
+  name: "MainNavBar",
+};
 </script>
