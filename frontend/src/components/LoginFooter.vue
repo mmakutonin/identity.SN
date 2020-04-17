@@ -5,7 +5,7 @@
     </div>
 
     <div class="w3-half footer-text-section">
-      <p>Designed by</p>
+      <p>Designed by Team Bonnies</p>
     </div>
   </div>
 </template>
