@@ -20,7 +20,8 @@ module.exports.routes = {
   'GET /api/v1/survey': 'SurveyController.index',
   'PUT /api/v1/survey': 'SurveyController.update',
 
-  'POST /api/v1/send': 'MessageController.store',
+  'POST /api/v1/message': 'MessageController.store',
+  'GET /api/v1/message': 'MessageController.index',
 
   // Wildcard Route match that sends all requests to a single page vue app
   // Just put their JS bundle into assets/js and reference it in homepage.ejs
