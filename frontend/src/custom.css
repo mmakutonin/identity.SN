@@ -1,20 +1,156 @@
 :root {
-    --full-screen-height: 100vh
+  --full-screen-height: 100vh;
 }
 
+.main {
+  height: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 .cust-login {
-    height: var(--full-screen-height);
+  height: var(--full-screen-height);
+  background: url(https://images.unsplash.com/photo-1508898578281-774ac4893c0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)
+    bottom center;
+  background-size: cover;
 }
 
 .cust-full-height {
-    height: 100%
+  height: 100%;
 }
 
 .cust-small-icon-image-dim {
-    height: 1em;
-    width: 1em
+  height: 1em;
+  width: 1em;
 }
 
 .cust-threequarter-height {
-    height: 75%
+  height: 55%;
+  width: 55vh;
+  max-width: 100%;
+}
+
+.cust-display-text h2 {
+  font-size: 2rem;
+}
+.cust-display-text h1 {
+  font-size: 7rem;
+}
+
+.cust-display-text p:hover {
+  transform: scale(1.1);
+}
+
+#app-icon {
+  width: 25%;
+  height: 25%;
+}
+
+#log-in-subtitle {
+  padding-top: 2.2em;
+  text-align: center;
+}
+
+.login-card p {
+  font-size: 0.5em;
+}
+
+.navbar {
+  height: 64px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+  border-bottom: 4em !important;
+}
+.nav-items {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+}
+.nav-logo {
+  width: 40%;
+  justify-content: flex-start;
+}
+
+.nav-logo img {
+  height: 64px;
+}
+
+.loginOAuth-button:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+.about-section-container {
+  height: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.feature-item {
+  background-color: #ecf0f1;
+  height: 100vh;
+}
+
+#feature-font {
+  font-size: 2em;
+  justify-content: center;
+  text-align: center;
+  margin-left: 45px;
+  margin-right: 45px;
+  margin-top: 2em;
+  font-weight: bolder;
+  margin-bottom: 45px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1em;
+}
+
+#feature-paragraphs {
+  text-align: justify;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.feature-img {
+  padding-top: 1.1em;
+  padding-bottom: 1.1em;
+}
+
+.about-team {
+  height: 50vh;
+}
+
+.footer-main {
+  height: 64px;
+  background-color: black;
+}
+
+.footer-text-section p {
+  color: white;
+  font-size: 1em;
+}
+
+.footer-text-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+@media only screen and (max-width: 600px) {
+  .cust-login {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-card {
+    margin-top: 0;
+  }
+
+  .cust-threequarter-height {
+    height: 85%;
+    width: 80%;
+  }
 }
