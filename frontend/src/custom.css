@@ -148,6 +148,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  
 }
 
 .footer-text-section1,
@@ -196,6 +197,11 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+
+  .chat-convo-list-header {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .acc-set-up-container {
@@ -235,9 +241,7 @@
   justify-content: space-evenly;
   align-items: flex-end;
   margin-bottom: 1.5em;
-
 }
-
 
 .buttons-section {
   max-height: 400px;
@@ -271,4 +275,130 @@
   padding: 0;
   align-items: flex-end;
   overflow-y: hidden;
+}
+
+.chat-main {
+  height: var(--full-screen-height);
+  padding: 0 !important;
+}
+
+.chat-convo-list {
+  height: var(--full-screen-height);
+  width: 30%;
+  min-width: 200px;
+  background-color: #ecf0f1;
+}
+
+.chat-text-pane-main {
+  height: var(--full-screen-height);
+  background-color: #F1F0ED;
+}
+
+.user-profile-bar {
+  background-color: #4781E9;
+  width: 15%;
+}
+
+.chat-convo-list-header{
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.5em;
+  align-items: center;
+
+ 
+}
+.chat-convo-list-header h2{
+  display: flex;
+  justify-content: flex-start;
+  width: 80%;
+}
+
+.new-match-btn {
+  background-color: #4781E9;
+  color: white;
+  height: 3em;
+  float: right;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  
+}
+
+.chat-contact-cards {
+  height: 12%;
+  max-height: 80px;
+  display: flex;
+  flex-direction: row;
+  overflow-y: scroll;
+  justify-content: center;
+  background-color: white;
+}
+
+.chat-contact-thumbnail-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-contact-thumbnail-btn {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+.chat-contact-cards input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.last-msg-content{
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 80%;
+}
+.contact-search-bar-section {
+  display: flex;
+}
+
+.search-bar {
+  width: 100%;
+  margin-top: 0.5em;
+  background-color: white;
+  border: none;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  .cust-login {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-card {
+    margin-top: 0;
+  }
+
+  .cust-threequarter-height {
+    height: 85%;
+    width: 80%;
+  }
+
+  .nav-items {
+    justify-content: space-between !important;
+    padding-right: 1em;
+  }
+
+  .nav-items a {
+    font-size: 0.85rem;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .chat-convo-list-header {
+    display: flex;
+    flex-direction: column;
+  }
 }

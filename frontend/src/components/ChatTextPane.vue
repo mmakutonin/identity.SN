@@ -1,5 +1,5 @@
 <template>
-    <div class='w3-container w3-orange'>
+    <div class='w3-container w3-cell chat-text-pane-main'>
         Hi from ChatTextPane
         <h1> {{currentContact.name}} </h1>
         <div
