@@ -18,7 +18,7 @@
       <div class="w3-bar set-up-nav">
         <input
           type="button"
-          class="w3-button w3-round-xlarge w3-hover-indigo"
+          class="w3-button w3-black w3-round-large w3-hover-indigo"
           value="Previous"
           v-bind:disabled="screenCounter === 0"
           v-on:click="screenCounter--"
@@ -27,7 +27,7 @@
         <input
           type="button"
           v-bind:class="
-            'w3-button w3-round-xlarge w3-hover-indigo' +
+            'w3-button w3-black w3-round-large w3-hover-indigo' +
               (screenCounter === 1 ? 'w3-green w3-hover-green' : '')
           "
           v-bind:value="screenCounter === 1 ? 'Lets Chat!' : 'Next Page'"

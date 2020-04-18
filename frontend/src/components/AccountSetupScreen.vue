@@ -1,7 +1,7 @@
 <template>
-  <div class="w3-container w3-flat-clouds acc-set-up-container">
+  <div class="w3-container w3-animate-opacity w3-flat-clouds acc-set-up-container">
     <h2 class="w3-display-topmiddle">{{ message }}</h2>
-    <div class="w3-container w3-animate-fading buttons-section">
+    <div class="w3-container buttons-section">
       <div
         v-for="(obj, index) in allColors"
         v-bind:key="obj.index"

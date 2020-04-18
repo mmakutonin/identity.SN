@@ -1,5 +1,5 @@
 <template>
-  <div class="w3-bar navbar">
+  <div class="w3-bar w3-border-bottom w3-border-red w3-mobile navbar">
     <div class="nav-logo"><img src="../assets/ic-icon.png" /></div>
 
     <div class="nav-items">
