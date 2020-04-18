@@ -11,12 +11,18 @@
             {{new Date(chatMessage.timestamp)}}
         </div>
         <ChatTextPaneInput />
+        <input
+            type='button'
+            class='w3-button w3-green'
+            value='Meet Face-to-Face'
+            v-on:click='this.videoChat'
+        />
     </div>
 </template>
 
 <script>
 import ChatTextPaneInput from './ChatTextPaneInput'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 export default {
     name:       'ChatTextPane',
     components: {
@@ -30,7 +36,8 @@ export default {
             else {
                 return 'w3-grey'
             }
-        }
+        },
+        ...mapActions('chat', ['videoChat'])
     },
     computed: {
         ...mapGetters('chat', ['currentChat', 'currentContact'])

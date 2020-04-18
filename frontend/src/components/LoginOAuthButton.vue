@@ -23,6 +23,7 @@ export default {
     methods: {
         signIn() {
             console.log('Sign In Called')
+            this.$router.push('/fill-info')
         }
     }
 }
