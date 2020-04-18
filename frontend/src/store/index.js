@@ -129,6 +129,13 @@ export default new Vuex.Store({
                         chat,
                         index: getters.currentContact.chatIndex
                     })
+                },
+                //Actions to be expanded later can be found below:
+                videoChat() {
+                    window.open('https://hangouts.google.com/call/W7JggBBJ23loiAC0qUZkAEEE')
+                },
+                findMatch() {
+                    console.log('"match is being found," sayeth the void.')
                 }
             }
         }
