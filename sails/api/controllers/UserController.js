@@ -19,22 +19,6 @@ module.exports = {
 
     return res.json(user);
   },
-  googleAuth: function(req, res) {
-    passport.authenticate('google', { scope: ['email', 'profile'] })(req, res);
-  },
-
-  googleCallback: function(req, res, next) {
-    passport.authenticate('google', function(err, user) {
-      if(err) {
-        // redirect to login page
-        console.log('google callback error: '+err);
-      } else {
-        console.log('google credentials');
-        console.log(user);
-        res.json(user);
-      }
-    })(req, res, next);
-  },
 
   store: async function (req, res) {
     // Should only be usable by Google webhook & passport JS later on
@@ -85,5 +69,34 @@ module.exports = {
     await User.destroy({ id });
 
     return res.ok();
+  },
+
+  googleAuth: function(req, res) {
+    passport.authenticate('google', { scope: ['email', 'profile'] })(req, res);
+  },
+
+  googleCallback: function(req, res, next) {
+    passport.authenticate('google', function(err, user) {
+      if(err) {
+        // redirect to login page
+        console.log('google callback error: '+err);
+      } else {
+        console.log('google credentials');
+        console.log(user);
+        res.json(user);
+      }
+    })(req, res, next);
+  },
+  facebookAuth: function(req, res, next) {
+    passport.authenticate('facebook', { scope: ['email']})(req, res, next);
+  },
+
+  facebookCallback: function(req, res, next) {
+    passport.authenticate('facebook', function(err, user) {
+
+      console.log('facebook credentials');
+      console.log(user);
+      res.json(user);
+    })(req, res, next);
   },
 };

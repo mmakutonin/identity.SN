@@ -17,6 +17,8 @@ module.exports.routes = {
   'DELETE /api/v1/user/:id': 'UserController.destroy',
   'GET /api/v1/auth/google':  'UserController.googleAuth',
   'GET /api/v1/auth/google/callback': 'UserController.googleCallback',
+  'GET /api/v1/auth/facebook':  'UserController.facebookAuth',
+  'GET /api/v1/auth/facebook/callback': 'UserController.facebookCallback',
 
   'POST /api/v1/survey': 'SurveyController.store',
   'GET /api/v1/survey': 'SurveyController.index',
