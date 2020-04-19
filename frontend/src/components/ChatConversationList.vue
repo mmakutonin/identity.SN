@@ -1,21 +1,27 @@
 <template>
-  <div class="w3-cell chat-convo-list">
+  <div class="w3-cell w3-border-right chat-convo-list">
     <div class="w3-container w3-mobile chat-convo-list-header">
       <h2>Chat</h2>
-      <input
-        type="button"
-        class="w3-button w3-round-xlarge w3-hover-none new-match-btn"
-        value="Find a New Match"
-        v-on:click="searchForMatch()"
-      />
+      <div class="chat-convo-list-header-btn-section w3-container">
+        <input
+          type="button"
+          class="w3-button w3-round-xlarge new-match-btn"
+          value="New Match"
+          v-on:click="searchForMatch()"
+        />
+      </div>
     </div>
     <div class="w3-container contact-search-bar-section">
-        <input class="w3-padding w3-round-xlarge search-bar" type="text" placeholder="Search...">
+      <input
+        class="w3-padding w3-round-xlarge search-bar"
+        type="text"
+        placeholder="Search..."
+      />
     </div>
     <div
       v-for="(contact, index) in contacts"
       v-bind:key="contact.chatIndex"
-      class="w3-card w3-padding w3-container w3-section chat-contact-cards "
+      class="w3-padding w3-container w3-section chat-contact-cards "
     >
       <div class="chat-contact-thumbnail-section">
         <input
@@ -29,7 +35,7 @@
       </div>
 
       <div class="last-msg-content w3-padding">
-        {{ contact.lastMessage.content }}
+        <p>{{ contact.lastMessage.content }}</p>
       </div>
     </div>
     <div v-if="alertDisplayed">

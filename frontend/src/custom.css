@@ -148,7 +148,6 @@
   width: 100%;
   display: flex;
   align-items: center;
-  
 }
 
 .footer-text-section1,
@@ -172,7 +171,7 @@
   width: 60%;
 }
 
-@media only screen and (max-width: 600px) {
+/*@media only screen and (max-width: 600px) {
   .cust-login {
     display: flex;
     flex-direction: column;
@@ -202,7 +201,7 @@
     display: flex;
     flex-direction: column;
   }
-}
+}*/
 
 .acc-set-up-container {
   height: 100%;
@@ -211,7 +210,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
- 
 }
 
 .acc-set-up-container h2 {
@@ -219,7 +217,7 @@
   text-align: center;
   padding-left: 0 !important;
   padding-right: 0 !important;
-  padding-top: 1.5em; 
+  padding-top: 1.5em;
 }
 
 .set-up-main {
@@ -254,8 +252,6 @@
   text-align: center;
   overflow-y: scroll;
   margin-top: 4em;
-  
-
 }
 
 .option-buttons {
@@ -291,39 +287,42 @@
 
 .chat-text-pane-main {
   height: var(--full-screen-height);
-  background-color: #F1F0ED;
+  background-color: #f1f0ed;
 }
 
 .user-profile-bar {
-  background-color: #4781E9;
+  background-color: #4781e9;
   width: 15%;
 }
 
-.chat-convo-list-header{
+.chat-convo-list-header,
+.chat-text-pane-header {
   display: flex;
   flex-direction: row;
   margin-top: 1.5em;
+  justify-content: center;
   align-items: center;
-
- 
 }
-.chat-convo-list-header h2{
+
+.chat-convo-list-header-btn-section,
+.chat-text-pane-btn-section {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.chat-convo-list-header h2,
+.chat-text-pane-header h2 {
   display: flex;
   justify-content: flex-start;
   width: 80%;
+  font-weight: 800;
 }
 
-.new-match-btn {
-  background-color: #4781E9;
+.new-match-btn,
+.meet-face-btn {
+  background-color: #4781e9;
   color: white;
   height: 3em;
-  float: right;
-  text-align: center;
-  justify-content: center;
-  display: flex;
-  align-items: flex-end;
-  width: 100%;
-  
+  font-size: 1rem;
 }
 
 .chat-contact-cards {
@@ -334,6 +333,8 @@
   overflow-y: scroll;
   justify-content: center;
   background-color: white;
+  margin-right: 16px;
+  margin-left: 16px;
 }
 
 .chat-contact-thumbnail-section {
@@ -347,16 +348,23 @@
   height: 50px;
   text-align: center;
 }
-.chat-contact-cards input{
+.chat-contact-cards input {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.last-msg-content{
+.last-msg-content {
   overflow-y: hidden;
   overflow-x: hidden;
   width: 80%;
+  
+}
+
+.last-msg-content p {
+  margin: 0 !important;
+  font-size: 0.85rem;
+  color: #7f8c8d;
 }
 .contact-search-bar-section {
   display: flex;
@@ -367,10 +375,11 @@
   margin-top: 0.5em;
   background-color: white;
   border: none;
-
 }
 
-
+/**
+Styling for Mobile
+**/
 @media only screen and (max-width: 600px) {
   .cust-login {
     display: flex;
@@ -397,8 +406,11 @@
     padding-right: 0 !important;
   }
 
-  .chat-convo-list-header {
+  .chat-convo-list-header,
+  .chat-text-pane-header {
     display: flex;
     flex-direction: column;
+    margin-left: 0 !important;
+    align-items: baseline;
   }
 }
