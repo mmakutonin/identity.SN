@@ -57,6 +57,7 @@
 
 .navbar {
   height: 64px;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   display: flex;
@@ -148,6 +149,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .footer-text-section1,
@@ -392,71 +394,45 @@
 }
 
 .bubble-sender {
-  min-width: 100px;
-  max-width: 75%;
-  min-height: 50px;
-  float: right;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  position: relative;
+  align-items: flex-end;
   margin-top: 0 !important;
-  margin-bottom: 15px !important;
+  margin-left: 25%;
+  max-width: 75%;
+  justify-content: flex-end;
+  display: flex;
 }
 
-.bubble-sender::before {
-  display: block;
-  position: absolute;
-  right: -8px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 6px 8px 6px 0;
-  border-color: transparent  transparent transparent blue;
+.bubble-sender .bubble-text {
+  position: relative;
 }
 
 .bubble-income {
-  min-width: 100px;
-  max-width: 75%;
-  min-height: 50px;
-  float: left;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
   position: relative;
+  align-items: flex-start;
   margin-top: 0 !important;
-  margin-bottom: 15px !important;
-}
-
-.bubble-income::before {
-  display: block;
-  position: absolute;
-  left: -8px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 6px 0 6px 8px;
-  border-color: transparent transparent transparent grey;
-}
-
-.bubble-text {
+  margin-right: 25%;
+  max-width: 75%;
+  justify-content: flex-start;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+}
+.bubble-text {
+  display: inline-block;
 }
 .msg-content {
   font-size: 0.9rem;
   padding-top: 4px !important;
   padding-bottom: 4px !important;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  color: white;
   
 }
 .msg-date {
   font-size: 0.75rem;
   padding-top: 4px !important;
   padding-bottom: 4px !important;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 /**
 Styling for Mobile
@@ -499,5 +475,7 @@ Styling for Mobile
     height: calc(80% - 80px);
     max-height: 750px;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
   }
 }

@@ -18,17 +18,19 @@
       <div
         v-for="chatMessage in currentChat"
         v-bind:key="chatMessage.timestamp"
-        v-bind:class="
-          'w3-round-xxlarge w3-section ' + color(chatMessage.sender)
-        "
+        v-bind:class="'w3-section ' + sender(chatMessage.sender)"
       >
-        <div class="bubble-text">
-          <p class="w3-padding msg-content">
-            {{ chatMessage.content }}
-          </p>
-          <p class="w3-padding msg-date">
+        <div
+          v-bind:class="'w3-round-xxlarge bubble ' + color(chatMessage.sender)"
+        >
+          <div class="bubble-text">
+            <p class="w3-padding msg-content">
+              {{ chatMessage.content }}
+            </p>
+            <!--<p class="w3-padding msg-date">
             {{ new Date(chatMessage.timestamp) }}
-          </p>
+          </p>-->
+          </div>
         </div>
       </div>
     </div>
@@ -48,11 +50,19 @@ export default {
     ChatTextPaneInput,
   },
   methods: {
+    sender(sender) {
+      if (sender) {
+        return "bubble-sender";
+      } else {
+        return "bubble-income";
+      }
+    },
+
     color(sender) {
       if (sender) {
-        return "w3-blue bubble-sender";
+        return "w3-blue";
       } else {
-        return "w3-grey bubble-income";
+        return "w3-grey";
       }
     },
     ...mapActions("chat", ["videoChat"]),
