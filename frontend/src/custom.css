@@ -274,7 +274,7 @@
 }
 
 .chat-main {
-  height: var(--full-screen-height);
+  height: 100%;
   padding: 0 !important;
 }
 
@@ -290,6 +290,21 @@
   background-color: #f1f0ed;
 }
 
+.chat-text-pane-input-section {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  height: 5%;
+  margin-top: 2em;
+}
+
+.chat-text-msg-section {
+  height: 80%;
+  max-height: 750px;
+  overflow-y: scroll;
+  margin-top: 1em;
+}
 .user-profile-bar {
   background-color: #4781e9;
   width: 15%;
@@ -308,6 +323,8 @@
 .chat-text-pane-btn-section {
   padding-right: 0 !important;
   padding-left: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 }
 .chat-convo-list-header h2,
 .chat-text-pane-header h2 {
@@ -319,8 +336,6 @@
 
 .new-match-btn,
 .meet-face-btn {
-  background-color: #4781e9;
-  color: white;
   height: 3em;
   font-size: 1rem;
 }
@@ -358,7 +373,6 @@
   overflow-y: hidden;
   overflow-x: hidden;
   width: 80%;
-  
 }
 
 .last-msg-content p {
@@ -377,6 +391,73 @@
   border: none;
 }
 
+.bubble-sender {
+  min-width: 100px;
+  max-width: 75%;
+  min-height: 50px;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  margin-top: 0 !important;
+  margin-bottom: 15px !important;
+}
+
+.bubble-sender::before {
+  display: block;
+  position: absolute;
+  right: -8px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 8px 6px 0;
+  border-color: transparent  transparent transparent blue;
+}
+
+.bubble-income {
+  min-width: 100px;
+  max-width: 75%;
+  min-height: 50px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  margin-top: 0 !important;
+  margin-bottom: 15px !important;
+}
+
+.bubble-income::before {
+  display: block;
+  position: absolute;
+  left: -8px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent grey;
+}
+
+.bubble-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.msg-content {
+  font-size: 0.9rem;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  
+}
+.msg-date {
+  font-size: 0.75rem;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
 /**
 Styling for Mobile
 **/
@@ -412,5 +493,11 @@ Styling for Mobile
     flex-direction: column;
     margin-left: 0 !important;
     align-items: baseline;
+  }
+
+  .chat-text-msg-section {
+    height: calc(80% - 80px);
+    max-height: 750px;
+    overflow-y: scroll;
   }
 }

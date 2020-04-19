@@ -5,7 +5,7 @@
       <div class="chat-convo-list-header-btn-section w3-container">
         <input
           type="button"
-          class="w3-button w3-round-xlarge new-match-btn"
+          class="w3-button w3-round-xlarge w3-green new-match-btn"
           value="New Match"
           v-on:click="searchForMatch()"
         />
