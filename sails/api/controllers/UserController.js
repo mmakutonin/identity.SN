@@ -8,6 +8,8 @@
 // TODO: make sure the user actually has permission to do these operations
 // TODO: then we wont need to include the weird user email / id thing in the urlstring
 
+var passport = require('passport');
+
 module.exports = {
   // Expects the id parameter to contain an email address
   // So escape the . in the email address with %2E
@@ -17,9 +19,26 @@ module.exports = {
 
     return res.json(user);
   },
+  googleAuth: function(req, res) {
+    passport.authenticate('google', { scope: ['email', 'profile'] })(req, res);
+  },
+
+  googleCallback: function(req, res, next) {
+    passport.authenticate('google', function(err, user) {
+      if(err) {
+        // redirect to login page
+        console.log('google callback error: '+err);
+      } else {
+        console.log('google credentials');
+        console.log(user);
+        res.json(user);
+      }
+    })(req, res, next);
+  },
 
   store: async function (req, res) {
     // Should only be usable by Google webhook & passport JS later on
+
     const { body } = req;
 
     const user = await User.create({
