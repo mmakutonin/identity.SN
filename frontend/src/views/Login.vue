@@ -24,8 +24,8 @@
               <h4>Log In:</h4>
               <p>Please use pick either options</p>
             </div>
-            <LoginOAuthButton signInMethod="Google" />
-            <LoginOAuthButton signInMethod="Facebook" />
+            <LoginOAuthButton signInMethod="google" />
+            <LoginOAuthButton signInMethod="facebook" />
           </div>
         </div>
       </div>

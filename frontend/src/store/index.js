@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import apiCalls from '../util/apiCalls'
 
 Vue.use(Vuex)
 
@@ -10,6 +11,10 @@ export default new Vuex.Store({
     mutations: {
     },
     actions: {
+        async logIn({ commit }, payload ) {
+            window.open(`api/v1/auth/${payload.signInMethod}`)
+            const ret = await apiCalls.checkAuthenticated()
+        }
     },
     modules: {
         accountSetup: {
