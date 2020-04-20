@@ -13,8 +13,18 @@ module.exports = {
   // So escape the . in the email address with %2E
   find: async function (req, res) {
     const { id } = req.params;
-    const user = await User.findOne({ id });
+    const { interests, identities } = req.query;
+    let query = User.findOne({ id });
 
+    if(interests) {
+      query = query.populate('interests');
+    }
+
+    if(identities) {
+      query = query.populate('identities');
+    }
+
+    const user = await query;
     return res.json(user);
   },
 
