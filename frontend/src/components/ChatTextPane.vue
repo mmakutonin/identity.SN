@@ -1,6 +1,6 @@
 <template>
   <div class="w3-container w3-cell chat-text-pane-main">
-    <div class="w3-container w3-mobile chat-text-pane-header">
+    <div class="w3-container w3-border-bottom w3-mobile chat-text-pane-header">
       <h2>{{ currentContact.name }}</h2>
       <div class="chat-text-pane-btn-section w3-container">
         <input
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div
-      class="w3-container w3-padding chat-text-msg-section"
+      class="w3-container w3-mobile w3-padding chat-text-msg-section"
       v-chat-scroll="{ smooth: true }"
     >
       <div
@@ -21,7 +21,7 @@
         v-bind:class="'w3-section ' + sender(chatMessage.sender)"
       >
         <div
-          v-bind:class="'w3-round-xxlarge bubble ' + color(chatMessage.sender)"
+          v-bind:class="'w3-round-xlarge bubble ' + color(chatMessage.sender)"
         >
           <div class="bubble-text">
             <p class="w3-padding msg-content">

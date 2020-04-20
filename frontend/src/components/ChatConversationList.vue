@@ -1,6 +1,6 @@
 <template>
-  <div class="w3-cell w3-border-right chat-convo-list">
-    <div class="w3-container w3-mobile chat-convo-list-header">
+  <div class="w3-cell w3-border-right w3-hide-small chat-convo-list">
+    <div class="w3-container w3-border-bottom w3-mobile chat-convo-list-header">
       <h2>Chat</h2>
       <div class="chat-convo-list-header-btn-section w3-container">
         <input
