@@ -5,7 +5,7 @@
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  * 
  * Add new Identity Subcategory
- * Identity.addToCollection('<subIdentity>', 'subcategories', '<parentIdentity>')
+ * Identity.addToCollection('<parentIdentity>', 'subcategories', '<subIdentity>')
  * 
  * Get Identity's Subcategories
  * Identity.find().populate('subcategories')
@@ -46,7 +46,12 @@ module.exports = {
     },
 
     subcategories: {
-      collection: 'identity'
+      collection: 'identity',
+      via: 'parentCategory',
+    },
+
+    parentCategory: {
+      model: 'identity',
     }
 
   },

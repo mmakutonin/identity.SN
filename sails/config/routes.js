@@ -12,13 +12,13 @@ module.exports.routes = {
 
   // Add REST calls above here to override wildcard route
   'POST /api/v1/user/new': 'UserController.store',
-  'GET /api/v1/user/:id': 'UserController.find', // ?interests&identities
+  'GET /api/v1/user/:id': 'UserController.find', // ?interests=<bool>&identities=<bool>
   'PUT /api/v1/user/:id': 'UserController.update',
   'DELETE /api/v1/user/:id': 'UserController.destroy',
 
   'POST /api/v1/identity/new': 'IdentityController.store', // new id
-  'GET /api/v1/identities': 'IdentityController.index', // get root identities
-  'GET /api/v1/identities/:id': 'IdentityController.find', // get identity and subcategories
+  'GET /api/v1/identity': 'IdentityController.index', // get identities // ?root=<bool>&query=<str>&n=<num>&skip=<num>
+  'GET /api/v1/identity/:id': 'IdentityController.find', // get identity's subcategories // ?query=<str>&n=<num>&skip=<num>
 
   'POST /api/v1/user/identity': 'IdentityController.tagUserIdentity',
   'DELETE /api/v1/user/identity': 'IdentityController.removeUserIdentity',

@@ -16,11 +16,11 @@ module.exports = {
     const { interests, identities } = req.query;
     let query = User.findOne({ id });
 
-    if(interests) {
+    if(interests === "true") {
       query = query.populate('interests');
     }
 
-    if(identities) {
+    if(identities === "true") {
       query = query.populate('identities');
     }
 
