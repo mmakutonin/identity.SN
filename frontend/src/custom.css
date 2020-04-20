@@ -257,6 +257,10 @@
   overflow-y: hidden;
 }
 
+.chat-convo-list:active {
+  background-color: black;
+}
+
 .chat-text-pane-main {
   height: var(--full-screen-height);
   background-color: #f1f0ed;
@@ -278,7 +282,6 @@
   margin-bottom: 2em;
   padding-bottom: 1.25em;
   align-items: center;
-  
 }
 
 .chat-text-pane-input-section input {
@@ -286,13 +289,12 @@
 }
 
 .chat-text-msg-section {
-  height: calc(var(--full-screen-height)- 185px);
+  height: 80%;
   max-height: 750px;
   overflow-y: scroll;
   margin-top: 1em;
   padding-right: 32px !important;
   padding-left: 32px !important;
-
 }
 .user-profile-bar {
   background-color: #4781e9;
@@ -310,12 +312,11 @@
 }
 
 .chat-convo-list-header-btn-section,
-.chat-text-pane-btn-section, 
-.chat-input-send-btn-section{
+.chat-text-pane-btn-section,
+.chat-input-send-btn-section {
   padding-right: 0 !important;
   padding-left: 0 !important;
   margin-right: 0 !important;
-  
 }
 .chat-convo-list-header h2,
 .chat-text-pane-header h2 {
@@ -416,7 +417,6 @@
   padding-bottom: 4px !important;
   margin-top: 6px;
   margin-bottom: 6px;
-  
 }
 .msg-date {
   font-size: 0.75rem;

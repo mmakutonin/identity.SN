@@ -1,5 +1,8 @@
 <template>
-  <div class="w3-cell w3-border-right w3-hide-small chat-convo-list">
+  <div
+    :class="{ active: active }"
+    class="w3-cell w3-border-right w3-hide-small chat-convo-list"
+  >
     <div class="w3-container w3-border-bottom w3-mobile chat-convo-list-header">
       <h2>Chat</h2>
       <div class="chat-convo-list-header-btn-section w3-container">
@@ -38,20 +41,20 @@
         <p>{{ contact.lastMessage.content }}</p>
       </div>
     </div>
-    <div v-if="alertDisplayed">
-      Please style me as an alert, @bobby-san!
-      {{ alertMessage }}
-    </div>
   </div>
 </template>
 
 <script>
 import { mapState, mapMutations, mapActions } from "vuex";
+import Vue from "vue";
+import VueSimpleAlert from "vue-simple-alert";
+Vue.use(VueSimpleAlert);
 export default {
   name: "ChatConversationList",
   data: () => ({
     alertDisplayed: false,
     alertMessage: "",
+    active: true,
   }),
   watch: {
     alertDisplayed(val) {
@@ -75,9 +78,12 @@ export default {
     },
     searchForMatch() {
       this.findMatch();
-      this.alertMessage =
-        "Your match is being searched for. This can sometimes take a while, but we'll let you know as soon as we find them!";
+      /*this.alertMessage =
+        "Your match is being searched for. This can sometimes take a while, but we'll let you know as soon as we find them!";*/
       this.alertDisplayed = true;
+      this.$alert(
+        "Your match is being searched for. This can sometimes take a while, but we'll let you know as soon as we find them!"
+      );
     },
   },
   computed: {
@@ -96,6 +102,13 @@ export default {
         })),
       currentContactIndex: (state) => state.currentContactIndex,
     }),
+  },
+
+  mounted() {
+    this.$parent.$on("toggleNav", () => {
+      console.log("received");
+      this.active = !this.active;
+    });
   },
 };
 </script>
