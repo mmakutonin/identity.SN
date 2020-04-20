@@ -10,8 +10,7 @@ var verifyHandler = function (accessToken, refreshToken, profile, cb, done) {
   var data = {
     id: cb.id,
     name: cb.displayName,
-    email: cb.emails[0].value,
-    emailVerified: cb.emails[0].verified
+    email: cb.emails[0].value
   };
 
   return done(null, data);

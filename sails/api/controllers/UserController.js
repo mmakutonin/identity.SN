@@ -78,12 +78,10 @@ module.exports = {
   googleCallback: function(req, res, next) {
     passport.authenticate('google', function(err, user) {
       if(err) {
-        // redirect to login page
-        console.log('google callback error: '+err);
+        res.redirect('back')
       } else {
-        console.log('google credentials');
-        console.log(user);
-        res.json(user);
+        const newUser = true //change this to programmatically set
+        res.redirect(`http://localhost:8080/auth?newuser=${newUser}&id=${user.id}`) //hard-coded for now, will change when deploying.
       }
     })(req, res, next);
   },
@@ -93,10 +91,12 @@ module.exports = {
 
   facebookCallback: function(req, res, next) {
     passport.authenticate('facebook', function(err, user) {
-
-      console.log('facebook credentials');
-      console.log(user);
-      res.json(user);
+      if(err) {
+        res.redirect('back')
+      } else {
+        const newUser = true //change this to programmatically set
+        res.redirect(`http://localhost:8080/auth?newuser=${newUser}&id=${user.id}`) //hard-coded for now, will change when deploying.
+      }
     })(req, res, next);
   },
 };

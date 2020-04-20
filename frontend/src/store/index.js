@@ -6,13 +6,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        userName: 'mikumaku'
+        userId: null
     },
     mutations: {
+        setUser(state, payload) {
+            state.userId = payload.id
+        }
     },
     actions: {
         async logIn({ commit }, payload ) {
-            window.open(`api/v1/auth/${payload.signInMethod}`)
+            window.open(`api/v1/auth/${payload.signInMethod}`, '_parent')
             const ret = await apiCalls.checkAuthenticated()
         }
     },
