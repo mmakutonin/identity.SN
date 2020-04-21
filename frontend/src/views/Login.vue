@@ -12,7 +12,7 @@
       </div>
       <div class="w3-half w3-display-container cust-full-height">
         <div
-          class="w3-display-middle w3-card w3-white w3-round-xlarge cust-threequarter-height"
+          v-bind:class="'w3-display-middle w3-card w3-round-xlarge cust-threequarter-height ' + bgColor"
         >
           <div class="w3-display-topmiddle w3-margin-top w3-animate-opacity login-card">
             <img
@@ -41,6 +41,7 @@ import LoginOAuthButton from "../components/LoginOAuthButton";
 import MainNavBar from "../components/MainNavBar";
 import LoginAboutSection from "../components/LoginAboutSection";
 import LoginFooter from "../components/LoginFooter";
+import { mapState } from 'vuex';
 export default {
   name: "Login",
   components: {
@@ -49,5 +50,8 @@ export default {
     LoginAboutSection,
     LoginFooter,
   },
+  computed: {
+    ...mapState(['bgColor'])
+  }
 };
 </script>

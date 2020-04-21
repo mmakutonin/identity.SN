@@ -6,11 +6,23 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        userId: null
+        userId: null,
+        bgColor: 'w3-sand'
+    },
+    getters: {
+        darkMode: (state) => state.bgColor === 'w3-sand' ? false : true
     },
     mutations: {
         setUser(state, payload) {
             state.userId = payload.id
+        },
+        darkMode(state, payload) {
+            if(payload.darkMode) {
+                state.bgColor = 'w3-dark-grey'
+            }
+            else {
+                state.bgColor = 'w3-sand'
+            }
         }
     },
     actions: {

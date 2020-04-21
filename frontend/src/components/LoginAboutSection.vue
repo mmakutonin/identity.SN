@@ -2,7 +2,7 @@
   <div class="w3-container about-section-container" id="about-section">
     <div class="w3-mobile feature-item">
       <div class="w3-third w3-center">
-        <h2 class="w3-text-black" id="feature-font">
+        <h2 id="feature-font">
           Explore Identities
           <img
             src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
@@ -18,7 +18,7 @@
         </h2>
       </div>
       <div class="w3-third w3-center">
-        <h2 class="w3-text-black" id="feature-font">
+        <h2 id="feature-font">
           Free Chat
           <img
             src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
@@ -34,7 +34,7 @@
         </h2>
       </div>
       <div class="w3-third w3-center">
-        <h2 class="w3-text-black" id="feature-font">
+        <h2 id="feature-font">
           Video Chat
           <img
             src="https://images.unsplash.com/photo-1577864662891-c7b77f10f638?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80"
