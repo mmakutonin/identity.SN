@@ -9,22 +9,57 @@
  * https://sailsjs.com/config/bootstrap
  */
 
-module.exports.bootstrap = async function() {
+async function seed() {
+  // Seed the database during development
 
-  // By convention, this is a good place to set up fake data during development.
-  //
-  // For example:
-  // ```
-  // // Set up fake development data (or if we already have some, avast)
-  // if (await User.count() > 0) {
-  //   return;
-  // }
-  //
-  // await User.createEach([
-  //   { emailAddress: 'ry@example.com', fullName: 'Ryan Dahl', },
-  //   { emailAddress: 'rachael@example.com', fullName: 'Rachael Shaw', },
-  //   // etc.
-  // ]);
-  // ```
+  const users = await User.createEach([
+    {
+      fullName: "Jane Kim",
+      displayName: "JK",
+      id: "kim@123.com",
+    },
+    {
+      fullName: "Amelia Earhart",
+      displayName: "Amelia Earhart",
+      id: "hart@fda.gov",
+    },
+    {
+      fullName: "Emilee Rodgers",
+      displayName: "Rodilla",
+      id: "lee@123.edu",
+    },
+  ]).fetch();
 
+  await Identity.createEach([
+    { id: "gay" },
+    { id: "gayest" },
+    { id: "a bit gay" },
+    { id: "not gay" },
+  ]);
+  await Identity.addToCollection("gay", "subcategories", [
+    "gayest",
+    "a bit gay",
+  ]);
+
+  await User.addToCollection(users[0].id, "identities", "gayest");
+  await User.addToCollection(users[0].id, "interests", "not gay");
+  await User.addToCollection(users[1].id, "identities", "not gay");
+  await User.addToCollection(users[1].id, "interests", "gayest");
+
+  await Message.createEach([
+    {
+      from: users[0].id,
+      to: users[1].id,
+      message: "Hi I'm Dan",
+    },
+    {
+      from: users[1].id,
+      to: users[0].id,
+      message: "Hi I'm Amelia",
+    },
+  ]);
+}
+
+module.exports.bootstrap = async function () {
+  await seed();
 };

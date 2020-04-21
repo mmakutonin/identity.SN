@@ -63,7 +63,6 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color: white;
   border-bottom: 4em !important;
   z-index: 1;
 }
@@ -108,7 +107,6 @@
 }
 
 .feature-item {
-  background-color: #ecf0f1;
   height: 100vh;
 }
 

@@ -7,8 +7,7 @@
 
 module.exports = {
   store: async function (req, res) {
-    // TODO: replace w/ user who's logged in
-    const user = (await User.find())[0];
+    const user = await User.getCurrent();
 
     const { message: text, toId } = req.body;
 
@@ -25,8 +24,7 @@ module.exports = {
   },
 
   index: async function (req, res) {
-    // TODO: replace w/ user who's logged in
-    const user = (await User.find())[0];
+    const user = await User.getCurrent();
 
     const messages = await Message.find({
       or: [{ from: user.id }, { to: user.id }],

@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import Chat from '../views/Chat.vue'
 import AccountSetup from '../views/AccountSetup.vue'
+import Auth from '../views/Auth'
+import Settings from '../views/Settings'
 
 Vue.use(VueRouter)
 
@@ -21,6 +23,16 @@ const routes = [
         path:      '/chat',
         name:      'Chat',
         component: Chat
+    },
+    {
+        path: '/auth',
+        name: 'Auth',
+        component: Auth
+    },
+    {
+        path: '/settings',
+        name: 'Settings',
+        component: Settings
     }
 ]
 

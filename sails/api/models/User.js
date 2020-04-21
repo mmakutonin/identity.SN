@@ -1,20 +1,20 @@
 /**
  * User.js
- * 
- * Make new user: 
+ *
+ * Make new user:
  * User.create({ fName: "Bob", lName:"Henry", displayName: "boot", id:"asdf@fe.com" })
  *  .fetch().exec(console.log)
- * 
- * Get the messages this user sent 
+ *
+ * Get the messages this user sent
  * User.findOne("asdf@fe.com").populate('sent')
- * 
+ *
  * Create a message that this user sent
  * const user1 = await User.find('asdf@fe.com')
  * const user2 = await User.find('some@other.email')
  * Message.create({
  *  message: "foobar",
  *  from: user1.id,
- *  to: user2.id, 
+ *  to: user2.id,
  * })
  *
  * @description :: A model definition represents a database table/collection.
@@ -38,15 +38,10 @@ module.exports = {
       required: true,
       columnName: "display_name",
     },
-    fName: {
+    fullName: {
       type: "string",
       required: true,
-      columnName: "fname",
-    },
-    lName: {
-      type: "string",
-      required: true,
-      columnName: "lname",
+      columnName: "full_name",
     },
     createdAt: {
       type: "number",
@@ -66,9 +61,19 @@ module.exports = {
       collection: "message",
       via: "to",
     },
-    surveyResponses: {
-      collection: "survey",
-      via: "user",
+    
+    identities: {
+      collection: 'identity',
+      via: 'users',
     },
+    interests: {
+      collection: 'identity',
+      via: 'likedBy',
+    }
   },
+  async getCurrent() {
+    // TODO: replace this with the
+    // TODO: user that's currently logged in
+    return (await User.find())[0];
+  }
 };

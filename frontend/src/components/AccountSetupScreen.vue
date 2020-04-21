@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   name: "AccountSetupScreen",
   props: {
@@ -47,7 +47,7 @@ export default {
     ],
   }),
   methods: {
-    ...mapMutations("accountSetup", ["elementAdd", "elementRemove"]),
+    ...mapActions('accountSetup', ['addItem', 'rmItem']),
     circleColor(index, color) {
       if (Object.keys(this.known).includes(index)) {
         return "w3-light-grey";
@@ -55,11 +55,11 @@ export default {
         return "w3-" + color;
       }
     },
-    elementClickHandler(index) {
-      if (Object.keys(this.known).includes(index)) {
-        this.elementRemove({ index, elementType: this.elementType });
+    elementClickHandler(item) {
+      if (Object.keys(this.known).includes(item)) {
+        this.rmItem({ item, elementType: this.elementType });
       } else {
-        this.elementAdd({ index, elementType: this.elementType });
+        this.addItem({ item, elementType: this.elementType });
       }
     },
   },
@@ -70,11 +70,11 @@ export default {
       },
       known: function(state) {
         return state[this.elementType + "Known"];
-      },
+      }
     }),
     allColors() {
       const retObj = {};
-      for (const key in this.all) {
+      for (const key in {...this.all, ...this.known}) {
         retObj[key] = {
           element: this.all[key],
           color: this.colorArray[

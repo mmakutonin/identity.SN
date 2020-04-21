@@ -1,6 +1,10 @@
 <template>
   <div class="w3-container set-up-background">
+    <div v-if='!loaded'>
+      Getting ready to create your account
+    </div>
     <div
+      v-else
       class="w3-container w3-light-gray w3-shadow w3-display-middle w3-border w3-round-xlarge set-up-main"
     >
       <AccountSetupScreen
@@ -42,12 +46,16 @@
 <script>
 import AccountSetupScreen from "../components/AccountSetupScreen";
 import LoginFooter from "../components/LoginFooter";
+import { mapState, mapActions } from 'vuex';
 export default {
   name: "AccountSetup",
   components: { AccountSetupScreen, LoginFooter },
   data: () => ({
     screenCounter: 0,
   }),
+  created() {
+    this.getUserMetadata({id: this.userId})
+  },
   watch: {
     screenCounter(newVal) {
       if (newVal > 1) {
@@ -55,5 +63,14 @@ export default {
       }
     },
   },
+  methods: {
+    ...mapActions('accountSetup', ['getUserMetadata'])
+  },
+  computed: {
+    ...mapState(['userId']),
+    ...mapState("accountSetup", {
+      loaded: (state) => !!state.userId
+    })
+  }
 };
 </script>
