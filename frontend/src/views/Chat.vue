@@ -4,8 +4,9 @@
     <!--<div id="nav-icon" v-if="mobileView">
       <input type="button" class="w3-button w3-green bar-icon" value="Toggle" />
     </div>-->
-    <ChatConversationList v-if="!mobileView" />
+    <ChatConversationList />
     <ChatTextPane />
+    
   </div>
 </template>
 
@@ -28,6 +29,11 @@ export default {
     LoginFooter,
     ChatUserProfile,
   },
+  /*computed: {
+    mobileView () {
+      return window.innerWidth <= 990;
+    }
+  }*/
   /*methods: {
       handleView() {
           this.mobileView = window.innerWidth <= 990;

@@ -150,6 +150,7 @@
   display: flex;
   align-items: center;
   z-index: 1;
+  position: relative;
 }
 
 .footer-text-section1,
@@ -248,14 +249,29 @@
   padding: 0 !important;
   overflow-y: hidden;
   width: var(--full-screen-width);
+  display: flex;
+  flex-direction: row;
+}
+
+.convo {
+  width: 1024px;
 }
 
 .chat-convo-list {
   height: 100%;
   width: 30%;
-  min-width: 200px;
   background-color: #ecf0f1;
   overflow-y: hidden;
+  z-index: 1;
+  top:0;
+  left: 0;
+  
+  transition: 0.5s;
+}
+
+.active {
+  width: 0;
+  transition: 0.5s;
 }
 
 .chat-text-pane-main {
@@ -263,8 +279,9 @@
   background-color: #f1f0ed;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  width: 100%;
+  
 }
-
 .chat-text-pane-input-section {
   position: sticky;
   position: -webkit-sticky;
@@ -304,6 +321,15 @@
   flex-direction: row;
   margin-top: 1em;
   justify-content: center;
+  align-items: center;
+  padding-bottom: 0.75em;
+}
+
+.chat-text-pane-header {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+  justify-content: space-between;
   align-items: center;
   padding-bottom: 0.75em;
 }
@@ -425,7 +451,7 @@
 /**
 Styling for Mobile
 **/
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .cust-login {
     display: flex;
     flex-direction: column;
@@ -475,43 +501,32 @@ Styling for Mobile
   .chat-main {
     overflow-y: hidden;
     overflow-x: hidden;
-    /*display: flex;
-    flex-direction: column;*/
     width: var(--full-screen-width);
   }
+
+  .chat-convo-list {
+    width: 100%; 
+  }
+
+  .active {
+    width: 0;
+    transition: 0.5s;
+  }
+  /*.chat-text-pane-main {
+    overflow-x: visible;
+    width: 20%;
+    float: right;
+  }*/
 }
 
-#nav-icon {
-  padding: 10px 10px 20px;
-  margin-right: 10px;
-  cursor: pointer;
-  justify-content: center;
-}
-
- .bar-icon {
-  font-size: 10px;
-}
-
-/*@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 320px) {
   .chat-text-msg-section {
     height: calc(100% - 175px);
-    max-height: 800px;
+    max-height: 360px;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
     padding-right: 16px !important;
     padding-left: 16px !important;
   }
-}*/
-
-/*@media only screen and (max-width: 1024px) {
-  .chat-text-msg-section {
-    height: calc(100% - 175px);
-    max-height: 1150px;
-    overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
-    padding-right: 16px !important;
-    padding-left: 16px !important;
-  }
-}*/
+}

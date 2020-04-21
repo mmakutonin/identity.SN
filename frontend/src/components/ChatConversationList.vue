@@ -1,5 +1,5 @@
 <template>
-  <div class="w3-cell w3-border-right w3-hide-small chat-convo-list">
+  <div class="w3-cell w3-border-right chat-convo-list" v-bind:class="{ active: active }">
     <div class="w3-container w3-border-bottom w3-mobile chat-convo-list-header">
       <h2>Chat</h2>
       <div class="chat-convo-list-header-btn-section w3-container">
@@ -51,7 +51,7 @@ export default {
   data: () => ({
     alertDisplayed: false,
     alertMessage: "",
-    /*active: true,*/
+    active: true,
   }),
   watch: {
     alertDisplayed(val) {
@@ -101,11 +101,11 @@ export default {
     }),
   },
 
-  /*mounted() {
+  mounted() {
     this.$parent.$on("toggleNav", () => {
       console.log("received");
       this.active = !this.active;
     });
-  },*/
+  },
 };
 </script>
