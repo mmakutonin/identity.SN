@@ -1,14 +1,14 @@
 /**
-* UserControllerController
-*
-* @description :: Server-side actions for handling incoming requests.
-* @help        :: See https://sailsjs.com/docs/concepts/actions
-*/
+ * UserControllerController
+ *
+ * @description :: Server-side actions for handling incoming requests.
+ * @help        :: See https://sailsjs.com/docs/concepts/actions
+ */
 
 // TODO: make sure the user actually has permission to do these operations
 // TODO: then we wont need to include the weird user email / id thing in the urlstring
 
-var passport = require('passport');
+var passport = require("passport");
 module.exports = {
   // Expects the id parameter to contain an email address
   // So escape the . in the email address with %2E
@@ -17,12 +17,12 @@ module.exports = {
     const { interests, identities } = req.query;
     let query = User.findOne({ id });
 
-    if(interests === "true") {
-      query = query.populate('interests');
+    if (interests === "true") {
+      query = query.populate("interests");
     }
 
-    if(identities === "true") {
-      query = query.populate('identities');
+    if (identities === "true") {
+      query = query.populate("identities");
     }
 
     const user = await query;
@@ -34,52 +34,38 @@ module.exports = {
     const { body } = req;
 
     const user = await User.create({
-      fName: body.fName,
-      lName: body.lName,
-      displayName: body.displayName,
+      fullName: body.name,
+      displayName: body.name,
       id: body.email,
-    }).fetch()
+    }).fetch();
 
     return res.json(user);
   },
-  
-    update: async function (req, res) {
-        const { body, params } = req;
 
-        const newAttributes = {};
+  update: async function (req, res) {
+    const { email, displayName, fullName } = req.body;
+    const { id } = req.params;
 
-        if (typeof body.displayName !== "undefined") {
-            newAttributes.displayName = body.displayName;
-        }
+    const newAttributes = {
+      ...(typeof displayName === "string" && { displayName }),
+      ...(typeof email === "string" && { id: email }),
+      ...(typeof fullName === "string" && { fullName }),
+    };
 
-        if (typeof body.email !== "undefined") {
-            newAttributes.id = body.email;
-        }
+    const user = await User.update({ id }).set(newAttributes).fetch();
 
-        if(typeof body.fName !== "undefined") {
-            newAttributes.fName = body.fName;
-        }
+    return res.json(user);
+  },
 
-        if(typeof body.lName !== "undefined") {
-            newAttributes.lName = body.lName;
-        }
+  destroy: async function (req, res) {
+    const { id } = req.params;
 
-        const user = await User.update({ id: params.id })
-        .set(newAttributes)
-        .fetch();
+    await User.destroy({ id });
 
-        return res.json(user);
-    },
+    return res.ok();
+  },
 
-    destroy: async function (req, res) {
-        const { id } = req.params;
-
-        await User.destroy({ id });
-
-        return res.ok();
-    },
-
-    googleAuth: function(req, res) {
+  googleAuth: function(req, res) {
         passport.authenticate('google', { scope: ['email', 'profile'] })(req, res);
     },
 
@@ -122,5 +108,5 @@ module.exports = {
                 res.redirect(`http://localhost:8080/auth?newuser=${newUser}&id=${user.email}`) //hard-coded for now, will change when deploying.
             }
         })(req, res, next);
-    },
+  },
 };
