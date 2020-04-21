@@ -1,46 +1,83 @@
 <template>
-    <div class='w3-container w3-orange'>
-        Hi from ChatTextPane
-        <h1> {{currentContact.name}} </h1>
-        <div
-            v-for='chatMessage in currentChat'
-            v-bind:key='chatMessage.timestamp'
-            v-bind:class='"w3-card w3-round-xlarge w3-section " + color(chatMessage.sender)'
-        >
-            {{chatMessage.content}}
-            {{new Date(chatMessage.timestamp)}}
-        </div>
-        <ChatTextPaneInput />
+  <div class="w3-container w3-cell chat-text-pane-main">
+    <div class="w3-container w3-border-bottom w3-mobile chat-text-pane-header">
+      <button type="button" class="w3-button" v-on:click="toggleNav()" > <font-awesome-icon icon="bars" /> </button>
+      <h2>{{ currentContact.name }}</h2>
+      <div class="chat-text-pane-btn-section w3-container">
         <input
-            type='button'
-            class='w3-button w3-green'
-            value='Meet Face-to-Face'
-            v-on:click='this.videoChat'
+          type="button"
+          class="meet-face-btn w3-button w3-green w3-round-xlarge"
+          value="Meet Face-to-Face"
+          v-on:click="this.videoChat"
         />
+      </div>
     </div>
+    <div
+      class="w3-container w3-mobile w3-padding chat-text-msg-section"
+      v-chat-scroll="{ smooth: true }"
+    >
+      <div
+        v-for="chatMessage in currentChat"
+        v-bind:key="chatMessage.timestamp"
+        v-bind:class="'w3-section ' + sender(chatMessage.sender)"
+      >
+        <div
+          v-bind:class="'w3-round-xlarge bubble ' + color(chatMessage.sender)"
+        >
+          <div class="bubble-text">
+            <p class="w3-padding msg-content">
+              {{ chatMessage.content }}
+            </p>
+            <!--<p class="w3-padding msg-date">
+            {{ new Date(chatMessage.timestamp) }}
+          </p>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <ChatTextPaneInput />
+  </div>
 </template>
 
 <script>
-import ChatTextPaneInput from './ChatTextPaneInput'
-import { mapGetters, mapActions } from 'vuex'
+import ChatTextPaneInput from "./ChatTextPaneInput";
+import { mapGetters, mapActions } from "vuex";
+import VueChatScroll from "vue-chat-scroll";
+import Vue from "vue";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(faBars)
+Vue.use(VueChatScroll);
 export default {
-    name:       'ChatTextPane',
-    components: {
-        ChatTextPaneInput
+  name: "ChatTextPane",
+  components: {
+    ChatTextPaneInput,
+    FontAwesomeIcon
+  },
+  methods: {
+    sender(sender) {
+      if (sender) {
+        return "bubble-sender";
+      } else {
+        return "bubble-income";
+      }
     },
-    methods: {
-        color(sender) {
-            if(sender) {
-                return 'w3-indigo'
-            }
-            else {
-                return 'w3-grey'
-            }
-        },
-        ...mapActions('chat', ['videoChat'])
+
+    color(sender) {
+      if (sender) {
+        return "w3-blue";
+      } else {
+        return "w3-grey";
+      }
     },
-    computed: {
-        ...mapGetters('chat', ['currentChat', 'currentContact'])
-    }
-}
+    toggleNav() {
+      this.$parent.$emit('toggleNav')
+    },
+    ...mapActions("chat", ["videoChat"]),
+  },
+  computed: {
+    ...mapGetters("chat", ["currentChat", "currentContact"]),
+  },
+};
 </script>
