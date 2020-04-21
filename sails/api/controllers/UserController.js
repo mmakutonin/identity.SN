@@ -85,12 +85,8 @@ module.exports = {
                 .exec(async(err, user, wasCreated)=> {
                     if (err) { return res.serverError(err); }
 
-                    if(wasCreated) {
-                        console.log("User created");
-                    }
-                    else {
+                    if(!wasCreated) {
                         newUser = false;
-                        console.log("User found");
                     }
                 });
                 res.redirect(`http://localhost:8080/auth?newuser=${newUser}&id=${user.id}`) //hard-coded for now, will change when deploying.
@@ -111,12 +107,8 @@ module.exports = {
                 .exec(async(err, user, wasCreated)=> {
                     if (err) { return res.serverError(err); }
 
-                    if(wasCreated) {
-                        console.log("User created");
-                    }
-                    else {
+                    if(!wasCreated) {
                         newUser = false;
-                        console.log("User found");
                     }
                 });
                 res.redirect(`http://localhost:8080/auth?newuser=${newUser}&id=${user.id}`) //hard-coded for now, will change when deploying.
