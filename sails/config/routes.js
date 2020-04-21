@@ -15,6 +15,10 @@ module.exports.routes = {
   'GET /api/v1/user/:id': 'UserController.find', // ?interests=<bool>&identities=<bool>
   'PUT /api/v1/user/:id': 'UserController.update',
   'DELETE /api/v1/user/:id': 'UserController.destroy',
+  'GET /api/v1/auth/google':  'UserController.googleAuth',
+  'GET /api/v1/auth/google/callback': 'UserController.googleCallback',
+  'GET /api/v1/auth/facebook':  'UserController.facebookAuth',
+  'GET /api/v1/auth/facebook/callback': 'UserController.facebookCallback',
 
   'POST /api/v1/identity/new': 'IdentityController.store', // new id
   'GET /api/v1/identity': 'IdentityController.index', // get identities // ?root=<bool>&query=<str>&n=<num>&skip=<num>
@@ -34,7 +38,7 @@ module.exports.routes = {
 
   // Wildcard Route match that sends all requests to a single page vue app
   // Just put their JS bundle into assets/js and reference it in homepage.ejs
-  'GET /*': { 
+  'GET /*': {
     view: 'pages/homepage',
     skipAssets: true,
   },

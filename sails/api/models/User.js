@@ -1,20 +1,20 @@
 /**
  * User.js
- * 
- * Make new user: 
+ *
+ * Make new user:
  * User.create({ fName: "Bob", lName:"Henry", displayName: "boot", id:"asdf@fe.com" })
  *  .fetch().exec(console.log)
- * 
- * Get the messages this user sent 
+ *
+ * Get the messages this user sent
  * User.findOne("asdf@fe.com").populate('sent')
- * 
+ *
  * Create a message that this user sent
  * const user1 = await User.find('asdf@fe.com')
  * const user2 = await User.find('some@other.email')
  * Message.create({
  *  message: "foobar",
  *  from: user1.id,
- *  to: user2.id, 
+ *  to: user2.id,
  * })
  *
  * @description :: A model definition represents a database table/collection.

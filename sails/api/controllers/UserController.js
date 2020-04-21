@@ -8,6 +8,7 @@
 // TODO: make sure the user actually has permission to do these operations
 // TODO: then we wont need to include the weird user email / id thing in the urlstring
 
+var passport = require("passport");
 module.exports = {
   // Expects the id parameter to contain an email address
   // So escape the . in the email address with %2E
@@ -51,9 +52,7 @@ module.exports = {
       ...(typeof fullName === "string" && { fullName }),
     };
 
-    const user = await User.update({ id })
-      .set(newAttributes)
-      .fetch();
+    const user = await User.update({ id }).set(newAttributes).fetch();
 
     return res.json(user);
   },
@@ -64,5 +63,70 @@ module.exports = {
     await User.destroy({ id });
 
     return res.ok();
+  },
+
+  googleAuth: function (req, res) {
+    passport.authenticate("google", { scope: ["email", "profile"] })(req, res);
+  },
+
+  googleCallback: function (req, res, next) {
+    passport.authenticate("google", function (err, user) {
+      if (err) {
+        res.redirect("back");
+      } else {
+        var newUser = true;
+        User.findOrCreate(
+          { id: user.email },
+          {
+            id: user.email,
+            fullName: user.firstname + " " + user.last_name,
+            displayName: user.firstname + " " + user.last_name,
+          }
+        ).exec(async (err, user, wasCreated) => {
+          if (err) {
+            return res.serverError(err);
+          }
+
+          if (!wasCreated) {
+            newUser = false;
+          }
+        });
+        res.redirect(
+          `http://localhost:8080/auth?newuser=${newUser}&id=${user.id}`
+        ); //hard-coded for now, will change when deploying.
+      }
+    })(req, res, next);
+  },
+  facebookAuth: function (req, res, next) {
+    passport.authenticate("facebook", { scope: ["email"] })(req, res, next);
+  },
+
+  facebookCallback: function (req, res, next) {
+    passport.authenticate("facebook", function (err, user) {
+      if (err) {
+        res.redirect("back");
+      } else {
+        var newUser = true;
+        User.findOrCreate(
+          { id: user.email },
+          {
+            id: user.email,
+            fullName: user.firstname + " " + user.last_name,
+            displayName: user.firstname + " " + user.last_name,
+          }
+        ).exec(async (err, user, wasCreated) => {
+          if (err) {
+            return res.serverError(err);
+          }
+
+          if (!wasCreated) {
+            newUser = false;
+          }
+        });
+        res.redirect(
+          `http://localhost:8080/auth?newuser=${newUser}&id=${user.id}`
+        ); //hard-coded for now, will change when deploying.
+      }
+    })(req, res, next);
   },
 };
