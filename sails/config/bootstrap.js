@@ -14,21 +14,18 @@ async function seed() {
 
   const users = await User.createEach([
     {
-      fName: "Dan",
-      lName: "Kim",
-      displayName: "Dan Kim",
+      fullName: "Jane Kim",
+      displayName: "JK",
       id: "kim@123.com",
     },
     {
-      fName: "Amelia",
-      lName: "Earhart",
+      fullName: "Amelia Earhart",
       displayName: "Amelia Earhart",
       id: "hart@fda.gov",
     },
     {
-      fName: "Emilee",
-      lName: "Rodgers",
-      displayName: "Emilee",
+      fullName: "Emilee Rodgers",
+      displayName: "Rodilla",
       id: "lee@123.edu",
     },
   ]).fetch();

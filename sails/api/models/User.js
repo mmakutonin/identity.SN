@@ -38,15 +38,10 @@ module.exports = {
       required: true,
       columnName: "display_name",
     },
-    fName: {
+    fullName: {
       type: "string",
       required: true,
-      columnName: "fname",
-    },
-    lName: {
-      type: "string",
-      required: true,
-      columnName: "lname",
+      columnName: "full_name",
     },
     createdAt: {
       type: "number",
