@@ -97,7 +97,7 @@ module.exports = {
                         newUser = false;
                     }
                 });
-                res.redirect(`http://localhost:8080/auth?newuser=${newUser}&id=${user.id}`) //hard-coded for now, will change when deploying.
+                res.redirect(`http://localhost:8080/auth?newuser=${newUser}&id=${user.email}`) //hard-coded for now, will change when deploying.
             }
         })(req, res, next);
     },
@@ -119,7 +119,7 @@ module.exports = {
                         newUser = false;
                     }
                 });
-                res.redirect(`http://localhost:8080/auth?newuser=${newUser}&id=${user.id}`) //hard-coded for now, will change when deploying.
+                res.redirect(`http://localhost:8080/auth?newuser=${newUser}&id=${user.email}`) //hard-coded for now, will change when deploying.
             }
         })(req, res, next);
     },

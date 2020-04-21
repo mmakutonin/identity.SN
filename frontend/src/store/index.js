@@ -16,7 +16,6 @@ export default new Vuex.Store({
     actions: {
         async logIn({ commit }, payload ) {
             window.open(`api/v1/auth/${payload.signInMethod}`, '_parent')
-            const ret = await apiCalls.checkAuthenticated()
         }
     },
     modules: {
@@ -24,13 +23,15 @@ export default new Vuex.Store({
             namespaced: true,
             state:      {
                 //dummy data
-                interestsAll:    { 1: 'Sports', 3: 'Buffalo', 934: 'LGBTQ+', 1102: 'Religion', 231: 'MasterChef' },
+                userId:          '',
+                interestsAll:    {},
                 interestsKnown:  {},
-                identitiesAll:   { 3: 'Buffalo', 662: 'Bisexual', 1213: 'Jewish', 1234: 'Christian', 45612: 'Buffalo Bills' },
+                identitiesAll:   {},
                 identitiesKnown: {}
             },
             mutations: {
                 populateUserMetadata(state, payload) {
+                    state.userId = payload.userId
                     state.interestsAll = payload.interestsAll
                     state.interestsKnown = payload.interestsKnown
                     state.identitiesAll = payload.identitiesAll
@@ -42,18 +43,45 @@ export default new Vuex.Store({
                 elementRemove(state, payload) {
                     Vue.delete(state[payload.elementType + 'Known'], payload.index)
                 },
-                interestAdd(state, payload) {
-                    Vue.set(state.interestsKnown, state.interestsKnown.length, state.interestsAll[payload.index])
-                },
-                interestRemove(state, payload) {
-                    Vue.set(state.interestsKnown, payload.index)
-                },
             },
             actions: {
-                // getUserMetadata({ commit }, payload) {
-                //     //to be implemented
-
-                // }
+                async getUserMetadata({ commit }, payload) {
+                    console.log(payload)
+                    const identitiesAll = await apiCalls.getIdentitiesAll(20)
+                    const {identitiesKnown, interestsKnown} = await apiCalls.getUser(payload.id, true)
+                    commit({
+                        type: 'populateUserMetadata',
+                        userId: payload.id,
+                        identitiesAll,
+                        interestsAll: identitiesAll,
+                        interestsKnown,
+                        identitiesKnown
+                    })
+                },
+                addItem({ commit }, payload) {
+                    const elementType = {
+                        'identities': 'identity',
+                        'interests': 'interest'
+                    }[payload.elementType]
+                    apiCalls.addUserItem(payload.item, elementType)
+                    .then(res => commit({
+                        type: 'elementAdd',
+                        elementType: payload.elementType,
+                        index: payload.item
+                    }))
+                },
+                rmItem({ commit }, payload) {
+                    const elementType = {
+                        'identities': 'identity',
+                        'interests': 'interest'
+                    }[payload.elementType]
+                    apiCalls.addUserItem(payload.item, elementType)
+                    .then(res => commit({
+                        type: 'elementRemove',
+                        elementType: payload.elementType,
+                        index: payload.item
+                    }))
+                }
             }
         },
         chat: {
