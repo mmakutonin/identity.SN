@@ -9,32 +9,40 @@
 // TODO: then we wont need to include the weird user email / id thing in the urlstring
 
 var passport = require('passport');
-
 module.exports = {
-    // Expects the id parameter to contain an email address
-    // So escape the . in the email address with %2E
-    find: async function (req, res) {
-        const { id } = req.params;
-        const user = await User.findOne({ id });
+  // Expects the id parameter to contain an email address
+  // So escape the . in the email address with %2E
+  find: async function (req, res) {
+    const { id } = req.params;
+    const { interests, identities } = req.query;
+    let query = User.findOne({ id });
 
-        return res.json(user);
-    },
+    if(interests === "true") {
+      query = query.populate('interests');
+    }
 
-    store: async function (req, res) {
-        // Should only be usable by Google webhook & passport JS later on
+    if(identities === "true") {
+      query = query.populate('identities');
+    }
 
-        const { body } = req;
+    const user = await query;
+    return res.json(user);
+  },
 
-        const user = await User.create({
-            fName: body.fName,
-            lName: body.lName,
-            displayName: body.displayName,
-            id: body.email,
-        }).fetch()
+  store: async function (req, res) {
+    // Should only be usable by Google webhook & passport JS later on
+    const { body } = req;
 
-        return res.json(user);
-    },
+    const user = await User.create({
+      fName: body.fName,
+      lName: body.lName,
+      displayName: body.displayName,
+      id: body.email,
+    }).fetch()
 
+    return res.json(user);
+  },
+  
     update: async function (req, res) {
         const { body, params } = req;
 
@@ -52,7 +60,7 @@ module.exports = {
             newAttributes.fName = body.fName;
         }
 
-        if(typeof body.fName !== "undefined") {
+        if(typeof body.lName !== "undefined") {
             newAttributes.lName = body.lName;
         }
 

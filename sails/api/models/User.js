@@ -61,9 +61,19 @@ module.exports = {
       collection: "message",
       via: "to",
     },
-    surveyResponses: {
-      collection: "survey",
-      via: "user",
+    
+    identities: {
+      collection: 'identity',
+      via: 'users',
     },
+    interests: {
+      collection: 'identity',
+      via: 'likedBy',
+    }
   },
+  async getCurrent() {
+    // TODO: replace this with the
+    // TODO: user that's currently logged in
+    return (await User.find())[0];
+  }
 };
