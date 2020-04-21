@@ -247,6 +247,7 @@
   height: var(--full-screen-height);
   padding: 0 !important;
   overflow-y: hidden;
+  width: var(--full-screen-width);
 }
 
 .chat-convo-list {
@@ -255,10 +256,6 @@
   min-width: 200px;
   background-color: #ecf0f1;
   overflow-y: hidden;
-}
-
-.chat-convo-list:active {
-  background-color: black;
 }
 
 .chat-text-pane-main {
@@ -478,9 +475,21 @@ Styling for Mobile
   .chat-main {
     overflow-y: hidden;
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
+    /*display: flex;
+    flex-direction: column;*/
+    width: var(--full-screen-width);
   }
+}
+
+#nav-icon {
+  padding: 10px 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+ .bar-icon {
+  font-size: 10px;
 }
 
 /*@media only screen and (max-width: 768px) {

@@ -1,25 +1,40 @@
 <template>
-    <div class="w3-container chat-main">
-        <!--<ChatUserProfile />-->
-        <ChatConversationList />
-		<ChatTextPane />
-        
-		
-    </div>
+  <div class="w3-container chat-main">
+    <!--<ChatUserProfile />-->
+    <!--<div id="nav-icon" v-if="mobileView">
+      <input type="button" class="w3-button w3-green bar-icon" value="Toggle" />
+    </div>-->
+    <ChatConversationList v-if="!mobileView" />
+    <ChatTextPane />
+  </div>
 </template>
 
 <script>
-import ChatTextPane from '../components/ChatTextPane'
-import ChatConversationList from '../components/ChatConversationList'
-import LoginFooter from '../components/LoginFooter'
-import ChatUserProfile from '../components/ChatUserProfile'
+import ChatTextPane from "../components/ChatTextPane";
+import ChatConversationList from "../components/ChatConversationList";
+import LoginFooter from "../components/LoginFooter";
+import ChatUserProfile from "../components/ChatUserProfile";
 export default {
-    name:       'Chat',
-    components: {
-        ChatTextPane,
-        ChatConversationList,
-        LoginFooter,
-        ChatUserProfile
-    }
-}
+  name: "Chat",
+  data: () => {
+    return {
+      mobileView: false,
+      showNav: false,
+    };
+  },
+  components: {
+    ChatTextPane,
+    ChatConversationList,
+    LoginFooter,
+    ChatUserProfile,
+  },
+  /*methods: {
+      handleView() {
+          this.mobileView = window.innerWidth <= 990;
+      }
+  },
+  created() {
+      this.handleView();
+  }*/
+};
 </script>

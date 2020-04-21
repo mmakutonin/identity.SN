@@ -1,7 +1,7 @@
 <template>
   <div class="w3-container w3-cell chat-text-pane-main">
     <div class="w3-container w3-border-bottom w3-mobile chat-text-pane-header">
-      <input type="button" class="w3-button" v-on:click="toggleNav()" value="+"/>
+      <!--<input type="button" class="w3-button" v-on:click="toggleNav()" value="+"/>-->
       <h2>{{ currentContact.name }}</h2>
       <div class="chat-text-pane-btn-section w3-container">
         <input
@@ -66,9 +66,9 @@ export default {
         return "w3-grey";
       }
     },
-    toggleNav() {
+    /*toggleNav() {
       this.$parent.$emit('toggleNav')
-    },
+    },*/
     ...mapActions("chat", ["videoChat"]),
   },
   computed: {
