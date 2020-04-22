@@ -7,31 +7,57 @@
 
 module.exports = {
   store: async function (req, res) {
-    // TODO: replace w/ user who's logged in
-    const user = (await User.find())[0];
 
-    const { message: text, toId } = req.body;
-
-    // TODO: add some sort of check here to make
-    // TODO: sure they have permission to chat
-
-    const message = await Message.create({
-      from: user.id,
-      to: toId,
-      message: text,
-    }).fetch();
-
-    return res.json(message);
+    const { message: text, toId, userID } = req.body;
+    const firstUser = await User.find().where({ id: userID });
+    const secondUser = await User.find().where({ id: toId });
+    
+    const room = Room.find().where({ firstUser, secondUser 
+    })
+    if(room){
+      const message = await Message.create({
+        from: user.id,
+        to: toId,
+        message: text,
+      }).fetch();
+  
+      return res.json(message);
+    } else {
+      return res.status(400).send({ error: 'There is no such room for these users'})
+    }
   },
 
   index: async function (req, res) {
-    // TODO: replace w/ user who's logged in
-    const user = (await User.find())[0];
 
-    const messages = await Message.find({
-      or: [{ from: user.id }, { to: user.id }],
-    });
+    const { messagesNumber, messagesTimePoint, firstUser, secondUser } = req.query
 
-    return res.json(messages);
+    var arrayOfChats = []
+    let fromMessages = await Message.find()
+      .where({ from: firstUser })
+      .then(res => {
+        return res = res.filter((message) => message.to === secondUser)
+      }).catch(error => {
+        return { error }
+      })
+    let toMessages = await Message.find()
+      .where({ from: secondUser })
+      .then(res => {
+        return res.filter((message) => message.to === firstUser)
+      }).catch(error => {
+        return { error }
+      })
+    arrayOfChats = fromMessages.concat(toMessages)
+    const sortedChats = arrayOfChats.slice().sort((a, b) => a.createdAt - b.createdAt)
+    if (firstUser && secondUser) {
+      if (messagesNumber) {
+        const end = sortedChats.length();
+        const init = end - messagesNumber;
+        const limitedChats = sortedChats.slice(init, end);
+        return res.json(limitedChats)
+      }
+      return res.json(sortedChats);
+    } else{
+      return res.send({ error: 'User not found!'})
+    }
   },
 };

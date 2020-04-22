@@ -23,6 +23,9 @@ module.exports.routes = {
   'POST /api/v1/message': 'MessageController.store',
   'GET /api/v1/message': 'MessageController.index',
 
+  'POST /api/v1/room': 'RoomController.store',
+  'GET /api/v1/room': 'RoomController.index',
+
   // Wildcard Route match that sends all requests to a single page vue app
   // Just put their JS bundle into assets/js and reference it in homepage.ejs
   'GET /*': { 

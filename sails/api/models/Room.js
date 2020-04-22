@@ -1,50 +1,53 @@
 /**
- * Message.js
+ * Room.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
 module.exports = {
-  tableName: "messages",
+  // tableName: "rooms",
 
   attributes: {
+
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
+
     id: {
-      type: "number",
-      autoIncrement: true,
-      columnName: "message_id",
-    },
-    message: {
       type: "string",
+      columnName: "matches_id",
+      unique: true,
       required: true
     },
     createdAt: {
       type: "number",
       autoCreatedAt: true,
-      columnName: "created_at",
+      columnName: "created_at"
     },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
     //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
 
+
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-    from: {
+
+    //How to access two users and distinguish between then?
+    //TODO: Alter from and to with the answer to that question
+    firstUser: {
       model: "user",
       columnName: "user_from",
+      required: true
     },
-    to: {
+    secondUser: {
       model: "user",
       columnName: "user_to",
+      required: true
     }
   },
-  // afterCreate: function(newMessage, proceed){
-  //   sails.socket.broadcast("message-feed", "new-message", newMessage);
-  //   proceed();
-  // }
+
 };
+
