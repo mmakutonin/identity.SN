@@ -9,8 +9,8 @@
               src="https://static-2.gumroad.com/res/gumroad/1211634803146/asset_previews/9af3b0e81825adb7e5475199b224c409/retina/unlock-colour-thumbnail.png"
               class="w3-image w3-round feature-img"
             />
-            <div class="w3-round-xlarge w3-theme-d5 overlay">
-              <div class="text">Your identity remains private</div>
+            <div class="w3-round-xlarge overlay">
+              <div class="text w3-text-black">Your identity remains private</div>
             </div>
           </div>
           <p id="feature-paragraphs" class="w3-hide-small">
@@ -27,8 +27,8 @@
               src="https://static-2.gumroad.com/res/gumroad/1211634803146/asset_previews/17afde9c33f0af3eb03bb4698069d08e/retina/drawkit-support-man-colour-thumbnail.png"
               class="w3-image w3-round feature-img"
             />
-            <div class="w3-round-xlarge w3-theme-d5 w3-image overlay">
-              <div class="text">Match is automatically made for you</div>
+            <div class="w3-round-xlarge w3-image overlay">
+              <div class="text w3-text-black">Match is automatically made for you</div>
             </div>
           </div>
           <p id="feature-paragraphs" class="w3-hide-small">
@@ -42,13 +42,13 @@
       <div class="w3-third w3-center">
         <h2 id="feature-font">
           Video Chat
-          <div class="feature-img-container">
+          <div class="w3-image feature-img-container">
             <img
               src="https://static-2.gumroad.com/res/gumroad/1211634803146/asset_previews/25c9fe6481563597cf75a0d84cb37f3e/retina/holding-phone-colour-thumbnail.png"
               class="w3-image w3-round-xlarge feature-img"
             />
-            <div class="w3-round-xlarge w3-theme-d5 overlay">
-              <div class="text">Video chat available wihtin 24 hours</div>
+            <div class="w3-round-xlarge w3-image overlay">
+              <div class="text w3-text-black">Video chat available within 24 hours</div>
             </div>
           </div>
           <p id="feature-paragraphs" class="w3-hide-small">
