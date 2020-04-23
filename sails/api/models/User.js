@@ -69,6 +69,10 @@ module.exports = {
     interests: {
       collection: 'identity',
       via: 'likedBy',
+    },
+    rooms: {
+      collection: 'room',
+      via: 'users',
     }
   },
   async getCurrent() {

@@ -8,9 +8,11 @@
 module.exports = {
   store: async function (req, res) {
     const user = await User.getCurrent();
+    console.log(user)
 
     const { message: text, toId } = req.body;
-
+    const room = Room.find().where({ user })
+    console.log(room)
     // TODO: add some sort of check here to make
     // TODO: sure they have permission to chat
 
@@ -25,7 +27,7 @@ module.exports = {
 
   index: async function (req, res) {
     const user = await User.getCurrent();
-
+    console.log(user)
     const messages = await Message.find({
       or: [{ from: user.id }, { to: user.id }],
     });

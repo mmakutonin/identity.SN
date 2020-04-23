@@ -1,54 +1,48 @@
 /**
- * Message.js
+ * Room.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
 module.exports = {
-  tableName: "messages",
+  tableName: 'Rooms',
 
   attributes: {
+
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
+
     id: {
-      type: "number",
-      autoIncrement: true,
-      columnName: "message_id",
-    },
-    message: { 
       type: "string",
+      columnName: "matches_id",
+      unique: true,
       required: true
     },
     createdAt: {
       type: "number",
       autoCreatedAt: true,
-      columnName: "created_at",
+      columnName: "created_at"
     },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
     //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
 
+
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-    from: {
-      model: "user",
-      columnName: "user_from",
+    users: {
+      collection: 'user',
+      via: 'rooms'
     },
-    to: {
-      model: "user",
-      columnName: "user_to",
-    },
-    room: {
-      model: 'room',
-      columnName: 'message_room'
+    messages: {
+      collection: 'message',
+      via: 'room'
     }
   },
-  afterCreate: function(newMessage, proceed){
-    sails.sockets.broadcast(room.id, 'new-message', newMessage);
-    proceed();
-  }
+
 };
+

@@ -33,6 +33,9 @@ module.exports.routes = {
   'POST /api/v1/message': 'MessageController.store',
   'GET /api/v1/message': 'MessageController.index',
 
+  'POST /api/v1/room': 'RoomController.store',
+  'GET /api/v1/room': 'RoomController.index',
+
   'GET /api/v1/match': 'util/match',
   'GET /api/v1/hangout': 'util/hangout',
 
