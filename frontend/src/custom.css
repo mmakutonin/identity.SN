@@ -399,12 +399,9 @@
 }
 
 .set-up-background {
-  background: url(https://images.unsplash.com/photo-1508898578281-774ac4893c0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)
-    bottom center;
-  background-size: cover;
   height: var(--full-screen-height);
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   padding: 0;
   align-items: flex-end;
   overflow-y: hidden;
@@ -612,6 +609,18 @@
   padding-bottom: 4px !important;
   margin-top: 6px;
   margin-bottom: 6px;
+}
+
+.loading {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  padding-top: 15em;
+}
+.loading h1 {
+  font-weight: 800;
+  font-size: 7em;
+  text-shadow: 1px 1px 5px #ecf0f1;
 }
 /**
 Styling for Mobile

@@ -1,7 +1,11 @@
 <template>
   <div class="w3-container set-up-background">
+    
     <div v-if="!loaded">
-      Let's create your profile!
+      <div class="w3-container w3-display-topmiddle w3-theme-d4 loading">
+        <h1>Hold on tight...</h1>
+        <h3>Getting ready to create your profile!</h3>
+      </div>
     </div>
     <div
       v-else
@@ -39,6 +43,7 @@
         />
       </div>
     </div>
+    
 
     <LoginFooter />
   </div>
@@ -47,9 +52,10 @@
 import AccountSetupScreen from "../components/AccountSetupScreen";
 import LoginFooter from "../components/LoginFooter";
 import { mapState, mapActions } from "vuex";
+import MainNavBar from "../components/MainNavBar";
 export default {
   name: "AccountSetup",
-  components: { AccountSetupScreen, LoginFooter },
+  components: { MainNavBar, AccountSetupScreen, LoginFooter},
   data: () => ({
     screenCounter: 0,
   }),
