@@ -1,7 +1,7 @@
 <template>
   <div class="w3-container set-up-background">
-    <div v-if='!loaded'>
-      Getting ready to create your account
+    <div v-if="!loaded">
+      Let's create your profile!
     </div>
     <div
       v-else
@@ -46,7 +46,7 @@
 <script>
 import AccountSetupScreen from "../components/AccountSetupScreen";
 import LoginFooter from "../components/LoginFooter";
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapActions } from "vuex";
 export default {
   name: "AccountSetup",
   components: { AccountSetupScreen, LoginFooter },
@@ -54,7 +54,7 @@ export default {
     screenCounter: 0,
   }),
   created() {
-    this.getUserMetadata({id: this.userId})
+    this.getUserMetadata({ id: this.userId });
   },
   watch: {
     screenCounter(newVal) {
@@ -64,13 +64,13 @@ export default {
     },
   },
   methods: {
-    ...mapActions('accountSetup', ['getUserMetadata'])
+    ...mapActions("accountSetup", ["getUserMetadata"]),
   },
   computed: {
-    ...mapState(['userId']),
+    ...mapState(["userId"]),
     ...mapState("accountSetup", {
-      loaded: (state) => !!state.userId
-    })
-  }
+      loaded: (state) => !!state.userId,
+    }),
+  },
 };
 </script>
