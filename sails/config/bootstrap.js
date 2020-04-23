@@ -61,5 +61,6 @@ async function seed() {
 }
 
 module.exports.bootstrap = async function () {
-  await seed();
+  const identities = await Identity.find();
+  if (identities.length === 0) await seed();
 };
