@@ -34,7 +34,6 @@ export default new Vuex.Store({
         accountSetup: {
             namespaced: true,
             state:      {
-                //dummy data
                 userId:          '',
                 interestsAll:    {},
                 interestsKnown:  {},
@@ -70,24 +69,24 @@ export default new Vuex.Store({
                         identitiesKnown
                     })
                 },
-                addItem({ commit }, payload) {
+                addItem({ state, commit }, payload) {
                     const elementType = {
                         'identities': 'identity',
                         'interests': 'interest'
                     }[payload.elementType]
-                    apiCalls.addUserItem(payload.item, elementType)
+                    apiCalls.addUserItem(payload.item, elementType, state.userId)
                     .then(res => commit({
                         type: 'elementAdd',
                         elementType: payload.elementType,
                         index: payload.item
                     }))
                 },
-                rmItem({ commit }, payload) {
+                rmItem({ state, commit }, payload) {
                     const elementType = {
                         'identities': 'identity',
                         'interests': 'interest'
                     }[payload.elementType]
-                    apiCalls.addUserItem(payload.item, elementType)
+                    apiCalls.addUserItem(payload.item, elementType. state.userId)
                     .then(res => commit({
                         type: 'elementRemove',
                         elementType: payload.elementType,
@@ -99,7 +98,8 @@ export default new Vuex.Store({
         chat: {
             namespaced: true,
             state:      {
-                userName: 'Miku Macaroni',
+                userName: '',
+                rooms: [],
                 contacts: [
                     {
                         name:      'Bobby Nugs',
@@ -163,9 +163,21 @@ export default new Vuex.Store({
                 },
                 changeCurrentContact(state, payload) {
                     state.currentContactIndex = payload.index
+                },
+                setUserId(state, payload) {
+                    state.userName = payload.userId
+                },
+                addRoom(state, payload) {
+                    Vue.set(state.rooms, state.rooms.length, payload.room)
                 }
             },
             actions: {
+                initChats({commit}, payload) {
+                    commit({
+                        type: 'setUserId',
+                        userId: payload.userId
+                    })
+                },
                 sendMessage({ commit, getters }, payload) {
                     const chat = {
                         sender:    true,
@@ -182,8 +194,11 @@ export default new Vuex.Store({
                 videoChat() {
                     window.open('https://hangouts.google.com/call/W7JggBBJ23loiAC0qUZkAEEE')
                 },
-                findMatch() {
-                    console.log('"match is being found," sayeth the void.')
+                async findMatch({ state, commit }) {
+                    commit({
+                        type: 'addRoom',
+                        room: await apiCalls.findMatch(state.userName)
+                    })
                 }
             }
         }

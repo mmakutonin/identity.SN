@@ -63,12 +63,17 @@ export default {
   watch: {
     screenCounter(newVal) {
       if (newVal > 1) {
-        this.$router.push("chat");
+        this.initChats({
+          userId: this.userId
+        })
+        .then(res => this.findMatch()
+        .then(res => this.$router.push("chat")))
       }
     },
   },
   methods: {
     ...mapActions("accountSetup", ["getUserMetadata"]),
+    ...mapActions('chat', ['initChats', 'findMatch'])
   },
   computed: {
     ...mapState(["userId"]),

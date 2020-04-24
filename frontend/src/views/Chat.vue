@@ -15,6 +15,7 @@ import ChatTextPane from "../components/ChatTextPane";
 import ChatConversationList from "../components/ChatConversationList";
 import LoginFooter from "../components/LoginFooter";
 import ChatUserProfile from "../components/ChatUserProfile";
+import { mapActions, mapState } from 'vuex';
 export default {
   name: "Chat",
   data: () => {
@@ -29,11 +30,20 @@ export default {
     LoginFooter,
     ChatUserProfile,
   },
-  /*computed: {
-    mobileView () {
-      return window.innerWidth <= 990;
-    }
-  }*/
+  created() {
+    this.initChats({
+      userId: this.userId
+    })
+  },
+  methods: {
+    ...mapActions('chat',['initChats'])
+  },
+  computed: {
+    ...mapState(['userId'])
+    // mobileView () {
+    //   return window.innerWidth <= 990;
+    // }
+  }
   /*methods: {
       handleView() {
           this.mobileView = window.innerWidth <= 990;
