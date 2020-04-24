@@ -1,0 +1,1018 @@
+[
+  {
+      "icebreaker": "what does “walking in someone’s shoes” mean to you?",
+      "identity": "sensitive to gender"
+  },
+  {
+      "icebreaker": "what does “walking in someone’s shoes” mean to you?",
+      "identity": "sensitive to sexual orientation"
+  },
+  {
+      "icebreaker": "what does “walking in someone’s shoes” mean to you?",
+      "identity": "religious"
+  },
+  {
+      "icebreaker": "what does “walking in someone’s shoes” mean to you?",
+      "identity": "racially sensitive"
+  },
+  {
+      "icebreaker": "what does “walking in someone’s shoes” mean to you?",
+      "identity": "immigrant"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "transgender female"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "transgender male"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "queer"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "intersex"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "gay/lesbian"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "non-binary"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "immigrant"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "muslim"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "black/african americans"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "asian/southeast asian/pacific asian"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "latino/latina"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "afro latino"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "latinx"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "hispanic"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "jewish"
+  },
+  {
+      "icebreaker": "when has fear got in your way?",
+      "identity": "middle eastern"
+  },
+  {
+      "icebreaker": "is there such thing as a \"wrong\" choice?",
+      "identity": "conservative"
+  },
+  {
+      "icebreaker": "is there such thing as a \"wrong\" choice?",
+      "identity": "progressive"
+  },
+  {
+      "icebreaker": "is there such thing as a \"wrong\" choice?",
+      "identity": "moderate"
+  },
+  {
+      "icebreaker": "is there such thing as a \"wrong\" choice?",
+      "identity": "pro-choice"
+  },
+  {
+      "icebreaker": "is there such thing as a \"wrong\" choice?",
+      "identity": "pro-life"
+  },
+  {
+      "icebreaker": "what are the important choices you have had to make in your life?",
+      "identity": "sensitive to gender"
+  },
+  {
+      "icebreaker": "what are the important choices you have had to make in your life?",
+      "identity": "sensitive to sexual orientation"
+  },
+  {
+      "icebreaker": "what are the important choices you have had to make in your life?",
+      "identity": "religious"
+  },
+  {
+      "icebreaker": "what are the important choices you have had to make in your life?",
+      "identity": "racially sensitive"
+  },
+  {
+      "icebreaker": "what are the important choices you have had to make in your life?",
+      "identity": "feminist"
+  },
+  {
+      "icebreaker": "can you learn or be taught empathy?",
+      "identity": "sensitive to gender"
+  },
+  {
+      "icebreaker": "can you learn or be taught empathy?",
+      "identity": "sensitive to sexual orientation"
+  },
+  {
+      "icebreaker": "can you learn or be taught empathy?",
+      "identity": "religious"
+  },
+  {
+      "icebreaker": "can you learn or be taught empathy?",
+      "identity": "racially sensitive"
+  },
+  {
+      "icebreaker": "can you learn or be taught empathy?",
+      "identity": "opinionated about abortion"
+  },
+  {
+      "icebreaker": "can you learn or be taught empathy?",
+      "identity": "opinionated about gender equality"
+  },
+  {
+      "icebreaker": "can you learn or be taught empathy?",
+      "identity": "opinionated about immigration"
+  },
+  {
+      "icebreaker": "describe what a typical day in your life.",
+      "identity": "sensitive to gender"
+  },
+  {
+      "icebreaker": "describe what a typical day in your life.",
+      "identity": "sensitive to sexual orientation"
+  },
+  {
+      "icebreaker": "describe what a typical day in your life.",
+      "identity": "religious"
+  },
+  {
+      "icebreaker": "describe what a typical day in your life.",
+      "identity": "racially sensitive"
+  },
+  {
+      "icebreaker": "describe what a typical day in your life.",
+      "identity": "work oriented"
+  },
+  {
+      "icebreaker": "describe what a typical day in your life.",
+      "identity": "opinionated about education"
+  },
+  {
+      "icebreaker": "describe what a typical day in your life.",
+      "identity": "opinionated about healthcare"
+  },
+  {
+      "icebreaker": "do you believe in god? who is your god?",
+      "identity": "religious"
+  },
+  {
+      "icebreaker": "would owning a gun calm your fears?",
+      "identity": "conservative"
+  },
+  {
+      "icebreaker": "what is happiness to you?",
+      "identity": "sensitive to gender"
+  },
+  {
+      "icebreaker": "what is happiness to you?",
+      "identity": "sensitive to sexual orientation"
+  },
+  {
+      "icebreaker": "what is happiness to you?",
+      "identity": "religious"
+  },
+  {
+      "icebreaker": "what is happiness to you?",
+      "identity": "racially sensitive"
+  },
+  {
+      "icebreaker": "what is happiness to you?",
+      "identity": "work oriented"
+  },
+  {
+      "icebreaker": "what is happiness to you?",
+      "identity": "opinionated about education"
+  },
+  {
+      "icebreaker": "what is happiness to you?",
+      "identity": "opinionated about healthcare"
+  },
+  {
+      "icebreaker": "how do you deal with people who disagree with you?",
+      "identity": "sensitive to gender"
+  },
+  {
+      "icebreaker": "how do you deal with people who disagree with you?",
+      "identity": "sensitive to sexual orientation"
+  },
+  {
+      "icebreaker": "how do you deal with people who disagree with you?",
+      "identity": "religious"
+  },
+  {
+      "icebreaker": "how do you deal with people who disagree with you?",
+      "identity": "racially sensitive"
+  },
+  {
+      "icebreaker": "how do you deal with people who disagree with you?",
+      "identity": "work oriented"
+  },
+  {
+      "icebreaker": "how do you deal with people who disagree with you?",
+      "identity": "opinionated about education"
+  },
+  {
+      "icebreaker": "how do you deal with people who disagree with you?",
+      "identity": "opinionated about healthcare"
+  },
+  {
+      "icebreaker": "is your future already determined?",
+      "identity": "sensitive to gender"
+  },
+  {
+      "icebreaker": "is your future already determined?",
+      "identity": "sensitive to sexual orientation"
+  },
+  {
+      "icebreaker": "is your future already determined?",
+      "identity": "religious"
+  },
+  {
+      "icebreaker": "is your future already determined?",
+      "identity": "racially sensitive"
+  },
+  {
+      "icebreaker": "is your future already determined?",
+      "identity": "work oriented"
+  },
+  {
+      "icebreaker": "is your future already determined?",
+      "identity": "opinionated about education"
+  },
+  {
+      "icebreaker": "is your future already determined?",
+      "identity": "opinionated about healthcare"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "sensitive to gender"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "cis-gender male"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "cis-gender female"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "transgender male"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "transgender female"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "intersex"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "bi-gender"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "gender non-conforming/gender variant"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "third gender"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "gender queer"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "genderfluid"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "two-spirit"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "polyamourous"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "other gender"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "sensitive to sexual orientation"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "straight"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "gay/lesbian"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "asexual"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "pansexual"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "demisexual"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "bisexual"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "queer"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "ally"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "non-conforming"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "non-binary"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "aromantic"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "demiromantic"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "cross-dresser"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "femme"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "metrosexual"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "questioning"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "skoliosexual"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "other sexual orientation"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "religious"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "catholic"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "muslim"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "buddhist"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "christian"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "evangelist"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "wiccan"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "hinduist"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "taoist"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "other religion"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "racially sensitive"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "black/african americans"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "white"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "asian/southeast asian/pacific asian"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "latino/latina"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "afro latino"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "latinx"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "hispanic"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "jewish"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "middle eastern"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "indian"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "immigrant"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "other race"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "work oriented"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "unemployed"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "technologist"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "healthcare worker"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "student"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "educator"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "service worker"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "retail worker"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "food worker"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "minimum-wage worker"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "political"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "conservative"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "progressive"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "moderate"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "opinionated about abortion"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "pro-choice"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "pro-life"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "opinionated about gender equality"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "feminist"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "equalist"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "#metoo"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "status quo"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "opinionated about immigration"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "anti-immigration"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "anti-illegal immigration"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "pro-immigration"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "pro-immigration reform"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "pro-illegal immigration"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "opinionated about education"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "for free tuition"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "pro-public school"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "pro-charter school"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "against free tuition"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "opinionated about healthcare"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "for medicare-for-all"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "for privatized insurance"
+  },
+  {
+      "icebreaker": "what is your favorite question to ask a stranger?",
+      "identity": "for public and private option"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "sensitive to gender"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "cis-gender male"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "cis-gender female"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "transgender male"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "transgender female"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "intersex"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "bi-gender"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "gender non-conforming/gender variant"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "third gender"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "gender queer"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "genderfluid"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "two-spirit"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "polyamourous"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "other gender"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "sensitive to sexual orientation"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "straight"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "gay/lesbian"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "asexual"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "pansexual"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "demisexual"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "bisexual"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "queer"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "ally"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "non-conforming"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "non-binary"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "aromantic"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "demiromantic"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "cross-dresser"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "femme"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "metrosexual"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "questioning"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "skoliosexual"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "other sexual orientation"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "religious"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "catholic"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "muslim"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "buddhist"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "christian"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "evangelist"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "wiccan"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "hinduist"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "taoist"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "other religion"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "racially sensitive"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "black/african americans"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "white"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "asian/southeast asian/pacific asian"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "latino/latina"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "afro latino"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "latinx"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "hispanic"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "jewish"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "middle eastern"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "indian"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "immigrant"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "other race"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "work oriented"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "unemployed"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "technologist"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "healthcare worker"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "student"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "educator"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "service worker"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "retail worker"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "food worker"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "minimum-wage worker"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "political"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "conservative"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "progressive"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "moderate"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "opinionated about abortion"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "pro-choice"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "pro-life"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "opinionated about gender equality"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "feminist"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "equalist"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "#metoo"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "status quo"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "opinionated about immigration"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "anti-immigration"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "anti-illegal immigration"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "pro-immigration"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "pro-immigration reform"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "pro-illegal immigration"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "opinionated about education"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "for free tuition"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "pro-public school"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "pro-charter school"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "against free tuition"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "opinionated about healthcare"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "for medicare-for-all"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "for privatized insurance"
+  },
+  {
+      "icebreaker": "what has been your most embarrassing moment?",
+      "identity": "for public and private option"
+  }
+]

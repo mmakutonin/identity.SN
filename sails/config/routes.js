@@ -32,13 +32,14 @@ module.exports.routes = {
 
   "GET /api/v1/room/:rid": "RoomController.find", // Use this to get the messages in a room.
   "GET /api/v1/user/:uid/room": "RoomController.index",
-  
+
   "GET /api/v1/user/:uid/match": "util/match",
-  
+  "GET /api/v1/room/:rid/icebreaker": "util/icebreaker",
+
   "POST /api/v1/hangout": "HangoutController.store",
   "PUT /api/v1/hangout/:id/accept": "HangoutController.accept",
   "DELETE /api/v1/hangout/:id": "HangoutController.destroy",
-  
+
   /* This route below expects a token in the post body (json), or queryparams
     For example,
     ```{
@@ -49,11 +50,11 @@ module.exports.routes = {
     }```
   */
   "POST /api/v1/hangout/:id/link": "HangoutController.makeHangoutLink",
-  
+
   // Wildcard Route match that sends all requests to a single page vue app
   // Just put their JS bundle into assets/js and reference it in homepage.ejs
   "GET /*": {
     view: "pages/homepage",
     skipAssets: true,
-  }, 
+  },
 };
