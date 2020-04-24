@@ -13,7 +13,6 @@ module.exports.globals = {
 
   // Utility Library Dependencies
   _: require('@sailshq/lodash'),
-  uuidv4: require("uuid").v4,
 
   /****************************************************************************
   *                                                                           *
