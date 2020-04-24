@@ -30,14 +30,13 @@ module.exports.routes = {
 
   "POST /api/v1/message": "MessageController.store",
 
-  "POST /api/v1/user/:uid/room/": "RoomController.store", // Deprecated. Use the match method.
   "GET /api/v1/room/:rid": "RoomController.find", // Use this to get the messages in a room.
   "GET /api/v1/user/:uid/room": "RoomController.index",
-
+  
   "GET /api/v1/user/:uid/match": "util/match",
-
+  
   "GET /api/v1/hangout": "util/hangout",
-
+  
   // Wildcard Route match that sends all requests to a single page vue app
   // Just put their JS bundle into assets/js and reference it in homepage.ejs
   "GET /*": {

@@ -56,16 +56,20 @@ module.exports = {
       identities[indicies[0]].id
     );
 
+    const room02 = await sails.helpers.createRoom([users[0].id, users[2].id]);
+
     await Message.createEach([
       {
         from: users[0].id,
-        to: users[1].id,
+        to: users[2].id,
         message: "Hi I'm Dan",
+        room: room02.id,
       },
       {
-        from: users[1].id,
+        from: users[2].id,
         to: users[0].id,
         message: "Hi I'm Amelia",
+        room: room02.id,
       },
     ]);
   },

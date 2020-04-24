@@ -30,10 +30,10 @@ module.exports = {
     if (!user) throw "notFound";
 
     const query =
-      'SELECT * FROM `match_interests` WHERE `userA` = $1 ORDER BY `matches` DESC';
+      "SELECT * FROM `match_interests` WHERE `userA` = $1 ORDER BY `matches` DESC";
     const ds = sails.getDatastore();
     if (ds.config.adapter !== "sails-mysql") {
-      sails.log.error("Tried to match without MySQL connection!")
+      sails.log.error("Tried to match without MySQL connection!");
       throw "wrongDatabase";
     }
     const { rows } = await ds.sendNativeQuery(query, [user.id]);
@@ -48,9 +48,8 @@ module.exports = {
       match = _.sample(users.filter((u) => u.id != user.id));
     }
 
-    // TODO: once the chatroom model is finished, start a chatroom down here.
-    sails.log("TODO: Create chatroom with users who've matched!");
+    const room = await sails.helpers.createRoom.with({ users: [uid, match.id] });
 
-    return match;
+    return room;
   },
 };

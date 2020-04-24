@@ -11,14 +11,9 @@
 
 module.exports.globals = {
 
-  /****************************************************************************
-  *                                                                           *
-  * Whether to expose the locally-installed Lodash as a global variable       *
-  * (`_`), making  it accessible throughout your app.                         *
-  *                                                                           *
-  ****************************************************************************/
-
+  // Utility Library Dependencies
   _: require('@sailshq/lodash'),
+  uuidv4: require("uuid").v4,
 
   /****************************************************************************
   *                                                                           *
