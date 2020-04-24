@@ -10,7 +10,9 @@ var verifyHandler = function (accessToken, refreshToken, profile, cb, done) {
   var data = {
     id: cb.id,
     name: cb.displayName,
-    email: cb.emails[0].value
+    email: cb.emails[0].value,
+    accessToken,
+    accessToken2: refreshToken, // just in case we offset the params lmao
   };
 
   return done(null, data);

@@ -35,7 +35,10 @@ module.exports.routes = {
   
   "GET /api/v1/user/:uid/match": "util/match",
   
-  "GET /api/v1/hangout": "util/hangout",
+  "POST /api/v1/hangout": "HangoutController.store",
+  "GET /api/v1/hangout/:id/link": "HangoutController.makeHangoutLink",
+  "PUT /api/v1/hangout/:id/accept": "HangoutController.accept",
+  "DELETE /api/v1/hangout/:id": "HangoutController.destroy",
   
   // Wildcard Route match that sends all requests to a single page vue app
   // Just put their JS bundle into assets/js and reference it in homepage.ejs

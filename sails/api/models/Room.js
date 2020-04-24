@@ -41,7 +41,11 @@ module.exports = {
     messages: {
       collection: 'message',
       via: 'room'
-    }
+    },
+    hangout: {
+      collection: "hangout",
+      via: "room",
+    },
   },
 
 };
