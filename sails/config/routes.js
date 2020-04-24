@@ -31,7 +31,7 @@ module.exports.routes = {
   "POST /api/v1/message": "MessageController.store",
 
   "POST /api/v1/user/:uid/room/": "RoomController.store", // Deprecated. Use the match method.
-  "GET /api/v1/room/:rid/message": "RoomController.getMessages",
+  "GET /api/v1/room/:rid": "RoomController.find", // Use this to get the messages in a room.
   "GET /api/v1/user/:uid/room": "RoomController.index",
 
   "GET /api/v1/user/:uid/match": "util/match",
