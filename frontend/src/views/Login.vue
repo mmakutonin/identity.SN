@@ -6,12 +6,13 @@
         <div
           class="w3-mobile w3-padding w3-display-middle w3-round-xlarge w3-animate-opacity cust-display-text"
         >
-          <h1>identity.sn</h1>
-          <h2>Everything you need for a successful diversity conversation.</h2><br><br>
-          <h3>Get Matched, Share, and Learn Now!</h3>
+          <h1>identity.SN</h1>
+          <p class="vp-txt">A social network that <em><b>actually</b></em> connects people. Everything you need for more real and wholesome conversations</p><br>
+          <h3>Get Matched Now!</h3>
           <LoginOAuthButton signInMethod="google" />
           <p> or </p>
           <LoginOAuthButton signInMethod="facebook" />
+          <!--<p>Your personal information will remain secured as your identity will be kept anonymous</p>-->
         </div>
       </div>
 

@@ -9,7 +9,7 @@
 
       <input
         type="button"
-        class="meet-face-btn w3-button w3-theme-d4 w3-round-xlarge"
+        class="meet-face-btn w3-button w3-orange w3-hover-theme w3-round-xlarge"
         value="Meet Face-to-Face"
         v-on:click="this.videoChat"
       />

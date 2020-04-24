@@ -32,11 +32,23 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: default;
+  margin-top: 60px;
 }
 
 .cust-display-text p {
   color: #252d40;
   margin: 0;
+}
+
+.vp-txt {
+  color: #252d40;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.vp-txt b {
+  text-decoration: underline;
 }
 
 .cust-display-text h3 {
@@ -51,7 +63,6 @@
   color: #252d40;
   text-align: center;
   margin: 0;
-  font-weight: 100;
 }
 .cust-display-text h1 {
   font-size: 7rem;
@@ -152,6 +163,7 @@
   position: fixed;
   bottom: 0;
   cursor: pointer;
+  box-shadow: 1px 1px 4px;
 }
 .nav-logo2:hover {
   cursor: pointer;
@@ -286,6 +298,7 @@
   text-align: center;
   font-size: 1.25rem;
   font-weight: normal;
+  text-justify: justify;
 }
 
 .feature-img {
@@ -310,8 +323,8 @@
 }
 
 .feature-img-container:hover .overlay {
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   opacity: 1;
 }
 
@@ -465,23 +478,30 @@
   width: 100%;
 }
 .chat-text-pane-input-section {
-  position: sticky;
+  position: fixed;
   position: -webkit-sticky;
   bottom: 0;
-  display: flex;
-  flex-direction: row;
+
   height: 7%;
   margin-top: 2em;
   z-index: 1;
-  padding-left: 32px !important;
-  padding-right: 32px !important;
+  /*padding-left: 32px !important;
+  padding-right: 32px !important;*/
   margin-bottom: 2em;
   padding-bottom: 1.25em;
   align-items: center;
 }
 
 .chat-text-pane-input-section input {
-  margin-right: 1em;
+  margin-left: 1em;
+  display: block;
+  float: left;
+  width: 90%;
+}
+
+.chat-text-pane-input-section button {
+  display: block;
+  float: right;
 }
 
 .chat-text-msg-section {
@@ -691,10 +711,22 @@ Styling for Mobile
     background-color: white !important;
   }
 
+  .chat-text-pane-header button {
+    font-size: 1.5rem;
+    float: left;
+  }
+  .chat-text-pane-header h2,
+  .chat-convo-list-header h2 {
+    font-size: 1.5rem;
+    float: left;
+  }
+  .chat-text-pane-header input,
+  .chat-convo-list-header input {
+    font-size: 0.85rem;
+  }
+
   .chat-convo-list-header,
   .chat-text-pane-header {
-    display: flex;
-    flex-direction: column;
     margin-left: 0 !important;
     align-items: baseline;
   }
@@ -710,6 +742,9 @@ Styling for Mobile
   .chat-text-pane-input-section {
     padding-right: 16px !important;
     padding-left: 16px !important;
+  }
+  .chat-text-pane-input-section input {
+    max-width: 275px;
   }
 
   .chat-main {
@@ -749,8 +784,6 @@ Styling for Mobile
   .nav-logo2 {
     margin-bottom: 2em;
   }
-
-  
 }
 @media only screen and (min-width: 768px) {
   .navbar li {

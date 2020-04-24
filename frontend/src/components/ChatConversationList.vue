@@ -7,7 +7,7 @@
       <h2>Chat</h2>
       <input
         type="button"
-        class="w3-button w3-round-xlarge w3-theme-d4 new-match-btn"
+        class="w3-button w3-round-xlarge w3-orange w3-hover-theme new-match-btn"
         value="New Match"
         v-on:click="searchForMatch()"
       />
@@ -39,7 +39,7 @@
         <p>{{ contact.lastMessage.content }}</p>
       </div>
     </div>
-    <a class="nav-logo3 w3-hover-text-theme" v-on:click="$router.push({ path: '/' })">identity.SN</a>
+    <a class="nav-logo3 w3-border-top w3-hover-text-theme" v-on:click="$router.push({ path: '/' })">identity.SN</a>
   </div>
 </template>
 
@@ -81,7 +81,7 @@ export default {
         "Your match is being searched for. This can sometimes take a while, but we'll let you know as soon as we find them!";*/
       this.alertDisplayed = true;
       this.$alert(
-        "Your match is being searched for. This can sometimes take a while, but we'll let you know as soon as we find them!"
+        "Your match is being searched for. This can sometimes take a while, but we'll let you know as soon as we find them!", "Please wait...", "success"
       );
     },
   },
@@ -108,6 +108,7 @@ export default {
       console.log("received");
       this.active = !this.active;
     });
+    this.$alert("Welcome to your chat room! Please keep an open mind and respect for your match. Please do not use chat to discriminate or disrespect", "Before you start...", "info");
   },
 };
 </script>

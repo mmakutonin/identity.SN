@@ -19,23 +19,26 @@
           <h1>For Buffalo and Beyond <font-awesome-icon icon="heart" /></h1>
           <br />
           <p>
-            The 2010s has allowed people to explore deeper and expand their
-            identities. We've witnessed equality, same-sex marriage, and a
-            multitude of cultural celebrations. However, lack of knowlegde,
-            exposure, and common sense oftentimes separate us. There are bias
-            incidents everywhere and the only way to fix this is through honest
-            conversations. <br />
+            The 2010s has withness an explosion and celebration of people's
+            identities. We have seen victories, setbacks, and awareness spread
+            across all diverse groups of people. While these unified us, lack of
+            knowlegde, exposure, and common sense oftentimes separate us.<br />
             <br />
-            As an effort to spread education and awareness of others'
-            identities, team Bonnies developed identiy.sn to provide an
-            anoynymous platform for people of Buffalo and beyond to have more
-            exposure to many different identities through open and respectful
-            conversations.
+            To better unify people, team Bonnies developed <b>identity.SN</b> to provide
+            an anoynymous social network platform for people of Buffalo and
+            beyond to have more meaningful conversations about potentially
+            divisive topisc and make long-lasting connections.
             <br />
             <br />
-            With that in mind, identity.sn is only suitable for those who are
-            ready and willing to discuss abstract concepts and identities.
+            With that in mind, we encourage you to have an open mindset and
+            respect for your match. We are committed to spread love and not hate so
+            hateful or discriminatory behaviors are not tolerated.
             <br />
+            Cheers!
+            <br />
+            <br />
+            With love, 
+            Team Bonnies
           </p>
         </div>
       </div>

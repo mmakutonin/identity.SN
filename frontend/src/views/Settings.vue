@@ -5,7 +5,7 @@
             class='w3-check'
             v-model='darkBgColor'
         />
-        <label> Dark Mode </label>
+        <label> Light Mode </label>
     </div>
 </template>
 
