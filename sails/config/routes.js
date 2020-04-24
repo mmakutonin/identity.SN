@@ -36,14 +36,24 @@ module.exports.routes = {
   "GET /api/v1/user/:uid/match": "util/match",
   
   "POST /api/v1/hangout": "HangoutController.store",
-  "GET /api/v1/hangout/:id/link": "HangoutController.makeHangoutLink",
   "PUT /api/v1/hangout/:id/accept": "HangoutController.accept",
   "DELETE /api/v1/hangout/:id": "HangoutController.destroy",
+  
+  /* This route below expects a token in the post body (json), or queryparams
+    For example,
+    ```{
+      "access_token": "ya29.a0Ae4lvC3ldd3vBuzhQUbz10Ni4BITGfrrC8V--xyV-b6UT_s0AXI34ItaiAkrolKL22xk-GHjqP51Qn9fhZ24p0AbWV7kkoyO4i8rgExG1LpEJUavCeZONllOfhCw-9zFlA6Gf3JtF4jI77GGDASdPbGzfd3Q_ytsDuI",
+      "scope": "https://www.googleapis.com/auth/calendar.events",
+      "token_type": "Bearer",
+      "expiry_date": 1587769922990
+    }```
+  */
+  "POST /api/v1/hangout/:id/link": "HangoutController.makeHangoutLink",
   
   // Wildcard Route match that sends all requests to a single page vue app
   // Just put their JS bundle into assets/js and reference it in homepage.ejs
   "GET /*": {
     view: "pages/homepage",
     skipAssets: true,
-  },
+  }, 
 };

@@ -72,5 +72,14 @@ module.exports = {
         room: room02.id,
       },
     ]);
+
+    await Hangout.create({
+      id: 1,
+      from: users[0].id,
+      to: users[2].id,
+      room: room02.id,
+      dateTime: new Date(new Date().getTime() + 3600000).toISOString(),
+      approved: true,
+    });
   },
 };

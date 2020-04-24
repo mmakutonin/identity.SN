@@ -24,9 +24,10 @@ module.exports = {
       autoUpdatedAt: true,
       columnName: "updated_at",
     },
-    datetime: {
+    dateTime: {
       type: "string",
       isAfter: new Date(),
+      description: "ISO Date String. Create with (new Date()).toISOString()"
     },
     hangoutUrl: {
       type: "string",
