@@ -67,9 +67,13 @@ module.exports = {
       via: "users",
     },
     interests: {
-      collection: "identity",
-      via: "likedBy",
+      collection: 'identity',
+      via: 'likedBy',
     },
+    rooms: {
+      collection: 'room',
+      via: 'users',
+    }
   },
   async getCurrent() {
     // TODO: Get current user from JWT
