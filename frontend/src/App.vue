@@ -1,11 +1,13 @@
 <template>
-  <router-view v-bind:class='bgColor'/>
+  <transition name="fade" mode="out-in">
+    <router-view v-bind:class="bgColor" />
+  </transition>
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 export default {
   computed: {
-    ...mapState(['bgColor'])
+    ...mapState(["bgColor"])
   }
-}
+};
 </script>

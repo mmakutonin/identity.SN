@@ -12,34 +12,40 @@
         v-on:click="searchForMatch()"
       />
     </div>
-   <!-- <div class="w3-container contact-search-bar-section">
+    <!-- <div class="w3-container contact-search-bar-section">
       <input
         class="w3-padding w3-round-xlarge search-bar"
         type="text"
         placeholder="Search..."
       />
     </div>-->
-    <div
-      v-for="(contact, index) in contacts"
-      v-bind:key="contact.chatIndex"
-      class="w3-padding w3-container w3-border-bottom w3-section chat-contact-cards "
-    >
-      <div class="chat-contact-thumbnail-section">
-        <input
-          type="button"
-          v-bind:value="contact.initials"
-          v-bind:class="
-            'chat-contact-thumbnail-btn w3-circle w3-button ' + color(index)
-          "
-          v-on:click="changeCurrentContact({ index })"
-        />
-      </div>
+    <div class="chat-cc-section w3-mobile">
+      <div
+        v-for="(contact, index) in contacts"
+        v-bind:key="contact.chatIndex"
+        class="w3-padding w3-container w3-border-bottom w3-section chat-contact-cards "
+      >
+        <div class="chat-contact-thumbnail-section">
+          <input
+            type="button"
+            v-bind:value="contact.initials"
+            v-bind:class="
+              'chat-contact-thumbnail-btn w3-circle w3-button ' + color(index)
+            "
+            v-on:click="changeCurrentContact({ index })"
+          />
+        </div>
 
-      <div class="last-msg-content w3-padding">
-        <p>{{ contact.lastMessage.content }}</p>
+        <div class="last-msg-content w3-padding">
+          <p>{{ contact.lastMessage.content }}</p>
+        </div>
       </div>
     </div>
-    <a class="nav-logo3 w3-border-top w3-hover-text-theme" v-on:click="$router.push({ path: '/' })">identity.SN</a>
+    <a
+      class="nav-logo3 w3-border-top w3-hover-text-theme"
+      v-on:click="$router.push({ path: '/' })"
+      >identity.SN</a
+    >
   </div>
 </template>
 
@@ -81,7 +87,9 @@ export default {
         "Your match is being searched for. This can sometimes take a while, but we'll let you know as soon as we find them!";*/
       this.alertDisplayed = true;
       this.$alert(
-        "Your match is being searched for. This can sometimes take a while, but they'll appear as soon as we find them!", "Please wait...", "success"
+        "Your match is being searched for. This can sometimes take a while, but they'll appear as soon as we find them!",
+        "Please wait...",
+        "success"
       );
     },
   },
@@ -91,18 +99,23 @@ export default {
         state.rooms.map((contact) => ({
           ...contact,
           lastMessage:
-            contact.messages.length > 0 ? contact.messages[contact.messages.length - 1] : ''
+            contact.messages.length > 0
+              ? contact.messages[contact.messages.length - 1]
+              : "",
         })),
-      currentContactIndex: (state) => state.currentContactIndex
+      currentContactIndex: (state) => state.currentContactIndex,
     }),
   },
 
   mounted() {
     this.$parent.$on("toggleNav", () => {
-      console.log("received");
       this.active = !this.active;
     });
-    this.$alert("Welcome to your chat room! Please keep an open mind and respect for your match. Please do not use chat to discriminate or disrespect", "Before you start...", "info");
+    this.$alert(
+      "Welcome to your chat room! Please keep an open mind and respect for your match. Please do not use chat to discriminate or disrespect",
+      "Before you start...",
+      "info"
+    );
   },
 };
 </script>

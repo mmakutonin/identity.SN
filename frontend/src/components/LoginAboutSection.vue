@@ -17,9 +17,10 @@
             </div>
           </div>
           <p id="feature-paragraphs" class="w3-hide-small">
-            Tired of swiping like Tinder? No worries, we
-            auto-match you with a partner based on what you and they identify as. If
-            you get uncomfortable, you can delete the match and start over
+            Based on what your interests and identities are, we let the
+            algorithm find you the best match to make it even more diverse and
+            exciting. If you get uncomfortable, you can delete the match and
+            start over
           </p>
         </h2>
       </div>
@@ -39,8 +40,9 @@
             </div>
           </div>
           <p id="feature-paragraphs" class="w3-hide-small">
-            Shy? We got you! With anonymity, you can share anything or everything about your identities <b>worries-free</b>! We encourage you to break out of your comfort zone and break the
-            ice!
+            Shy? We got you! With anonymity, you can share anything or
+            everything about your identities <b>worries-free</b>! We encourage
+            you to break out of your comfort zone and break the ice!
           </p>
         </h2>
       </div>
@@ -60,7 +62,8 @@
             </div>
           </div>
           <p id="feature-paragraphs" class="w3-hide-small">
-            We believe in doing one thing at a time because it gives us time to reflect. So, we impose a single-conversation limit because <b>ONE</b> match for <b>ONE</b> day makes <b>ONE</b> wholesome conversation
+            We believe in doing one thing at a time because it gives us a chance to
+            reflect. So, we impose a 24-hour limit on each of your conversations for a more wholesome experience
           </p>
         </h2>
       </div>
@@ -81,7 +84,8 @@
           </div>
           <p id="feature-paragraphs" class="w3-hide-small">
             Within the 24 hours allocated for your match, both you and your
-            partner can decide to "meet" face-to-face through a video chat to have even realer conversations
+            partner can decide to "meet" face-to-face through a video chat to
+            have even realer conversations
           </p>
         </h2>
       </div>
