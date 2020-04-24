@@ -7,10 +7,15 @@
           class="w3-mobile w3-padding w3-display-middle w3-round-xlarge w3-animate-opacity cust-display-text"
         >
           <h1>identity.SN</h1>
-          <p class="vp-txt">A social network that <em><b>actually</b></em> connects people. Everything you need for more real and wholesome conversations</p><br>
+          <p class="vp-txt">
+            A social network that helps to facilitate real connections between
+            people with diverse backgrounds by matching users for<br />
+            <b>one-on-one</b> 24-hour chats
+          </p>
+          <br />
           <h3>Get Matched Now!</h3>
           <LoginOAuthButton signInMethod="google" />
-          <p> or </p>
+          <p>or</p>
           <LoginOAuthButton signInMethod="facebook" />
           <!--<p>Your personal information will remain secured as your identity will be kept anonymous</p>-->
         </div>
@@ -24,7 +29,6 @@
           alt="main-pic-person-holding-phone"
           class="w3-round-xlarge w3-image main-pic"
         />
-       
       </div>
     </div>
     <LoginAboutSection />

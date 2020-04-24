@@ -6,11 +6,13 @@
       ><span class="navicon"></span
     ></label>
     <ul v-bind:class="'nav-items ' + bgColor">
-      <li>
-        <a href="#" class="w3-hover-none w3-hover-text-theme nav-item-li"
-          >Home</a
-        >
-      </li>
+      <transition name="fade" mode="out-in">
+        <li>
+          <a href="#" class="w3-hover-none w3-hover-text-theme nav-item-li"
+            >Home</a
+          >
+        </li>
+      </transition>
       <li>
         <a
           href="#about-section"
@@ -31,10 +33,15 @@
         >Contact</a
       >-->
       <li>
-        <a
+        <!--<a
           class="w3-hover-none w3-hover-text-theme nav-item-li"
           v-on:click="$router.push({ path: '/settings' })"
           >Settings</a
+        >-->
+        <router-link
+          :to="{ name: 'Settings' }"
+          class="w3-hover-none w3-hover-text-theme nav-item-li"
+          >Settings</router-link
         >
       </li>
     </ul>
