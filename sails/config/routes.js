@@ -26,12 +26,14 @@ module.exports.routes = {
 
   'POST /api/v1/user/identity': 'IdentityController.tagUserIdentity',
   'DELETE /api/v1/user/identity': 'IdentityController.removeUserIdentity',
- 
+
   'POST /api/v1/user/interest': 'IdentityController.tagUserInterest',
   'DELETE /api/v1/user/interest': 'IdentityController.removeUserInterest',
 
   'POST /api/v1/message': 'MessageController.store',
-  'GET /api/v1/message': 'MessageController.index',
+  'GET /api/v1/:id/message': 'MessageController.index',
+  'POST /api/v1/message/analyze': 'MessageController.analyze',
+
 
   'POST /api/v1/room': 'RoomController.store',
   'GET /api/v1/room': 'RoomController.index',

@@ -17,7 +17,7 @@ module.exports = {
       autoIncrement: true,
       columnName: "message_id",
     },
-    message: { 
+    message: {
       type: "string",
       required: true
     },
@@ -48,7 +48,7 @@ module.exports = {
     }
   },
   afterCreate: function(newMessage, proceed){
-    sails.sockets.broadcast(room.id, 'new-message', newMessage);
+    sails.sockets.broadcast(newMessage.room, 'new-message', newMessage.message);
     proceed();
   }
 };

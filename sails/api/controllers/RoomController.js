@@ -7,15 +7,20 @@
 const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
-    store: function(req, res){
-        const room = Room.create({
-            id: uuidv4()
+    store: async function(req, res){
+        const firstUser = await User.getCurrent();
+        const { userId } = req.body;
+        const secondUser = await User.findOne(userId);
+        const room_id = uuidv4();
+        const room = await Room.create({
+            id: room_id,
         }).fetch();
-        await Room.addToCollection(room.id, 'users', [firstUser, secondUser]);
+
+        await Room.addToCollection(room.id, 'users', [firstUser.id, secondUser.id]);
+        return res.json("Room created " + room.id);
     },
     index: function(req, res){
 
     }
 
 };
-
