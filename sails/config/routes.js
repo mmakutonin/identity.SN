@@ -33,7 +33,8 @@ module.exports.routes = {
 
   'POST /api/v1/message': 'MessageController.store',
 
-  'GET /api/v1/match': 'util/match',
+  'GET /api/v1/user/:uid/match': 'util/match',
+
   'GET /api/v1/hangout': 'util/hangout',
 
   // Wildcard Route match that sends all requests to a single page vue app
