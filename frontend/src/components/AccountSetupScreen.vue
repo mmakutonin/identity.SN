@@ -3,10 +3,6 @@
     class="w3-container w3-animate-opacity w3-flat-clouds acc-set-up-container"
   >
     <h2 class="w3-margin">{{ message }}</h2>
-    <p class="w3-margin w3-italics">
-      If the identity you identity with or of interests is not on
-      the list, please choose OTHER.
-    </p>
     <div class="w3-row-padding buttons-section">
       <div
         v-for="(obj, index) in allColors"

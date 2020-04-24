@@ -28,7 +28,7 @@
         >
           <div class="bubble-text">
             <p class="w3-padding msg-content">
-              {{ chatMessage.content }}
+              {{ chatMessage.message }}
             </p>
             <!--<p class="w3-padding msg-date">
             {{ new Date(chatMessage.timestamp) }}
@@ -79,7 +79,7 @@ export default {
     ...mapActions("chat", ["videoChat"]),
   },
   computed: {
-    ...mapGetters("chat", ["currentChat", "currentContact"]),
+    ...mapGetters("chat", ["currentChat", "currentRoom"]),
   },
 };
 </script>
