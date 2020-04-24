@@ -131,7 +131,6 @@
   padding: 20px 20px;
   text-decoration: none;
   cursor: pointer;
-  border: none;
 }
 .nav-item-li:hover {
   transition: all 0.07s ease;
@@ -792,6 +791,7 @@ Styling for Mobile
   .nav-item-li {
     padding: 20px 30px;
   }
+
   .navbar .nav-items {
     clear: none;
     float: right;

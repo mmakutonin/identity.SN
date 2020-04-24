@@ -7,6 +7,7 @@
           <div class="feature-img-container">
             <img
               src="https://static-2.gumroad.com/res/gumroad/1211634803146/asset_previews/17afde9c33f0af3eb03bb4698069d08e/retina/drawkit-support-man-colour-thumbnail.png"
+              alt="person-sitting-at-desk-chatting"
               class="w3-image w3-round feature-img"
             />
             <div class="w3-round-xlarge w3-image overlay">
@@ -28,6 +29,7 @@
           <div class="feature-img-container">
             <img
               src="https://static-2.gumroad.com/res/gumroad/1211634803146/asset_previews/9af3b0e81825adb7e5475199b224c409/retina/unlock-colour-thumbnail.png"
+              alt="person-holding-a-key"
               class="w3-image w3-round feature-img"
             />
             <div class="w3-round-xlarge overlay">
@@ -48,6 +50,7 @@
           <div class="feature-img-container">
             <img
               src="https://static-2.gumroad.com/res/gumroad/1211634803146/asset_previews/25c9fe6481563597cf75a0d84cb37f3e/retina/holding-phone-colour-thumbnail.png"
+              alt="hand-holding-phone"
               class="w3-image w3-round feature-img"
             />
             <div class="w3-round-xlarge overlay">
@@ -67,6 +70,7 @@
           <div class="w3-image feature-img-container">
             <img
               src="https://uploads-ssl.webflow.com/5bcb5ee81fb2091a2ec550c7/5e81d56edad44d9253326383_covid19-illustration-example-2.png"
+              alt="people-video-chatting"
               class="w3-image w3-round-xlarge feature-img"
             />
             <div class="w3-round-xlarge w3-image overlay">

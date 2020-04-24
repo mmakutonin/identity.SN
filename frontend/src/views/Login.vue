@@ -21,6 +21,7 @@
       >
         <img
           src="https://static-2.gumroad.com/res/gumroad/1211634803146/asset_previews/10d376519ed6e83192a8606b66135312/retina/thumbnail.png"
+          alt="main-pic-person-holding-phone"
           class="w3-round-xlarge w3-image main-pic"
         />
        

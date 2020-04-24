@@ -7,21 +7,21 @@
     ></label>
     <ul v-bind:class="'nav-items ' + bgColor">
       <li>
-        <a href="#" class="w3-hover-none w3-hover-text-theme w3-border-top nav-item-li"
+        <a href="#" class="w3-hover-none w3-hover-text-theme nav-item-li"
           >Home</a
         >
       </li>
       <li>
         <a
           href="#about-section"
-          class="w3-hover-none w3-hover-text-theme w3-border-top nav-item-li"
+          class="w3-hover-none w3-hover-text-theme nav-item-li"
           >Features</a
         >
       </li>
       <li>
         <a
           href="#m-statement-section"
-          class="w3-hover-none w3-hover-text-theme w3-border-top nav-item-li"
+          class="w3-hover-none w3-hover-text-theme nav-item-li"
           >About</a
         >
       </li>
@@ -32,7 +32,7 @@
       >-->
       <li>
         <a
-          class="w3-hover-none w3-hover-text-theme w3-border-top nav-item-li"
+          class="w3-hover-none w3-hover-text-theme nav-item-li"
           v-on:click="$router.push({ path: '/settings' })"
           >Settings</a
         >
