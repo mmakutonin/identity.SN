@@ -81,25 +81,19 @@ export default {
         "Your match is being searched for. This can sometimes take a while, but we'll let you know as soon as we find them!";*/
       this.alertDisplayed = true;
       this.$alert(
-        "Your match is being searched for. This can sometimes take a while, but we'll let you know as soon as we find them!", "Please wait...", "success"
+        "Your match is being searched for. This can sometimes take a while, but they'll appear as soon as we find them!", "Please wait...", "success"
       );
     },
   },
   computed: {
     ...mapState("chat", {
       contacts: (state) =>
-        state.contacts.map((contact) => ({
+        state.rooms.map((contact) => ({
           ...contact,
           lastMessage:
-            state.chats[contact.chatIndex][
-              state.chats[contact.chatIndex].length - 1
-            ],
-          initials: contact.name
-            .split(" ")
-            .reduce((agg, word) => agg + word[0], "")
-            .toUpperCase(),
+            contact.messages.length > 0 ? contact.messages[contact.messages.length - 1] : ''
         })),
-      currentContactIndex: (state) => state.currentContactIndex,
+      currentContactIndex: (state) => state.currentContactIndex
     }),
   },
 

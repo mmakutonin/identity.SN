@@ -34,7 +34,6 @@ export default new Vuex.Store({
         accountSetup: {
             namespaced: true,
             state:      {
-                //dummy data
                 userId:          '',
                 interestsAll:    {},
                 interestsKnown:  {},
@@ -70,24 +69,24 @@ export default new Vuex.Store({
                         identitiesKnown
                     })
                 },
-                addItem({ commit }, payload) {
+                addItem({ state, commit }, payload) {
                     const elementType = {
                         'identities': 'identity',
                         'interests': 'interest'
                     }[payload.elementType]
-                    apiCalls.addUserItem(payload.item, elementType)
+                    apiCalls.addUserItem(payload.item, elementType, state.userId)
                     .then(res => commit({
                         type: 'elementAdd',
                         elementType: payload.elementType,
                         index: payload.item
                     }))
                 },
-                rmItem({ commit }, payload) {
+                rmItem({ state, commit }, payload) {
                     const elementType = {
                         'identities': 'identity',
                         'interests': 'interest'
                     }[payload.elementType]
-                    apiCalls.addUserItem(payload.item, elementType)
+                    apiCalls.addUserItem(payload.item, elementType. state.userId)
                     .then(res => commit({
                         type: 'elementRemove',
                         elementType: payload.elementType,
@@ -99,91 +98,60 @@ export default new Vuex.Store({
         chat: {
             namespaced: true,
             state:      {
-                userName: 'Miku Macaroni',
-                contacts: [
-                    {
-                        name:      'Bobby Nugs',
-                        chatIndex: 0
-                    },
-                    {
-                        name:      'Sammy Chainzzzz',
-                        chatIndex: 1
-                    }
-                ],
-                chats: [
-                    [
-                        {
-                            sender:    false,
-                            content:   'Hey Mike, how are you?',
-                            timestamp: 1586900619779
-                        },
-                        {
-                            sender:    true,
-                            content:   'Yo, sup?',
-                            timestamp: 1586900660000
-                        },
-                        {
-                            sender:    false,
-                            content:   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
-                            timestamp: 1586900710000
-                        },
-                        {
-                            sender:    false,
-                            content:   'exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
-                            timestamp: 1586900810000
-                        },
-                        {
-                            sender:    true,
-                            content:   'eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                            timestamp: 1586900910000
-                        },  
-                    ],
-                    [
-                        {
-                            sender:    false,
-                            content:   'Hey Mike, how are you?',
-                            timestamp: 1586900619779
-                        },
-                        {
-                            sender:    true,
-                            content:   'Yo, yo, sup?',
-                            timestamp: 1586900660000
-                        },
-                    ]
-                ],
+                userName: '',
+                rooms: [],
                 currentContactIndex: 0
             },
             getters: {
-                currentContact: (state) => state.contacts[state.currentContactIndex],
-                currentChat:    (state, { currentContact }) => state.chats[currentContact.chatIndex]
+                currentRoom: (state) => state.rooms.length > 0 ? state.rooms[state.currentContactIndex] :  '',
+                currentChat:    (state, { currentRoom }) => currentRoom.messages,
+                currentChatPartnerId: (state, {currentRoom}) => currentRoom.id
             },
             mutations: {
                 addMessage(state, payload) {
-                    Vue.set(state.chats[payload.index], state.chats[payload.index].length, payload.chat)
+                    Vue.set(state.rooms[payload.index].messages, state.rooms[payload.index].messages.length, payload.chat)
                 },
                 changeCurrentContact(state, payload) {
                     state.currentContactIndex = payload.index
+                },
+                setUserId(state, payload) {
+                    state.userName = payload.userId
+                },
+                addRoom(state, payload) {
+                    Vue.set(state.rooms, state.rooms.length, payload.room)
                 }
             },
             actions: {
-                sendMessage({ commit, getters }, payload) {
+                initChats({commit}, payload) {
+                    commit({
+                        type: 'setUserId',
+                        userId: payload.userId
+                    })
+                },
+                sendMessage({ state, commit, getters }, payload) {
                     const chat = {
-                        sender:    true,
-                        content:   payload.messageText,
-                        timestamp: Date.now()
+                        sender:     true,
+                        toId:       getters.currentChatPartnerId,
+                        fromId:     state.userName,
+                        message:    payload.messageText,
+                        timestamp:  Date.now()
                     }
                     commit({
                         type:  'addMessage',
                         chat,
-                        index: getters.currentContact.chatIndex
+                        index: state.currentContactIndex
                     })
+                    apiCalls.sendMessage(chat)
                 },
                 //Actions to be expanded later can be found below:
                 videoChat() {
                     window.open('https://hangouts.google.com/call/W7JggBBJ23loiAC0qUZkAEEE')
                 },
-                findMatch() {
-                    console.log('"match is being found," sayeth the void.')
+                async findMatch({ state, commit }) {
+                    commit({
+                        type: 'addRoom',
+                        room: await apiCalls.findMatch(state.userName)
+                    })
                 }
             }
         }

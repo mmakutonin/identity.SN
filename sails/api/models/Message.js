@@ -26,6 +26,10 @@ module.exports = {
       autoCreatedAt: true,
       columnName: "created_at",
     },
+    tone: {
+        type: "string",
+        columnName: "tone"
+    },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
