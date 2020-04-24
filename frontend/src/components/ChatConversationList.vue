@@ -1,27 +1,28 @@
 <template>
-  <div class="w3-cell w3-border-right chat-convo-list" v-bind:class="{ active: active }">
+  <div
+    class="w3-cell w3-border-right w3-theme2 chat-convo-list"
+    v-bind:class="{ active: active }"
+  >
     <div class="w3-container w3-border-bottom w3-mobile chat-convo-list-header">
       <h2>Chat</h2>
-      <div class="chat-convo-list-header-btn-section w3-container">
-        <input
-          type="button"
-          class="w3-button w3-round-xlarge w3-green new-match-btn"
-          value="New Match"
-          v-on:click="searchForMatch()"
-        />
-      </div>
+      <input
+        type="button"
+        class="w3-button w3-round-xlarge w3-theme-d4 new-match-btn"
+        value="New Match"
+        v-on:click="searchForMatch()"
+      />
     </div>
-    <div class="w3-container contact-search-bar-section">
+   <!-- <div class="w3-container contact-search-bar-section">
       <input
         class="w3-padding w3-round-xlarge search-bar"
         type="text"
         placeholder="Search..."
       />
-    </div>
+    </div>-->
     <div
       v-for="(contact, index) in contacts"
       v-bind:key="contact.chatIndex"
-      class="w3-padding w3-container w3-section chat-contact-cards "
+      class="w3-padding w3-container w3-border-bottom w3-section chat-contact-cards "
     >
       <div class="chat-contact-thumbnail-section">
         <input
@@ -38,6 +39,7 @@
         <p>{{ contact.lastMessage.content }}</p>
       </div>
     </div>
+    <a class="nav-logo3 w3-hover-text-theme" v-on:click="$router.push({ path: '/' })">identity.SN</a>
   </div>
 </template>
 

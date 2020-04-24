@@ -119,6 +119,8 @@
   display: block;
   padding: 20px 20px;
   text-decoration: none;
+  cursor: pointer;
+  border: none;
 }
 .nav-item-li:hover {
   transition: all 0.07s ease;
@@ -141,13 +143,20 @@
   font-weight: 900;
   text-decoration: none;
 }
+.nav-logo3 {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1.25em;
+  font-weight: 900;
+  text-decoration: none;
+  position: fixed;
+  bottom: 0;
+  cursor: pointer;
+}
 .nav-logo2:hover {
   cursor: pointer;
   transform: all 0.07s ease;
   color: #20cd93;
-}
-.nav-logo img {
-  height: 64px;
 }
 
 .navbar .nav-items {
@@ -306,10 +315,6 @@
   opacity: 1;
 }
 
-.feature-img:hover .overlay {
-  filter: blur(100px);
-}
-
 .text {
   font-size: 20px;
   position: absolute;
@@ -317,6 +322,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  cursor: default;
 }
 .about-team {
   height: 50vh;
@@ -330,8 +336,9 @@
   width: 100%;
   display: flex;
   align-items: center;
-  z-index: 1;
+  z-index: 0;
   position: relative;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 .footer-text-section1,
@@ -484,6 +491,7 @@
   margin-top: 1em;
   padding-right: 32px !important;
   padding-left: 32px !important;
+  cursor: default;
 }
 .user-profile-bar {
   background-color: #4781e9;
@@ -492,45 +500,53 @@
 
 .chat-convo-list-header,
 .chat-text-pane-header {
-  display: flex;
-  flex-direction: row;
   margin-top: 1em;
-  justify-content: center;
   align-items: center;
   padding-bottom: 0.75em;
+  cursor: default;
 }
 
-.chat-text-pane-header {
-  display: flex;
-  flex-direction: row;
-  margin-top: 1em;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 0.75em;
+.chat-text-pane-header button {
+  display: block;
+  float: left;
+
+  font-size: 1.75rem;
 }
 
-.chat-convo-list-header-btn-section,
-.chat-text-pane-btn-section,
+.chat-text-pane-header input,
+.chat-convo-list-header input {
+  display: block;
+  float: right;
+  padding: 15px;
+}
+
+.chat-convo-list-header h2,
+.chat-text-pane-header h2 {
+  display: block;
+  float: left;
+  font-weight: 800;
+}
+
 .chat-input-send-btn-section {
   padding-right: 0 !important;
   padding-left: 0 !important;
   margin-right: 0 !important;
 }
-.chat-convo-list-header h2,
-.chat-text-pane-header h2 {
+
+/*.chat-text-pane-header h2 {
   display: flex;
   justify-content: flex-start;
   width: 80%;
   font-weight: 800;
-}
+}*/
 
-.new-match-btn,
+/*.new-match-btn,
 .meet-face-btn,
 .send-btn {
   height: 3em;
   font-size: 1rem;
   min-width: 100px;
-}
+}*/
 
 .chat-contact-cards {
   height: 12%;
@@ -539,9 +555,6 @@
   flex-direction: row;
   overflow-y: scroll;
   justify-content: center;
-  background-color: white;
-  margin-right: 16px;
-  margin-left: 16px;
 }
 
 .chat-contact-thumbnail-section {
@@ -570,7 +583,8 @@
 .last-msg-content p {
   margin: 0 !important;
   font-size: 0.85rem;
-  color: #7f8c8d;
+  color: #ecfcf7;
+  cursor: default;
 }
 .contact-search-bar-section {
   display: flex;
@@ -625,15 +639,18 @@
 }
 
 .loading {
-  height: 100%;
   width: 100%;
-  align-items: center;
-  padding-top: 15em;
+  cursor: default;
 }
 .loading h1 {
   font-weight: 800;
   font-size: 7em;
   text-shadow: 1px 1px 5px #ecf0f1;
+  color: #1a202d;
+}
+
+.loading h3 {
+  color: #1a202d;
 }
 /**
 Styling for Mobile
@@ -732,6 +749,8 @@ Styling for Mobile
   .nav-logo2 {
     margin-bottom: 2em;
   }
+
+  
 }
 @media only screen and (min-width: 768px) {
   .navbar li {
@@ -769,6 +788,10 @@ Styling for Mobile
   color: #000 !important;
   background-color: #f9fefc !important;
 }
+.w3-theme2-l4 {
+  color: #000 !important;
+  background-color: #cbd2e1 !important;
+}
 .w3-theme-l3 {
   color: #000 !important;
   background-color: #f3fdfa !important;
@@ -777,9 +800,17 @@ Styling for Mobile
   color: #000 !important;
   background-color: #ecfcf7 !important;
 }
+.w3-theme2-l2 {
+  color: #fff !important;
+  background-color: #6477a6 !important;
+}
 .w3-theme-l1 {
   color: #000 !important;
   background-color: #e6fbf4 !important;
+}
+.w3-theme2-l1 {
+  color: #fff !important;
+  background-color: #435275 !important;
 }
 .w3-theme-d1 {
   color: #000 !important;

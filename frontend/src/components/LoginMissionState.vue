@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w3-container w3-mobile w3-theme-d1 m-statement-container"
+    class="w3-container w3-mobile w3-theme-d2 m-statement-container"
     id="m-statement-section"
   >
     <div class="w3-container m-state-content-section">

@@ -3,13 +3,14 @@
     <input
       type="text"
       class="w3-input w3-round-xlarge"
+      placeholder="Hi, it's nice matching with you! How's it going today?"
       v-model="messageText"
     />
     <div class="chat-input-send-btn-section">
       <input
         type="button"
         value="Send"
-        class="w3-button w3-round-xlarge w3-green send-btn"
+        class="w3-button w3-round-xlarge w3-theme-d4 w3-hover-theme send-btn"
         v-on:click="send(messageText)"
       />
     </div>

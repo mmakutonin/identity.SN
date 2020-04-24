@@ -1,5 +1,5 @@
 <template>
-  <div class="w3-container about-section-container" id="about-section">
+  <div class="w3-container w3-white about-section-container" id="about-section">
     <div class="w3-mobile feature-item">
       <div class="w3-third w3-center">
         <h2 id="feature-font">
@@ -21,7 +21,7 @@
       </div>
       <div class="w3-third w3-center">
         <h2 id="feature-font">
-          Auto-Match
+          Auto - Match
           <div class="feature-img-container">
             <img
               src="https://static-2.gumroad.com/res/gumroad/1211634803146/asset_previews/17afde9c33f0af3eb03bb4698069d08e/retina/drawkit-support-man-colour-thumbnail.png"

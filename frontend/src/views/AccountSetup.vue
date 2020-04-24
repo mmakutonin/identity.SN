@@ -1,8 +1,8 @@
 <template>
   <div class="w3-container w3-theme2 set-up-background">
-    <a class="nav-logo2" v-on:click="$router.push({ path: '/' })">iSN</a>
+    <a class="nav-logo2" v-on:click="$router.push({ path: '/' })">identity.SN</a>
     <div v-if="!loaded">
-      <div class="w3-container w3-display-topmiddle w3-theme-d4 loading">
+      <div class="w3-container w3-center w3-theme-d5 loading">
         <h1>Hold on tight...</h1>
         <h3>Getting ready to create your profile!</h3>
       </div>
