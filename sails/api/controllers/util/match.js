@@ -30,7 +30,7 @@ module.exports = {
     if (!user) throw "notFound";
 
     const query =
-      'SELECT * FROM `shared_identities_and_interests` WHERE `userA` = "$1" ORDER BY `total_shared` DESC';
+      'SELECT * FROM `match_interests` WHERE `userA` = $1 ORDER BY `matches` DESC';
     const ds = sails.getDatastore();
     if (ds.config.adapter !== "sails-mysql") {
       sails.log.error("Tried to match without MySQL connection!")
@@ -41,7 +41,7 @@ module.exports = {
     let match;
     if (rows.length !== 0) {
       // IDEA: might wanna pick one random one out of first 5 or 10 when we have enough users.
-      match = rows[0].userB;
+      match = await User.findOne({ id: rows[0].userB });
     } else {
       // If no match, pairs you up with someone random for sake of demonstration.
       const users = await User.find();
