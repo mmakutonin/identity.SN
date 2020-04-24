@@ -119,6 +119,9 @@ export default new Vuex.Store({
                 },
                 addRoom(state, payload) {
                     Vue.set(state.rooms, state.rooms.length, payload.room)
+                },
+                setRooms(state, payload) {
+                    state.rooms = payload.rooms
                 }
             },
             actions: {
@@ -126,6 +129,10 @@ export default new Vuex.Store({
                     commit({
                         type: 'setUserId',
                         userId: payload.userId
+                    })
+                    commit({
+                        type: 'setRooms',
+                        rooms: await apiCalls.getRooms(payload.userId)
                     })
                 },
                 sendMessage({ state, commit, getters }, payload) {
