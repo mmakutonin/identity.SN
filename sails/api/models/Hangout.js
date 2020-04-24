@@ -1,13 +1,11 @@
 /**
- * Message.js
+ * Hangout.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
 module.exports = {
-  tableName: "messages",
-
   attributes: {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
@@ -15,20 +13,30 @@ module.exports = {
     id: {
       type: "number",
       autoIncrement: true,
-      columnName: "message_id",
-    },
-    message: {
-      type: "string",
-      required: true,
     },
     createdAt: {
       type: "number",
       autoCreatedAt: true,
       columnName: "created_at",
     },
-    tone: {
-        type: "string",
-        columnName: "tone"
+    updatedAt: {
+      type: "number",
+      autoUpdatedAt: true,
+      columnName: "updated_at",
+    },
+    dateTime: {
+      type: "string",
+      isAfter: new Date(),
+      description: "ISO Date String. Create with (new Date()).toISOString()"
+    },
+    hangoutUrl: {
+      type: "string",
+      isURL: true,
+      allowNull: true,
+    },
+    approved: {
+      type: "boolean",
+      defaultsTo: false,
     },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
@@ -38,21 +46,15 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
+    room: {
+      model: "room",
+      unique: true,
+    },
     from: {
       model: "user",
-      columnName: "user_from",
     },
     to: {
       model: "user",
-      columnName: "user_to",
     },
-    room: {
-      model: "room",
-      columnName: "message_room",
-    },
-  },
-  afterCreate: function (newMessage, proceed) {
-    sails.sockets.broadcast(newMessage.room, "new-message", newMessage.message);
-    proceed();
   },
 };

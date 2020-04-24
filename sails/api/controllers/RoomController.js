@@ -22,7 +22,8 @@ module.exports = {
 
     const room = await Room.findOne({ id: rid })
       .populate("users")
-      .populate("messages");
+      .populate("messages")
+      .populate("hangout");
 
     return res.json(room);
   },
