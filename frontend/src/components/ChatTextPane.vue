@@ -1,16 +1,18 @@
 <template>
-  <div class="w3-container w3-cell chat-text-pane-main">
+  <div class="w3-container w3-cell w3-theme2 chat-text-pane-main">
     <div class="w3-container w3-border-bottom w3-mobile chat-text-pane-header">
-      <button type="button" class="w3-button" v-on:click="toggleNav()" > <font-awesome-icon icon="bars" /> </button>
-      <h2>{{ currentContact.name }}</h2>
-      <div class="chat-text-pane-btn-section w3-container">
-        <input
-          type="button"
-          class="meet-face-btn w3-button w3-green w3-round-xlarge"
-          value="Meet Face-to-Face"
-          v-on:click="this.videoChat"
-        />
-      </div>
+      <button type="button" class="w3-button w3-hover-none w3-hover-text-theme" v-on:click="toggleNav()">
+        <font-awesome-icon icon="bars" />
+      </button>
+      <h2>Your Match</h2>
+      <!--<h2>{{ currentContact.name }}</h2>-->
+
+      <input
+        type="button"
+        class="meet-face-btn w3-button w3-orange w3-hover-theme w3-round-xlarge"
+        value="Meet Face-to-Face"
+        v-on:click="this.videoChat"
+      />
     </div>
     <div
       class="w3-container w3-mobile w3-padding chat-text-msg-section"
@@ -44,16 +46,16 @@ import ChatTextPaneInput from "./ChatTextPaneInput";
 import { mapGetters, mapActions } from "vuex";
 import VueChatScroll from "vue-chat-scroll";
 import Vue from "vue";
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faBars)
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+library.add(faBars);
 Vue.use(VueChatScroll);
 export default {
   name: "ChatTextPane",
   components: {
     ChatTextPaneInput,
-    FontAwesomeIcon
+    FontAwesomeIcon,
   },
   methods: {
     sender(sender) {
@@ -66,13 +68,13 @@ export default {
 
     color(sender) {
       if (sender) {
-        return "w3-blue";
+        return "w3-theme-d4";
       } else {
-        return "w3-grey";
+        return "w3-theme2-l4";
       }
     },
     toggleNav() {
-      this.$parent.$emit('toggleNav')
+      this.$parent.$emit("toggleNav");
     },
     ...mapActions("chat", ["videoChat"]),
   },

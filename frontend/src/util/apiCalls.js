@@ -14,7 +14,7 @@ export default {
         }, {}))
     },
     getUser(id, includeInterestsAndIdentities) {
-        const querystring = `/api/v1/user/${id}${includeInterestsAndIdentities ? '?interests=true&identities=true' : ''}`.replace('.', '%2e')
+        const querystring = `/api/v1/user/${id}${includeInterestsAndIdentities ? '?interests=true&identities=true' : ''}`.replace(/\./g,'%2e')
         console.log(querystring)
         return axios.get(querystring)
         .then(res => res.data)

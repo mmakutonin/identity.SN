@@ -1,45 +1,53 @@
 <template>
-  <div v-bind:class="'w3-bar w3-border-bottom w3-border-red w3-mobile navbar ' + bgColor">
-    <div class="nav-logo"><img src="../assets/ic-icon.png" /></div>
-
-    <div class="nav-items">
-      <a
+  <header v-bind:class="'navbar ' + bgColor">
+    <a href="#" class="w3-hover-text-theme nav-logo">identity.SN</a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"
+      ><span class="navicon"></span
+    ></label>
+    <ul v-bind:class="'nav-items ' + bgColor">
+      <li>
+        <a href="#" class="w3-hover-none w3-hover-text-theme nav-item-li"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="#about-section"
+          class="w3-hover-none w3-hover-text-theme nav-item-li"
+          >Features</a
+        >
+      </li>
+      <li>
+        <a
+          href="#m-statement-section"
+          class="w3-hover-none w3-hover-text-theme nav-item-li"
+          >About</a
+        >
+      </li>
+      <!--<a
         href="#"
-        class="w3-bar-item w3-button w3-hover-none w3-hover-text-indigo w3-round"
-        >Home</a
-      >
-      <a
-        href="#"
-        class="w3-bar-item w3-button w3-hover-none w3-hover-text-indigo w3-round"
-        >Features</a
-      >
-      <a
-        href="#"
-        class="w3-bar-item w3-button w3-hover-none w3-hover-text-indigo w3-round"
-        >About</a
-      >
-      <a
-        href="#"
-        class="w3-bar-item w3-button w3-hover-none w3-hover-text-indigo w3-round"
+        class="w3-bar-item w3-button w3-hover-none w3-hover-text-theme w3-round nav-item-li"
         >Contact</a
-      >
-      <input
-        type='button'
-        class='w3-bar-item w3-button w3-hover-none w3-hover-text-indigo w3-round'
-        value='Settings'
-        v-on:click='$router.push({path: "/settings"})'
-      />
-    </div>
-  </div>
+      >-->
+      <li>
+        <a
+          class="w3-hover-none w3-hover-text-theme nav-item-li"
+          v-on:click="$router.push({ path: '/settings' })"
+          >Settings</a
+        >
+      </li>
+    </ul>
+  </header>
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import { mapState } from "vuex";
 
 export default {
   name: "MainNavBar",
   computed: {
-    ...mapState(['bgColor'])
-  }
+    ...mapState(["bgColor"]),
+  },
 };
 </script>

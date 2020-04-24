@@ -1,11 +1,16 @@
 <template>
-  <div class="w3-container set-up-background">
-    <div v-if='!loaded'>
-      Getting ready to create your account
+  <div class="w3-container w3-theme2 set-up-background">
+    <a class="nav-logo2" v-on:click="$router.push({ path: '/' })">identity.SN</a>
+    <div v-if="!loaded">
+      <div class="w3-container w3-center w3-theme-d5 loading">
+        <h1>Hold on tight...</h1>
+        <h3>Getting ready to create your profile!</h3>
+      </div>
     </div>
+
     <div
       v-else
-      class="w3-container w3-light-gray w3-shadow w3-display-middle w3-border w3-round-xlarge set-up-main"
+      class="w3-container w3-mobile w3-light-gray w3-display-middle w3-shadow w3-border w3-round-xlarge set-up-main"
     >
       <AccountSetupScreen
         v-if="screenCounter === 0"
@@ -22,7 +27,7 @@
       <div class="w3-bar set-up-nav">
         <input
           type="button"
-          class="w3-button w3-black w3-round-large w3-hover-indigo"
+          class="w3-button w3-theme-d4 w3-round-large w3-hover-theme2"
           value="Previous"
           v-bind:disabled="screenCounter === 0"
           v-on:click="screenCounter--"
@@ -31,30 +36,29 @@
         <input
           type="button"
           v-bind:class="
-            'w3-button w3-black w3-round-large w3-hover-indigo' +
-              (screenCounter === 1 ? 'w3-green w3-hover-green' : '')
+            'w3-button w3-theme-d4 w3-round-large w3-hover-theme2' +
+              (screenCounter === 1 ? 'w3-theme-d4 w3-hover-theme2' : '')
           "
           v-bind:value="screenCounter === 1 ? 'Lets Chat!' : 'Next Page'"
           v-on:click="screenCounter++"
         />
       </div>
     </div>
-
-    <LoginFooter />
   </div>
 </template>
 <script>
 import AccountSetupScreen from "../components/AccountSetupScreen";
 import LoginFooter from "../components/LoginFooter";
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapActions } from "vuex";
+import MainNavBar from "../components/MainNavBar";
 export default {
   name: "AccountSetup",
-  components: { AccountSetupScreen, LoginFooter },
+  components: { MainNavBar, AccountSetupScreen, LoginFooter },
   data: () => ({
     screenCounter: 0,
   }),
   created() {
-    this.getUserMetadata({id: this.userId})
+    this.getUserMetadata({ id: this.userId });
   },
   watch: {
     screenCounter(newVal) {
@@ -64,13 +68,13 @@ export default {
     },
   },
   methods: {
-    ...mapActions('accountSetup', ['getUserMetadata'])
+    ...mapActions("accountSetup", ["getUserMetadata"]),
   },
   computed: {
-    ...mapState(['userId']),
+    ...mapState(["userId"]),
     ...mapState("accountSetup", {
-      loaded: (state) => !!state.userId
-    })
-  }
+      loaded: (state) => !!state.userId,
+    }),
+  },
 };
 </script>

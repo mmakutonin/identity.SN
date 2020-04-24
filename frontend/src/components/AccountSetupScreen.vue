@@ -1,12 +1,18 @@
 <template>
-  <div class="w3-container w3-animate-opacity w3-flat-clouds acc-set-up-container">
-    <h2 class="w3-display-topmiddle">{{ message }}</h2>
-    <div class="w3-container buttons-section">
+  <div
+    class="w3-container w3-animate-opacity w3-flat-clouds acc-set-up-container"
+  >
+    <h2 class="w3-margin">{{ message }}</h2>
+    <p class="w3-margin w3-italics">
+      If the identity you identity with or of interests is not on
+      the list, please choose OTHER.
+    </p>
+    <div class="w3-row-padding buttons-section">
       <div
         v-for="(obj, index) in allColors"
         v-bind:key="obj.index"
         v-bind:class="
-          'option-buttons w3-container w3-round w3-padding w3-btn w3-border w3-border-' +
+          'option-buttons w3-col s2 w3-btn w3-round w3-border w3-border-' +
             obj.color +
             ' ' +
             circleColor(index, obj.color)
@@ -47,7 +53,7 @@ export default {
     ],
   }),
   methods: {
-    ...mapActions('accountSetup', ['addItem', 'rmItem']),
+    ...mapActions("accountSetup", ["addItem", "rmItem"]),
     circleColor(index, color) {
       if (Object.keys(this.known).includes(index)) {
         return "w3-light-grey";
@@ -70,11 +76,11 @@ export default {
       },
       known: function(state) {
         return state[this.elementType + "Known"];
-      }
+      },
     }),
     allColors() {
       const retObj = {};
-      for (const key in {...this.all, ...this.known}) {
+      for (const key in { ...this.all, ...this.known }) {
         retObj[key] = {
           element: this.all[key],
           color: this.colorArray[
