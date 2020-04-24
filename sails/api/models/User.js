@@ -72,8 +72,7 @@ module.exports = {
     }
   },
   async getCurrent() {
-    // TODO: replace this with the
-    // TODO: user that's currently logged in
+    // TODO: Get current user from JWT
     return (await User.find())[0];
   }
 };

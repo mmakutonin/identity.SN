@@ -48,31 +48,40 @@ module.exports = {
     return res.json(identity);
   },
   async tagUserIdentity(req, res) {
-    const user = await User.getCurrent();
+    const { uid } = req.params;
     const { identity } = req.body;
 
-    await User.addToCollection(user.id, "identities", identity);
+    // FIXME: Tagging an identity that doesn't exist doesn't cause error!
+    // FIXME: But also doesn't change the database 
+
+    // IDEA: prevent someone from having an identity as both 
+    // IDEA: self-identity & interest at same time
+
+    await User.addToCollection(uid, "identities", identity);
     return res.ok();
   },
   async removeUserIdentity(req, res) {
-    const user = await User.getCurrent();
+    const { uid } = req.params;
     const { identity } = req.body;
 
-    await User.removeFromCollection(user.id, "identities", identity);
+    await User.removeFromCollection(uid, "identities", identity);
     return res.ok();
   },
   async tagUserInterest(req, res) {
-    const user = await User.getCurrent();
+    const { uid } = req.params;
     const { identity } = req.body;
 
-    await User.addToCollection(user.id, "interests", identity);
+    // FIXME: Tagging an identity that doesn't exist doesn't cause error!
+    // But also doesn't change the database 
+
+    await User.addToCollection(uid, "interests", identity);
     return res.ok();
   },
   async removeUserInterest(req, res) {
-    const user = await User.getCurrent();
+    const { uid } = req.params;
     const { identity } = req.body;
 
-    await User.removeFromCollection(user.id, "interests", identity);
+    await User.removeFromCollection(uid, "interests", identity);
     return res.ok();
   },
 };

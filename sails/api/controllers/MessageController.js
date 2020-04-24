@@ -7,15 +7,13 @@
 
 module.exports = {
   store: async function (req, res) {
-    const user = await User.getCurrent();
-
-    const { message: text, toId } = req.body;
+    const { message: text, fromId, toId } = req.body;
 
     // TODO: add some sort of check here to make
     // TODO: sure they have permission to chat
 
     const message = await Message.create({
-      from: user.id,
+      from: fromId,
       to: toId,
       message: text,
     }).fetch();
@@ -24,10 +22,12 @@ module.exports = {
   },
 
   index: async function (req, res) {
-    const user = await User.getCurrent();
+    // TODO: Replace this with method for querying 
+    // TODO: a given chatroom for all its messages
+    const { uid } = req.params;
 
     const messages = await Message.find({
-      or: [{ from: user.id }, { to: user.id }],
+      or: [{ from: uid }, { to: uid }],
     });
 
     return res.json(messages);
