@@ -55,5 +55,12 @@ export default {
             messages:res.data.messages,
             createdAt:res.data.createdAt
         }))
+    },
+    sendMessage(message) {
+        axios.post(`/api/v1/message`, {
+            toId:       message.toId,
+            fromId:     message.fromId,
+            message:    message.message
+        })
     }
 }
