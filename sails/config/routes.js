@@ -24,19 +24,19 @@ module.exports.routes = {
   'GET /api/v1/identity': 'IdentityController.index', // get identities // ?root=<bool>&query=<str>&n=<num>&skip=<num>
   'GET /api/v1/identity/:id': 'IdentityController.find', // get identity's subcategories // ?query=<str>&n=<num>&skip=<num>
 
-  'POST /api/v1/user/identity': 'IdentityController.tagUserIdentity',
-  'DELETE /api/v1/user/identity': 'IdentityController.removeUserIdentity',
-
-  'POST /api/v1/user/interest': 'IdentityController.tagUserInterest',
-  'DELETE /api/v1/user/interest': 'IdentityController.removeUserInterest',
-
+  'POST /api/v1/user/:uid/identity': 'IdentityController.tagUserIdentity',
+  'DELETE /api/v1/user/:uid/identity': 'IdentityController.removeUserIdentity',
+  'POST /api/v1/user/:uid/interest': 'IdentityController.tagUserInterest',
+  'DELETE /api/v1/user/:uid/interest': 'IdentityController.removeUserInterest',
+  
   'POST /api/v1/message': 'MessageController.store',
-  'GET /api/v1/:id/message': 'MessageController.index',
+  'GET /api/v1/:uid/message': 'MessageController.index',
 
   'POST /api/v1/room': 'RoomController.store',
   'GET /api/v1/room': 'RoomController.index',
 
-  'GET /api/v1/match': 'util/match',
+  'GET /api/v1/user/:uid/match': 'util/match',
+
   'GET /api/v1/hangout': 'util/hangout',
 
   // Wildcard Route match that sends all requests to a single page vue app

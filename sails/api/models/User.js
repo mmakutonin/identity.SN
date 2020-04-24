@@ -61,10 +61,10 @@ module.exports = {
       collection: "message",
       via: "to",
     },
-    
+
     identities: {
-      collection: 'identity',
-      via: 'users',
+      collection: "identity",
+      via: "users",
     },
     interests: {
       collection: 'identity',
@@ -76,8 +76,12 @@ module.exports = {
     }
   },
   async getCurrent() {
-    // TODO: replace this with the
-    // TODO: user that's currently logged in
+    // TODO: Get current user from JWT
     return (await User.find())[0];
-  }
+  },
+  customToJSON() {
+    const obj = { ...this, email: this.id };
+    delete obj.id;
+    return obj;
+  },
 };
