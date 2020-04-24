@@ -3,58 +3,63 @@
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
- * 
+ *
  * Add new Identity Subcategory
  * Identity.addToCollection('<parentIdentity>', 'subcategories', '<subIdentity>')
- * 
+ *
  * Get Identity's Subcategories
  * Identity.find().populate('subcategories')
- * 
+ *
  * Add Identity to User
  * User.addToCollection('<UserID>', 'identities', '<IdentityID>')
- * 
+ *
  * Get User's Identities
  * User.find().populate('identities')
- * 
+ *
  * Add Interest to User
  * User.addToCollection('<UserID>', 'interests', '<IdentityID>')
- * 
+ *
  * Get User's Interests
  * User.find().populate('interests')
- * 
+ *
  */
 
 module.exports = {
-
   attributes: {
-
     id: {
-      type: 'string',
+      type: "string",
       unique: true,
       required: true,
-      columnName: 'identity_name',
-    }, 
+      columnName: "identity_name",
+    },
 
     users: {
-      collection: 'user',
-      via: 'identities',
+      collection: "user",
+      via: "identities",
     },
 
     likedBy: {
-      collection: 'user',
-      via: 'interests',
+      collection: "user",
+      via: "interests",
     },
 
     subcategories: {
-      collection: 'identity',
-      via: 'parentCategory',
+      collection: "identity",
+      via: "parentCategory",
     },
 
     parentCategory: {
-      model: 'identity',
-    }
-
+      model: "identity",
+    },
   },
 
-};
+  customToJSON: function () {
+    const obj = {
+      ...this,
+      identity: this.id,
+    };
+    delete obj.id;
 
+    return obj;
+  },
+};

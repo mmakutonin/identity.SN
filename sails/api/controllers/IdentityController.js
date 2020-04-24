@@ -28,7 +28,7 @@ module.exports = {
       },
       ...(typeof n === "string" && { limit: n }),
       ...(typeof skip === "string" && { skip }),
-    });
+    }).populate('subcategories').populate('parentCategory');
 
     return res.json(identities);
   },

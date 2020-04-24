@@ -1,0 +1,471 @@
+[
+  {
+      "id": "null",
+      "value": "7"
+  },
+  {
+      "id": "sensitive to gender",
+      "parent": "null",
+      "value": "14"
+  },
+  {
+      "id": "cis-gender male",
+      "parent": "sensitive to gender",
+      "value": "1"
+  },
+  {
+      "id": "cis-gender female",
+      "parent": "sensitive to gender",
+      "value": "1"
+  },
+  {
+      "id": "transgender male",
+      "parent": "sensitive to gender",
+      "value": "1"
+  },
+  {
+      "id": "transgender female",
+      "parent": "sensitive to gender",
+      "value": "1"
+  },
+  {
+      "id": "intersex",
+      "parent": "sensitive to gender",
+      "value": "1"
+  },
+  {
+      "id": "bi-gender",
+      "parent": "sensitive to gender",
+      "value": "1"
+  },
+  {
+      "id": "gender non-conforming/gender variant",
+      "parent": "sensitive to gender",
+      "value": "1"
+  },
+  {
+      "id": "third gender",
+      "parent": "sensitive to gender",
+      "value": "1"
+  },
+  {
+      "id": "gender queer",
+      "parent": "sensitive to gender",
+      "value": "1"
+  },
+  {
+      "id": "genderfluid",
+      "parent": "sensitive to gender",
+      "value": "1"
+  },
+  {
+      "id": "two-spirit",
+      "parent": "sensitive to gender",
+      "value": "1"
+  },
+  {
+      "id": "polyamourous",
+      "parent": "sensitive to gender",
+      "value": "1"
+  },
+  {
+      "id": "other gender",
+      "parent": "sensitive to gender",
+      "value": "1"
+  },
+  {
+      "id": "sensitive to sexual orientation",
+      "parent": "null",
+      "value": "19"
+  },
+  {
+      "id": "straight",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "gay/lesbian",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "asexual",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "pansexual",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "demisexual",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "bisexual",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "queer",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "ally",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "non-conforming",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "non-binary",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "aromantic",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "demiromantic",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "cross-dresser",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "femme",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "metrosexual",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "questioning",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "skoliosexual",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "other sexual orientation",
+      "parent": "sensitive to sexual orientation",
+      "value": "1"
+  },
+  {
+      "id": "religious",
+      "parent": "null",
+      "value": "10"
+  },
+  {
+      "id": "catholic",
+      "parent": "religious",
+      "value": "1"
+  },
+  {
+      "id": "muslim",
+      "parent": "religious",
+      "value": "1"
+  },
+  {
+      "id": "buddhist",
+      "parent": "religious",
+      "value": "1"
+  },
+  {
+      "id": "christian",
+      "parent": "religious",
+      "value": "1"
+  },
+  {
+      "id": "evangelist",
+      "parent": "religious",
+      "value": "1"
+  },
+  {
+      "id": "wiccan",
+      "parent": "religious",
+      "value": "1"
+  },
+  {
+      "id": "hinduist",
+      "parent": "religious",
+      "value": "1"
+  },
+  {
+      "id": "taoist",
+      "parent": "religious",
+      "value": "1"
+  },
+  {
+      "id": "other religion",
+      "parent": "religious",
+      "value": "1"
+  },
+  {
+      "id": "racially sensitive",
+      "parent": "null",
+      "value": "13"
+  },
+  {
+      "id": "black/african americans",
+      "parent": "racially sensitive",
+      "value": "1"
+  },
+  {
+      "id": "white",
+      "parent": "racially sensitive",
+      "value": "1"
+  },
+  {
+      "id": "asian/southeast asian/pacific asian",
+      "parent": "racially sensitive",
+      "value": "1"
+  },
+  {
+      "id": "latino/latina",
+      "parent": "racially sensitive",
+      "value": "1"
+  },
+  {
+      "id": "afro latino",
+      "parent": "racially sensitive",
+      "value": "1"
+  },
+  {
+      "id": "latinx",
+      "parent": "racially sensitive",
+      "value": "1"
+  },
+  {
+      "id": "hispanic",
+      "parent": "racially sensitive",
+      "value": "1"
+  },
+  {
+      "id": "jewish",
+      "parent": "racially sensitive",
+      "value": "1"
+  },
+  {
+      "id": "middle eastern",
+      "parent": "racially sensitive",
+      "value": "1"
+  },
+  {
+      "id": "indian",
+      "parent": "racially sensitive",
+      "value": "1"
+  },
+  {
+      "id": "immigrant",
+      "parent": "racially sensitive",
+      "value": "1"
+  },
+  {
+      "id": "other race",
+      "parent": "racially sensitive",
+      "value": "1"
+  },
+  {
+      "id": "work oriented",
+      "parent": "null",
+      "value": "10"
+  },
+  {
+      "id": "unemployed",
+      "parent": "work oriented",
+      "value": "1"
+  },
+  {
+      "id": "technologist",
+      "parent": "work oriented",
+      "value": "1"
+  },
+  {
+      "id": "healthcare worker",
+      "parent": "work oriented",
+      "value": "1"
+  },
+  {
+      "id": "student",
+      "parent": "work oriented",
+      "value": "1"
+  },
+  {
+      "id": "educator",
+      "parent": "work oriented",
+      "value": "1"
+  },
+  {
+      "id": "service worker",
+      "parent": "work oriented",
+      "value": "1"
+  },
+  {
+      "id": "retail worker",
+      "parent": "work oriented",
+      "value": "1"
+  },
+  {
+      "id": "food worker",
+      "parent": "work oriented",
+      "value": "1"
+  },
+  {
+      "id": "minimum-wage worker",
+      "parent": "work oriented",
+      "value": "1"
+  },
+  {
+      "id": "political",
+      "parent": "null",
+      "value": "9"
+  },
+  {
+      "id": "conservative",
+      "parent": "political",
+      "value": "1"
+  },
+  {
+      "id": "progressive",
+      "parent": "political",
+      "value": "1"
+  },
+  {
+      "id": "moderate",
+      "parent": "political",
+      "value": "1"
+  },
+  {
+      "id": "opinionated about abortion",
+      "parent": "political",
+      "value": "3"
+  },
+  {
+      "id": "pro-choice",
+      "parent": "opinionated about abortion",
+      "value": "1"
+  },
+  {
+      "id": "pro-life",
+      "parent": "opinionated about abortion",
+      "value": "1"
+  },
+  {
+      "id": "opinionated about gender equality",
+      "parent": "political",
+      "value": "5"
+  },
+  {
+      "id": "feminist",
+      "parent": "opinionated about gender equality",
+      "value": "1"
+  },
+  {
+      "id": "equalist",
+      "parent": "opinionated about gender equality",
+      "value": "1"
+  },
+  {
+      "id": "#metoo",
+      "parent": "opinionated about gender equality",
+      "value": "1"
+  },
+  {
+      "id": "status quo",
+      "parent": "opinionated about gender equality",
+      "value": "1"
+  },
+  {
+      "id": "opinionated about immigration",
+      "parent": "political",
+      "value": "6"
+  },
+  {
+      "id": "anti-immigration",
+      "parent": "opinionated about immigration",
+      "value": "1"
+  },
+  {
+      "id": "anti-illegal immigration",
+      "parent": "opinionated about immigration",
+      "value": "1"
+  },
+  {
+      "id": "pro-immigration",
+      "parent": "opinionated about immigration",
+      "value": "1"
+  },
+  {
+      "id": "pro-immigration reform",
+      "parent": "opinionated about immigration",
+      "value": "1"
+  },
+  {
+      "id": "pro-illegal immigration",
+      "parent": "opinionated about immigration",
+      "value": "1"
+  },
+  {
+      "id": "opinionated about education",
+      "parent": "political",
+      "value": "5"
+  },
+  {
+      "id": "for free tuition",
+      "parent": "opinionated about education",
+      "value": "1"
+  },
+  {
+      "id": "pro-public school",
+      "parent": "opinionated about education",
+      "value": "1"
+  },
+  {
+      "id": "pro-charter school",
+      "parent": "opinionated about education",
+      "value": "1"
+  },
+  {
+      "id": "against free tuition",
+      "parent": "opinionated about education",
+      "value": "1"
+  },
+  {
+      "id": "opinionated about healthcare",
+      "parent": "political",
+      "value": "4"
+  },
+  {
+      "id": "for medicare-for-all",
+      "parent": "opinionated about healthcare",
+      "value": "1"
+  },
+  {
+      "id": "for privatized insurance",
+      "parent": "opinionated about healthcare",
+      "value": "1"
+  },
+  {
+      "id": "for public and private option",
+      "parent": "opinionated about healthcare",
+      "value": "1"
+  }
+]
