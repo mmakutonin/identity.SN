@@ -8,11 +8,14 @@
 module.exports = {
   async index(req, res) {
     const { uid } = req.params;
-    const rooms = (await Room.find().populate('users')).filter(
-        r => _.includes(r.users, uid)
-    )
-    
-    return res.json(rooms)
+    const rooms = (await Room.find().populate("users")).filter((r) =>
+      _.includes(
+        r.users.map((u) => u.id),
+        uid
+      )
+    );
+
+    return res.json(rooms);
   },
   async find(req, res) {
     const { rid } = req.params;
