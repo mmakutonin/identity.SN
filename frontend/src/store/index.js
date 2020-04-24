@@ -122,10 +122,13 @@ export default new Vuex.Store({
                 },
                 setRooms(state, payload) {
                     state.rooms = payload.rooms
+                },
+                refreshCurrentRoom(state, payload) {
+                    Vue.set(state.rooms, payload.index, payload.room)
                 }
             },
             actions: {
-                initChats({commit}, payload) {
+                async initChats({commit}, payload) {
                     commit({
                         type: 'setUserId',
                         userId: payload.userId
@@ -135,7 +138,7 @@ export default new Vuex.Store({
                         rooms: await apiCalls.getRooms(payload.userId)
                     })
                 },
-                sendMessage({ state, commit, getters }, payload) {
+                async sendMessage({ state, commit, getters }, payload) {
                     const chat = {
                         sender:     true,
                         toId:       getters.currentChatPartnerId,
@@ -143,22 +146,34 @@ export default new Vuex.Store({
                         message:    payload.messageText,
                         timestamp:  Date.now()
                     }
+                    const tone = await apiCalls.sendMessage(chat)
                     commit({
                         type:  'addMessage',
-                        chat,
+                        chat: {...chat, tone},
                         index: state.currentContactIndex
                     })
-                    apiCalls.sendMessage(chat)
+                    
                 },
                 //Actions to be expanded later can be found below:
                 videoChat() {
                     window.open('https://hangouts.google.com/call/W7JggBBJ23loiAC0qUZkAEEE')
                 },
-                async findMatch({ state, commit }) {
-                    commit({
-                        type: 'addRoom',
-                        room: await apiCalls.findMatch(state.userName)
+                async findMatch({ state, commit, dispatch }) {
+                    await apiCalls.findMatch(state.userName)
+                    dispatch({
+                        type:'initChats',
+                        userId: state.userName
                     })
+                },
+                async refreshRooms({ state, dispatch, commit }) {
+                    const rooms = await apiCalls.getRooms(state.userName)
+                    commit({
+                        type: 'setRooms',
+                        rooms
+                    })
+                    setTimeout(() => {
+                        dispatch('refreshRooms')
+                    }, 2000)
                 }
             }
         }

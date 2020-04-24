@@ -1,7 +1,7 @@
 <template>
   <div class="w3-container w3-theme2 set-up-background">
     <a class="nav-logo2" v-on:click="$router.push({ path: '/' })">identity.SN</a>
-    <div v-if="!loaded">
+    <div v-if="!loaded || fin">
       <div class="w3-container w3-center w3-theme-d5 loading">
         <h1>Hold on tight...</h1>
         <h3>Getting ready to create your profile!</h3>
@@ -56,6 +56,7 @@ export default {
   components: { MainNavBar, AccountSetupScreen, LoginFooter },
   data: () => ({
     screenCounter: 0,
+    fin: false
   }),
   created() {
     this.getUserMetadata({ id: this.userId });
@@ -63,6 +64,7 @@ export default {
   watch: {
     screenCounter(newVal) {
       if (newVal > 1) {
+        this.fin = true
         this.initChats({
           userId: this.userId
         })

@@ -34,9 +34,10 @@ export default {
     this.initChats({
       userId: this.userId
     })
+    this.refreshRooms()
   },
   methods: {
-    ...mapActions('chat',['initChats'])
+    ...mapActions('chat',['initChats', 'refreshRooms'])
   },
   computed: {
     ...mapState(['userId'])
