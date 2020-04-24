@@ -40,8 +40,22 @@ export default {
     },
     findMatch(userId) {
         return axios.get(`/api/v1/user/${transformUserId(userId)}/match`)
-        .then(res => ({
-            ...res.data.users.map(({email}) => ({
+    },
+    getRoomMessages(roomId, userId) {
+        return axios.get(`api/v1/room/${roomId}`)
+        .then(res => res.data.messages.map(message => ({
+            sender:     message.from === userId ? true : false,
+            toId:       message.to,
+            fromId:     message.from,
+            message:    message.message,
+            timestamp:  message.createdAt,
+            tone:       message.tone
+        })))
+    },
+    async getRooms(userId) {
+        let res = await axios.get(`/api/v1/user/${transformUserId(userId)}/room`)
+        res = await res.data.map(async res => ({
+            ...res.users.map(({email}) => ({
                 id: email,
                 initials: email.substring(0,2).toUpperCase()
             })).reduce((agg, user) => {
@@ -52,15 +66,17 @@ export default {
                     return agg
                 }
             }),
-            messages:res.data.messages,
-            createdAt:res.data.createdAt
+            messages: await this.getRoomMessages(res.id, userId),
+            roomId: res.id,
+            createdAt:res.createdAt
         }))
+        return Promise.all(res)
     },
     sendMessage(message) {
         axios.post(`/api/v1/message`, {
             toId:       message.toId,
             fromId:     message.fromId,
             message:    message.message
-        })
+        }).then(res => res.data)
     }
 }

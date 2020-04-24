@@ -24,7 +24,7 @@
         v-bind:class="'w3-section ' + sender(chatMessage.sender)"
       >
         <div
-          v-bind:class="'w3-round-xlarge bubble ' + color(chatMessage.sender)"
+          v-bind:class="'w3-round-xlarge bubble ' + color(chatMessage.sender) + ' ' + toneColor(chatMessage.tone)"
         >
           <div class="bubble-text">
             <p class="w3-padding msg-content">
@@ -65,7 +65,18 @@ export default {
         return "bubble-income";
       }
     },
-
+    toneColor(tone) {
+      tone = tone.toLowerCase()
+      if(tone === 'anger' || tone === 'disgust' || tone === 'fear') {
+        return 'w3-bottombar w3-leftbar w3-rightbar w3-topbar w3-border-red'
+      }
+      else if (tone === 'joy') {
+        return 'w3-bottombar w3-leftbar w3-rightbar w3-topbar w3-border-green'
+      }
+      else {
+        return ''
+      }
+    },
     color(sender) {
       if (sender) {
         return "w3-theme-d4";
