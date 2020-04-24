@@ -7,17 +7,15 @@
 
 module.exports = {
     store: async function (req, res) {
-        const firstUser = await User.getCurrent();
-
-        const { message: text, toId } = req.body;
+        const { message: text, toId, fromId } = req.body;
         const secondUser = await User.findOne(toId);
         var room = await Room.find().populate('users');
         var room_id = -1;
-        var checkOne,checkTwo = false;
+        var checkOne = false, checkTwo = false;
         for(let userList of room){
             if(userList.users.length > 0){
                 for(let user of userList.users){
-                    if(user.id = firstUser.id){
+                    if(user.id = fromId){
                         checkOne = true;
                     }
                 }
@@ -33,29 +31,12 @@ module.exports = {
         }
 
         const message = await Message.create({
-            from: firstUser.id,
+            from: fromId,
             to: toId,
             message: text,
             room: room_id
         }).fetch();
 
         return res.json(message);
-    },
-
-    index: async function (req, res) {
-        const user = await User.getCurrent();
-        const { id } = req.params;
-        const message1 = await Message.find()
-        .where({
-            from: user.id ,
-            to: id
-        });
-        const message2 = await Message.find()
-        .where({
-            from: id ,
-            to: user.id
-        });
-        const messages = Object.assign(message1, message2);
-        return res.json(messages);
     },
 };
