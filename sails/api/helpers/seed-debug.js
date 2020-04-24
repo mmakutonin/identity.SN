@@ -38,12 +38,12 @@ module.exports = {
     await User.addToCollection(
       users[0].id,
       "identities",
-      identities[indicies[0]].id
+      [identities[indicies[0]].id, "immigrant"]
     );
     await User.addToCollection(
       users[0].id,
       "interests",
-      identities[indicies[1]].id
+      [identities[indicies[1]].id, "unemployed"]
     );
     await User.addToCollection(
       users[1].id,
@@ -54,6 +54,16 @@ module.exports = {
       users[1].id,
       "interests",
       identities[indicies[0]].id
+    );
+    await User.addToCollection(
+      users[2].id,
+      "identities",
+      "unemployed"
+    );
+    await User.addToCollection(
+      users[2].id,
+      "interests",
+      "immigrant"
     );
 
     const room02 = await sails.helpers.createRoom([users[0].id, users[2].id]);
