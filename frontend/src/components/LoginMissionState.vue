@@ -24,21 +24,21 @@
             across all diverse groups of people. While these unified us, lack of
             knowlegde, exposure, and common sense oftentimes separate us.<br />
             <br />
-            To better unify people, team Bonnies developed <b>identity.SN</b> to provide
-            an anoynymous social network platform for people of Buffalo and
-            beyond to have more meaningful conversations about potentially
-            divisive topisc and make long-lasting connections.
+            To better unify people, team Bonnies developed <b>identity.SN</b> to
+            provide an anoynymous social network platform for people of Buffalo
+            and beyond to have more meaningful conversations about potentially
+            divisive topics and make long-lasting connections.
             <br />
             <br />
             With that in mind, we encourage you to have an open mindset and
-            respect for your match. We are committed to spread love and not hate so
-            hateful or discriminatory behaviors are not tolerated.
+            respect for your match. We are committed to
+            <b>spread love and not hate</b> so hateful or discriminatory
+            behaviors are not tolerated. We hope you enjoy what
+            <b>identity.SN</b> has to offer!
+
             <br />
-            Cheers!
             <br />
-            <br />
-            With love, 
-            Team Bonnies
+            With love, Team Bonnies
           </p>
         </div>
       </div>
