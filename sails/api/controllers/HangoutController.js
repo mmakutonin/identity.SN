@@ -42,9 +42,6 @@ module.exports = {
     if (hangout.approved !== true) return res.status(401).send("Access Denied");
 
     const access_token = req.param("access_token");
-    const token_type = req.param("token_type");
-    const scope = req.param("scope");
-    const expiry_date = req.param("expiry_date");
 
     const auth = new google.auth.OAuth2(
       sails.config.google.clientID,
@@ -53,12 +50,7 @@ module.exports = {
       // TODO: Change this redirect path before deploy!
     );
 
-    auth.setCredentials({
-      access_token,
-      token_type,
-      scope,
-      expiry_date,
-    });
+    auth.setCredentials({ access_token });
 
     const gEvent = await sails.helpers.createHangout(auth, hangout);
   

@@ -53,7 +53,7 @@ module.exports = {
           conferenceDataVersion: 1,
         },
         function (err, event) {
-          if (err) throw err;
+          if (err) sails.log.error(err);
           s(event);
         }
       );

@@ -85,7 +85,6 @@ module.exports = {
         ).exec((err, user, wasCreated) => s({ user, wasCreated })));
         
         const newUser = wasCreated;
-        console.log(newUser, data.email, data.token);
         res.redirect(
           `http://localhost:8080/auth?newuser=${newUser}&id=${data.email}&token=${data.token}`
         ); //hard-coded for now, will change when deploying.
