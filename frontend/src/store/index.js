@@ -7,6 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         userId: null,
+        token: '',
         bgColor: 'w3-theme2'
     },
     getters: {
@@ -15,6 +16,7 @@ export default new Vuex.Store({
     mutations: {
         setUser(state, payload) {
             state.userId = payload.id
+            state.token = payload.token
         },
         darkMode(state, payload) {
             if(payload.darkMode) {

@@ -10,13 +10,14 @@
         type="button"
         class="meet-face-btn w3-button w3-orange w3-hover-theme w3-round-xlarge w3-margin-left"
         value="Meet Face-to-Face"
-        v-on:click="this.videoChat"
+        v-on:click="videoChat"
+        v-bind:disabled='!token'
       />
       <input
         type="button"
         class="meet-face-btn w3-button w3-blue w3-hover-theme w3-round-xlarge"
         value="Get Icebreaker Question"
-        v-on:click="this.iceBreaker"
+        v-on:click="iceBreaker"
       />
     </div>
     <div
@@ -48,7 +49,7 @@
 
 <script>
 import ChatTextPaneInput from "./ChatTextPaneInput";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions, mapState } from "vuex";
 import VueChatScroll from "vue-chat-scroll";
 import Vue from "vue";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -96,6 +97,7 @@ export default {
   },
   computed: {
     ...mapGetters("chat", ["currentChat", "currentRoom"]),
+    ...mapState(['token'])
   },
 };
 </script>
