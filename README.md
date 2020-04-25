@@ -25,7 +25,7 @@ We intend out platform to be available to all people regardless of their identit
 We intend to expand our app and let people across the US to join and start making these connections by 6 months. For a far future, if all permits, we might go international or make this into a diversity training module for work or school purposes. 
 
 # Thoughts # 
-identity.SN not only gave our team mor technical and collaboration experiences and skills, but it also taught all of us about our identities and the importance of human connections in the times of COVID-19. 
+identity.SN not only gave our team more technical and collaboration experiences and skills, but it also taught all of us about our identities and the importance of human connections in the times of COVID-19. 
 
 # Acknowledgement #
 
