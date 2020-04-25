@@ -65,48 +65,65 @@ module.exports = {
     return res.ok();
   },
 
-  googleAuth: function(req, res) {
-        passport.authenticate('google', { scope: ['email', 'profile'] })(req, res);
-    },
+  googleAuth: function (req, res) {
+    const scope = [
+      "email",
+      "profile",
+      "https://www.googleapis.com/auth/calendar.events",
+    ];
+    passport.authenticate("google", { scope })(req, res);
+  },
 
-    googleCallback: function(req, res, next) {
-        passport.authenticate('google', function(err, user) {
-            if(err) {
-                res.redirect('back')
-            } else {
-                var newUser = true;
-                User.findOrCreate({ id: user.email }, { id: user.email, fullName: user.firstname + " " + user.last_name, displayName: user.firstname + " " + user.last_name})
-                .exec(async(err, user, wasCreated)=> {
-                    if (err) { return res.serverError(err); }
+  googleCallback: function (req, res, next) {
+    const authorize = passport.authenticate("google", async function (err, data) {
+      if (err) {
+        res.redirect("back");
+      } else {
+        const { wasCreated, user } = await new Promise(s => User.findOrCreate(
+          { id: data.email },
+          { id: data.email, fullName: data.name, displayName: data.name }
+        ).exec((err, user, wasCreated) => s({ user, wasCreated })));
+        
+        const newUser = wasCreated;
+        console.log(newUser, data.email, data.token);
+        res.redirect(
+          `http://localhost:8080/auth?newuser=${newUser}&id=${data.email}&token=${data.token}`
+        ); //hard-coded for now, will change when deploying.
+      }
+    })
 
-                    if(!wasCreated) {
-                        newUser = false;
-                    }
-                });
-                res.redirect(`http://localhost:8080/auth?newuser=${newUser}&id=${user.email}`) //hard-coded for now, will change when deploying.
-            }
-        })(req, res, next);
-    },
-    facebookAuth: function(req, res, next) {
-        passport.authenticate('facebook', { scope: ['email']})(req, res, next);
-    },
+    authorize(req, res, next);
+  },
+  facebookAuth: function (req, res, next) {
+    passport.authenticate("facebook", { scope: ["email"] })(req, res, next);
+  },
 
-    facebookCallback: function(req, res, next) {
-        passport.authenticate('facebook', function(err, user) {
-            if(err) {
-                res.redirect('back')
-            } else {
-                var newUser = true;
-                User.findOrCreate({ id: user.email }, { id: user.email, fullName: user.firstname + " " + user.last_name, displayName: user.firstname + " " + user.last_name})
-                .exec(async(err, user, wasCreated)=> {
-                    if (err) { return res.serverError(err); }
+  facebookCallback: function (req, res, next) {
+    passport.authenticate("facebook", function (err, user) {
+      if (err) {
+        res.redirect("back");
+      } else {
+        var newUser = true;
+        User.findOrCreate(
+          { id: user.email },
+          {
+            id: user.email,
+            fullName: user.firstname + " " + user.last_name,
+            displayName: user.firstname + " " + user.last_name,
+          }
+        ).exec(async (err, user, wasCreated) => {
+          if (err) {
+            return res.serverError(err);
+          }
 
-                    if(!wasCreated) {
-                        newUser = false;
-                    }
-                });
-                res.redirect(`http://localhost:8080/auth?newuser=${newUser}&id=${user.email}`) //hard-coded for now, will change when deploying.
-            }
-        })(req, res, next);
+          if (!wasCreated) {
+            newUser = false;
+          }
+        });
+        res.redirect(
+          `http://localhost:8080/auth?newuser=${newUser}&id=${user.email}`
+        ); //hard-coded for now, will change when deploying. sails.getBaseUrl()
+      }
+    })(req, res, next);
   },
 };
