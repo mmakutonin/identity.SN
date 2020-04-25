@@ -86,7 +86,7 @@ module.exports = {
         
         const newUser = wasCreated;
         res.redirect(
-          `http://localhost:8080/auth?newuser=${newUser}&id=${data.email}&token=${data.token}`
+          `/auth?newuser=${newUser}&id=${data.email}&token=${data.token}`
         ); //hard-coded for now, will change when deploying.
       }
     })
@@ -120,7 +120,7 @@ module.exports = {
           }
         });
         res.redirect(
-          `http://localhost:8080/auth?newuser=${newUser}&id=${user.email}`
+          `/auth?newuser=${newUser}&id=${user.email}`
         ); //hard-coded for now, will change when deploying. sails.getBaseUrl()
       }
     })(req, res, next);
