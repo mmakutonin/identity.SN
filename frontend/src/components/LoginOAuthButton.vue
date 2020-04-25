@@ -8,21 +8,21 @@
   >
     <img
       v-if="signInMethod === 'google'"
-      class="w3-image cust-small-icon-image-dim"
-      src="../assets/google-icon.png"
+      class="w3-image cust-small-icon-image-dim1"
+      src="http://pngimg.com/uploads/google/google_PNG19635.png"
     />
     <img
       v-if="signInMethod === 'facebook'"
       class="w3-image cust-small-icon-image-dim"
-      src="../assets/facebook-icon.png"
+      src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512"
     />
-    {{ "Sign In With " + signInMethod }}
+    {{ "Sign In with " + signInMethod }}
   </div>
 </template>
 
 <script>
 import { mapActions } from "vuex";
-import {mapState} from 'vuex';
+import { mapState } from "vuex";
 export default {
   name: "LoginOauthButton",
   props: {
@@ -33,6 +33,6 @@ export default {
   },
   computed: {
     ...mapState(["bgColor"]),
-  }
+  },
 };
 </script>

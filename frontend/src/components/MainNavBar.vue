@@ -31,10 +31,10 @@
         >Contact</a
       >-->
       <li>
-        <a
+        <router-link
+          :to="{ name: 'Settings' }"
           class="w3-hover-none w3-hover-text-theme nav-item-li"
-          v-on:click="$router.push({ path: '/settings' })"
-          >Settings</a
+          >Settings</router-link
         >
       </li>
     </ul>

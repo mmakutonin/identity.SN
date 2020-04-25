@@ -5,6 +5,7 @@
       class="w3-input w3-round-xlarge"
       placeholder="Hi, it's nice matching with you! How's it going today?"
       v-model="messageText"
+      @keyup.enter="send(messageText)"
     />
 
     <button
