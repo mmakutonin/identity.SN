@@ -6,12 +6,17 @@
       </button>
       <h2>Your Match</h2>
       <!--<h2>{{ currentContact.name }}</h2>-->
-
       <input
         type="button"
-        class="meet-face-btn w3-button w3-orange w3-hover-theme w3-round-xlarge"
+        class="meet-face-btn w3-button w3-orange w3-hover-theme w3-round-xlarge w3-margin-left"
         value="Meet Face-to-Face"
         v-on:click="this.videoChat"
+      />
+      <input
+        type="button"
+        class="meet-face-btn w3-button w3-blue w3-hover-theme w3-round-xlarge"
+        value="Get Icebreaker Question"
+        v-on:click="this.iceBreaker"
       />
     </div>
     <div
@@ -87,7 +92,7 @@ export default {
     toggleNav() {
       this.$parent.$emit("toggleNav");
     },
-    ...mapActions("chat", ["videoChat"]),
+    ...mapActions("chat", ["videoChat", 'iceBreaker']),
   },
   computed: {
     ...mapGetters("chat", ["currentChat", "currentRoom"]),

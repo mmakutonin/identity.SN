@@ -73,10 +73,14 @@ export default {
         return Promise.all(res)
     },
     sendMessage(message) {
-        axios.post(`/api/v1/message`, {
+        return axios.post(`/api/v1/message`, {
             toId:       message.toId,
             fromId:     message.fromId,
             message:    message.message
         }).then(res => res.data)
+    },
+    iceBreaker(roomId) {
+        return axios.get(`api/v1/room/${roomId}/icebreaker`)
+        .then(ret => ret.data.icebreaker)
     }
 }
