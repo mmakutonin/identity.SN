@@ -11,7 +11,6 @@
         class="meet-face-btn w3-button w3-orange w3-hover-theme w3-round-xlarge w3-margin-left"
         value="Meet Face-to-Face"
         v-on:click="videoChat"
-        v-bind:disabled='!token'
       />
       <input
         type="button"
