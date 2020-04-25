@@ -173,7 +173,15 @@ export default new Vuex.Store({
                     })
                     setTimeout(() => {
                         dispatch('refreshRooms')
-                    }, 2000)
+                    }, 1000)
+                },
+                async iceBreaker({dispatch, getters}) {
+                    const messageText = await apiCalls.iceBreaker(getters.currentRoom.roomId)
+                    console.log(messageText)
+                    dispatch({
+                        type: 'sendMessage',
+                        messageText
+                    })
                 }
             }
         }
