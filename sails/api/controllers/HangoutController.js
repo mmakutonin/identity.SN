@@ -20,6 +20,36 @@ module.exports = {
 
     return res.json(event);
   },
+  async now(req, res) {
+    const { fromId, toId, roomId } = req.body;
+
+    let hangout = await Hangout.create({
+      room: roomId,
+      from: fromId,
+      to: toId,
+      dateTime: (new Date()).toISOString(),
+      approved: true,
+    }).fetch();
+
+    const access_token = req.param("access_token");
+
+    const auth = new google.auth.OAuth2(
+      sails.config.google.clientID,
+      sails.config.google.clientSecret,
+      "http://localhost:8080/api/v1/auth/google/callback"
+      // TODO: Change this redirect path before deploy!
+    );
+
+    auth.setCredentials({ access_token });
+
+    const gEvent = await sails.helpers.createHangout(auth, hangout);
+  
+    hangout = await Hangout.update({ id: hangout.id }).set({
+      hangoutUrl: gEvent.data.hangoutLink,
+    }).fetch()
+
+    return res.json(hangout);
+  },
   async accept(req, res) {
     const { id } = req.params;
     // TODO: make this more secure by checking the

@@ -48,7 +48,6 @@ module.exports = {
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
     room: {
       model: "room",
-      unique: true,
     },
     from: {
       model: "user",

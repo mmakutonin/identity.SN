@@ -37,6 +37,7 @@ module.exports.routes = {
   "GET /api/v1/room/:rid/icebreaker": "util/icebreaker",
 
   "POST /api/v1/hangout": "HangoutController.store",
+  "POST /api/v1/hangout/now": "HangoutController.now",
   "PUT /api/v1/hangout/:id/accept": "HangoutController.accept",
   "DELETE /api/v1/hangout/:id": "HangoutController.destroy",
 
